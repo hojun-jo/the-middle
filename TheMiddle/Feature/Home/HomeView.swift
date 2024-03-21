@@ -17,7 +17,7 @@ struct HomeView: View {
           ForEach(homeViewModel.locations, id: \.self) { location in
             LocationButtonView(location: location.name)
           }
-          LocationButtonView(location: "+")
+          LocationButtonView(location: "출발지 추가")
         }
         .padding()
         
@@ -64,7 +64,7 @@ private struct LocationButtonView: View {
         )
         .padding()
         .frame(width: geometry.size.width * 0.8)
-        .font(.title)
+        .font(.title3)
         .background(.blue)
         .foregroundStyle(.white)
         .clipShape(.buttonBorder)
