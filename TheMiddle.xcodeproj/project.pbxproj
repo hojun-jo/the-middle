@@ -12,9 +12,11 @@
 		38CAC6A92BAC1B3B0051C648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */; };
 		38CAC6AC2BAC1B3B0051C648 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6AB2BAC1B3B0051C648 /* Preview Assets.xcassets */; };
 		38CAC6B92BAC27610051C648 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6B82BAC27610051C648 /* Info.plist */; };
+		459CF2B3E50D419EF288D1FE /* Pods_TheMiddle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DA99F765D1213C814E733C /* Pods_TheMiddle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F02E80FFADFC4A6A30CCE2F /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
 		38CAC6A12BAC1B3A0051C648 /* TheMiddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMiddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CAC6A42BAC1B3A0051C648 /* TheMiddleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMiddleApp.swift; sourceTree = "<group>"; };
 		38CAC6A62BAC1B3A0051C648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		38CAC6AB2BAC1B3B0051C648 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38CAC6B82BAC27610051C648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38CAC6BA2BAC28CE0051C648 /* APIKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKey.xcconfig; sourceTree = "<group>"; };
+		6BB510C1DBBE71A7E1547E1C /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
+		77DA99F765D1213C814E733C /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459CF2B3E50D419EF288D1FE /* Pods_TheMiddle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				38CAC6A32BAC1B3A0051C648 /* TheMiddle */,
 				38CAC6A22BAC1B3A0051C648 /* Products */,
+				8D1F12C87D8A735282DF485A /* Pods */,
+				9E7D421E088E9485BDFE1BCC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,24 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		8D1F12C87D8A735282DF485A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F02E80FFADFC4A6A30CCE2F /* Pods-TheMiddle.debug.xcconfig */,
+				6BB510C1DBBE71A7E1547E1C /* Pods-TheMiddle.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9E7D421E088E9485BDFE1BCC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77DA99F765D1213C814E733C /* Pods_TheMiddle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38CAC6AF2BAC1B3B0051C648 /* Build configuration list for PBXNativeTarget "TheMiddle" */;
 			buildPhases = (
+				0B1B6A346EB2576D312AA9D8 /* [CP] Check Pods Manifest.lock */,
 				38CAC69D2BAC1B3A0051C648 /* Sources */,
 				38CAC69E2BAC1B3A0051C648 /* Frameworks */,
 				38CAC69F2BAC1B3A0051C648 /* Resources */,
+				B07B8FADAD3BB381A68A0628 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B1B6A346EB2576D312AA9D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheMiddle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B07B8FADAD3BB381A68A0628 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheMiddle/Pods-TheMiddle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheMiddle/Pods-TheMiddle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheMiddle/Pods-TheMiddle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		38CAC69D2BAC1B3A0051C648 /* Sources */ = {

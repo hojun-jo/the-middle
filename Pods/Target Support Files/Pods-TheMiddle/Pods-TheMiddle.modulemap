@@ -1,0 +1,6 @@
+framework module Pods_TheMiddle {
+  umbrella header "Pods-TheMiddle-umbrella.h"
+
+  export *
+  module * { export * }
+}

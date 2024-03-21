@@ -6,6 +6,6 @@ target 'TheMiddle' do
   use_frameworks!
 
   # Pods for TheMiddle
-  Pod 'NMapsMap'
+  pod 'NMapsMap'
 
 end
