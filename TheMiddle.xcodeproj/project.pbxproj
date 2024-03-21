@@ -11,6 +11,7 @@
 		38CAC6A72BAC1B3A0051C648 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6A62BAC1B3A0051C648 /* ContentView.swift */; };
 		38CAC6A92BAC1B3B0051C648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */; };
 		38CAC6AC2BAC1B3B0051C648 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6AB2BAC1B3B0051C648 /* Preview Assets.xcassets */; };
+		38CAC6B92BAC27610051C648 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6B82BAC27610051C648 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		38CAC6A62BAC1B3A0051C648 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38CAC6AB2BAC1B3B0051C648 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		38CAC6B82BAC27610051C648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38CAC6BA2BAC28CE0051C648 /* APIKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKey.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 				38CAC6B32BAC1BCC0051C648 /* Feature */,
 				38CAC6B22BAC1BC60051C648 /* Model */,
 				38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */,
+				38CAC6B82BAC27610051C648 /* Info.plist */,
+				38CAC6BA2BAC28CE0051C648 /* APIKey.xcconfig */,
 				38CAC6AA2BAC1B3B0051C648 /* Preview Content */,
 			);
 			path = TheMiddle;
@@ -167,6 +172,7 @@
 			files = (
 				38CAC6AC2BAC1B3B0051C648 /* Preview Assets.xcassets in Resources */,
 				38CAC6A92BAC1B3B0051C648 /* Assets.xcassets in Resources */,
+				38CAC6B92BAC27610051C648 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +312,7 @@
 		};
 		38CAC6B02BAC1B3B0051C648 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38CAC6BA2BAC28CE0051C648 /* APIKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -340,6 +347,7 @@
 		};
 		38CAC6B12BAC1B3B0051C648 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38CAC6BA2BAC28CE0051C648 /* APIKey.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
