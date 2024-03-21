@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PathType {
+enum PathType: Hashable {
   case homeView
   case searchView
   case mapView(isComplete: Bool)
