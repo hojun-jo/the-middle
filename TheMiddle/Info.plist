@@ -4,5 +4,7 @@
 <dict>
 	<key>NMFClientId</key>
 	<string>$(NAVER_MAP)</string>
+	<key>KakaoLocationSearchKey</key>
+	<string>$(KAKAO_LOCATION_SEARCH_KEY)</string>
 </dict>
 </plist>
