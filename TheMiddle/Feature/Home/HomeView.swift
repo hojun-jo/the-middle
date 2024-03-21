@@ -16,6 +16,7 @@ struct HomeView: View {
         ScrollView(.vertical) {
           ForEach(homeViewModel.locations, id: \.self) { location in
             LocationButtonView(location: location.name)
+              .padding(.bottom, 60)
           }
           LocationButtonView(location: "출발지 추가")
         }

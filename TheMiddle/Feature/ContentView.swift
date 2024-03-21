@@ -9,7 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
   @StateObject private var pathModel = PathModel()
-  @StateObject private var homeViewModel = HomeViewModel()
+  @StateObject private var homeViewModel = HomeViewModel(
+    locations: [
+      Location(name: "asdf", latitude: 2, longitude: 2),
+      Location(name: "asdf", latitude: 2, longitude: 2),
+      Location(name: "asdf", latitude: 2, longitude: 2),
+      Location(name: "asdf", latitude: 2, longitude: 2)
+    ]
+  )
   
   var body: some View {
     NavigationStack(path: $pathModel.paths) {
@@ -33,4 +40,8 @@ struct ContentView: View {
         )
     }
   }
+}
+
+#Preview {
+  ContentView()
 }
