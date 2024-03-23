@@ -8,12 +8,20 @@
 import Foundation
 
 extension Bundle {
-  static var kakaoAPIKey: String {
-    guard let filePath = Bundle.main.path(forResource: "Info", ofType: "plist"),
-          let plistDictionary = NSDictionary(contentsOfFile: filePath),
-          let value = plistDictionary.object(forKey: "KakaoLocationSearchKey") as? String
+  static var kakaoAPIKey: String? {
+    return fetchAPIKey(domain: "KakaoLocationSearchKey")
+  }
+  
+  static var naverMapClientID: String? {
+    return fetchAPIKey(domain: "NaverMapClientID")
+  }
+  
+  static private func fetchAPIKey(domain: String) -> String? {
+    guard let file = Bundle.main.path(forResource: "APIKey", ofType: "plist"),
+          let plist = NSDictionary(contentsOfFile: file),
+          let value = plist[domain] as? String
     else {
-      fatalError("Couldn't find Kakao API Key")
+      return nil
     }
     
     return value

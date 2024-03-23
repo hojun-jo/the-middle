@@ -9,12 +9,13 @@ import Foundation
 
 struct KakaoLocationAPI: APIType {
   let url: String = "https://dapi.kakao.com/v2/local/search/keyword.json"
-  let headers: [String : String]? = [
-    "Authorization" : Bundle.kakaoAPIKey
-  ]
+  let headers: [String : String]?
   let queryItems: [URLQueryItem]?
   
-  init(keyword: String, latitude: Double, longitude: Double) {
+  init?(keyword: String, latitude: Double, longitude: Double) throws {
+    guard let kakaoAPIKey = Bundle.kakaoAPIKey else { throw APIError.invalidKey }
+    
+    self.headers = ["Authorization" : kakaoAPIKey]
     self.queryItems = [
       URLQueryItem(name: "query", value: keyword),
       URLQueryItem(name: "y", value: String(latitude)),

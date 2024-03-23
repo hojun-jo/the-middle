@@ -22,6 +22,8 @@
 		38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DC2BAC85460051C648 /* Bundle+.swift */; };
 		38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */; };
 		38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E12BAC8AE70051C648 /* NetworkService.swift */; };
+		38CAC6E32BAEDAA70051C648 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6BC2BAC321E0051C648 /* APIKey.plist */; };
+		38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E42BAEDCDA0051C648 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +32,7 @@
 		38CAC6A62BAC1B3A0051C648 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38CAC6AB2BAC1B3B0051C648 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		38CAC6BB2BAC31FD0051C648 /* APIKey.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = APIKey.xcconfig; sourceTree = "<group>"; };
-		38CAC6BC2BAC321E0051C648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38CAC6BC2BAC321E0051C648 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		38CAC6BE2BAC331D0051C648 /* NMapsGeometry.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NMapsGeometry.xcframework; path = Pods/NMapsGeometry/framework/NMapsGeometry.xcframework; sourceTree = "<group>"; };
 		38CAC6C32BAC421F0051C648 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		38CAC6C52BAC457B0051C648 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		38CAC6DC2BAC85460051C648 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationDTO.swift; sourceTree = "<group>"; };
 		38CAC6E12BAC8AE70051C648 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		38CAC6E42BAEDCDA0051C648 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,8 +90,7 @@
 				38CAC6B32BAC1BCC0051C648 /* Feature */,
 				38CAC6B22BAC1BC60051C648 /* Model */,
 				38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */,
-				38CAC6BC2BAC321E0051C648 /* Info.plist */,
-				38CAC6BB2BAC31FD0051C648 /* APIKey.xcconfig */,
+				38CAC6BC2BAC321E0051C648 /* APIKey.plist */,
 				38CAC6AA2BAC1B3B0051C648 /* Preview Content */,
 			);
 			path = TheMiddle;
@@ -177,6 +178,7 @@
 			children = (
 				38CAC6D52BAC83F50051C648 /* Interface */,
 				38CAC6D82BAC847C0051C648 /* KakaoLocation */,
+				38CAC6E42BAEDCDA0051C648 /* APIError.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CAC6E32BAEDAA70051C648 /* APIKey.plist in Resources */,
 				38CAC6AC2BAC1B3B0051C648 /* Preview Assets.xcassets in Resources */,
 				38CAC6A92BAC1B3B0051C648 /* Assets.xcassets in Resources */,
 			);
@@ -359,6 +362,7 @@
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
 				38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */,
 				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
+				38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +500,7 @@
 				DEVELOPMENT_TEAM = SXJPM9PRM7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheMiddle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "중간에서봐";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -531,6 +536,7 @@
 				DEVELOPMENT_TEAM = SXJPM9PRM7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheMiddle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "중간에서봐";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
