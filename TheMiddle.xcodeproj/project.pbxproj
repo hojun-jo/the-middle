@@ -18,7 +18,9 @@
 		38CAC6D02BAC607A0051C648 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6CF2BAC607A0051C648 /* HomeViewModel.swift */; };
 		38CAC6D32BAC60940051C648 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D22BAC60940051C648 /* Location.swift */; };
 		38CAC6D72BAC84070051C648 /* APIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D62BAC84070051C648 /* APIType.swift */; };
+		38CAC6DA2BAC84A40051C648 /* KakaoLocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */; };
 		38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DC2BAC85460051C648 /* Bundle+.swift */; };
+		38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		38CAC6CF2BAC607A0051C648 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		38CAC6D22BAC60940051C648 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		38CAC6D62BAC84070051C648 /* APIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIType.swift; sourceTree = "<group>"; };
+		38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAPI.swift; sourceTree = "<group>"; };
 		38CAC6DC2BAC85460051C648 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationDTO.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6D52BAC83F50051C648 /* Interface */,
+				38CAC6D82BAC847C0051C648 /* KakaoLocation */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -179,6 +184,23 @@
 				38CAC6D62BAC84070051C648 /* APIType.swift */,
 			);
 			path = Interface;
+			sourceTree = "<group>";
+		};
+		38CAC6D82BAC847C0051C648 /* KakaoLocation */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */,
+				38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */,
+			);
+			path = KakaoLocation;
+			sourceTree = "<group>";
+		};
+		38CAC6DB2BAC852E0051C648 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC6DC2BAC85460051C648 /* Bundle+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		64AF494180CB8C6FB64EBAF8 /* Frameworks */ = {
@@ -316,12 +338,15 @@
 			files = (
 				38CAC6C62BAC457B0051C648 /* PathType.swift in Sources */,
 				38CAC6D02BAC607A0051C648 /* HomeViewModel.swift in Sources */,
+				38CAC6DA2BAC84A40051C648 /* KakaoLocationAPI.swift in Sources */,
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
 				38CAC6D32BAC60940051C648 /* Location.swift in Sources */,
+				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
+				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
