@@ -18,6 +18,7 @@
 		38CAC6D02BAC607A0051C648 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6CF2BAC607A0051C648 /* HomeViewModel.swift */; };
 		38CAC6D32BAC60940051C648 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D22BAC60940051C648 /* Location.swift */; };
 		38CAC6D72BAC84070051C648 /* APIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D62BAC84070051C648 /* APIType.swift */; };
+		38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DC2BAC85460051C648 /* Bundle+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		38CAC6CF2BAC607A0051C648 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		38CAC6D22BAC60940051C648 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		38CAC6D62BAC84070051C648 /* APIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIType.swift; sourceTree = "<group>"; };
+		38CAC6DC2BAC85460051C648 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		38CAC6B52BAC1BE90051C648 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				38CAC6DB2BAC852E0051C648 /* Extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";
