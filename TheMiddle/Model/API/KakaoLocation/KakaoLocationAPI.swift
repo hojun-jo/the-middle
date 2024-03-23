@@ -12,7 +12,11 @@ struct KakaoLocationAPI: APIType {
   let headers: [String : String]?
   let queryItems: [URLQueryItem]?
   
-  init?(keyword: String, latitude: Double, longitude: Double) throws {
+  init?(
+    keyword: String,
+    latitude: Double,
+    longitude: Double
+  ) throws {
     guard let kakaoAPIKey = Bundle.kakaoAPIKey else { throw APIError.invalidKey }
     
     self.headers = ["Authorization" : kakaoAPIKey]
