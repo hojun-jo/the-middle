@@ -21,6 +21,7 @@
 		38CAC6DA2BAC84A40051C648 /* KakaoLocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */; };
 		38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DC2BAC85460051C648 /* Bundle+.swift */; };
 		38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */; };
+		38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E12BAC8AE70051C648 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAPI.swift; sourceTree = "<group>"; };
 		38CAC6DC2BAC85460051C648 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationDTO.swift; sourceTree = "<group>"; };
+		38CAC6E12BAC8AE70051C648 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		38CAC6B52BAC1BE90051C648 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				38CAC6E02BAC8ADB0051C648 /* Service */,
 				38CAC6DB2BAC852E0051C648 /* Extension */,
 			);
 			path = Core;
@@ -201,6 +204,14 @@
 				38CAC6DC2BAC85460051C648 /* Bundle+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		38CAC6E02BAC8ADB0051C648 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC6E12BAC8AE70051C648 /* NetworkService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		64AF494180CB8C6FB64EBAF8 /* Frameworks */ = {
@@ -346,6 +357,7 @@
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
 				38CAC6D32BAC60940051C648 /* Location.swift in Sources */,
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
+				38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */,
 				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
