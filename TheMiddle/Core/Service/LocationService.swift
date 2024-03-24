@@ -35,7 +35,7 @@ extension LocationService: CLLocationManagerDelegate {
     case .notDetermined:
       manager.requestWhenInUseAuthorization()
     case .authorizedAlways, .authorizedWhenInUse:
-      manager.startUpdatingLocation()
+      manager.startMonitoringSignificantLocationChanges()
     case .denied, .restricted:
       manager.stopUpdatingLocation()
     default:
