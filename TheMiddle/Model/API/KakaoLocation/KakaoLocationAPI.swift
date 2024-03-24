@@ -14,16 +14,16 @@ struct KakaoLocationAPI: APIType {
   
   init?(
     keyword: String,
-    latitude: Double,
-    longitude: Double
+    latitude: String? = nil,
+    longitude: String? = nil
   ) throws {
     guard let kakaoAPIKey = Bundle.kakaoAPIKey else { throw APIError.invalidKey }
     
     self.headers = ["Authorization" : kakaoAPIKey]
     self.queryItems = [
       URLQueryItem(name: "query", value: keyword),
-      URLQueryItem(name: "y", value: String(latitude)),
-      URLQueryItem(name: "x", value: String(longitude))
+      URLQueryItem(name: "y", value: latitude),
+      URLQueryItem(name: "x", value: longitude)
     ]
   }
 }
