@@ -19,9 +19,9 @@ final class LocationService: NSObject {
 }
 
 extension LocationService {
-  func currentLocation() throws -> (latitude: Double, longitude: Double) {
+  func currentLocation() -> (latitude: Double, longitude: Double)? {
     guard let coordinate = locationManager.location?.coordinate else {
-      throw LocationError.failToGetCurrentLocation
+      return nil
     }
     
     return (coordinate.latitude, coordinate.longitude)
@@ -40,17 +40,6 @@ extension LocationService: CLLocationManagerDelegate {
       manager.stopUpdatingLocation()
     default:
       break
-    }
-  }
-}
-
-enum LocationError: LocalizedError {
-  case failToGetCurrentLocation
-  
-  var errorDescription: String? {
-    switch self {
-    case .failToGetCurrentLocation:
-      return "현재 위치를 가져올 수 없습니다.\n잠시 후 다시 시도해주세요."
     }
   }
 }
