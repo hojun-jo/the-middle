@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
   @StateObject private var pathModel = PathModel()
   @StateObject private var homeViewModel = HomeViewModel(
-    locations: [
+    startLocations: [
       Location(name: "asdf", latitude: 2, longitude: 2),
       Location(name: "asdf", latitude: 2, longitude: 2),
       Location(name: "asdf", latitude: 2, longitude: 2),

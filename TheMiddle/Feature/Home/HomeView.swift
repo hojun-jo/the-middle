@@ -14,13 +14,14 @@ struct HomeView: View {
     GeometryReader { geometry in
       VStack(alignment: .center) {
         ScrollView(.vertical) {
-          ForEach(homeViewModel.locations, id: \.self) { location in
-            LocationButtonView(location: location.name)
+          ForEach(homeViewModel.startLocations, id: \.self) { location in
+            LocationButtonView(location: location)
               .padding(.bottom, 60)
           }
-          LocationButtonView(location: "출발지 추가")
+          LocationButtonView()
         }
         .padding()
+        .background(.red)
         
         Button(
           action: {
@@ -44,9 +45,9 @@ struct HomeView: View {
 
 // MARK: - Location Button View
 private struct LocationButtonView: View {
-  private let location: String
+  private let location: Location?
   
-  fileprivate init(location: String) {
+  fileprivate init(location: Location? = nil) {
     self.location = location
   }
   
@@ -58,9 +59,10 @@ private struct LocationButtonView: View {
         Button(
           action: {
             // TODO: - 검색 페이지로 이동
+            // location 없을 경우 (위치 허용 안 함) 좌표 없이 검색
           },
           label: {
-            Text(location)
+            Text(location?.name ?? "출발지 추가")
           }
         )
         .padding()
