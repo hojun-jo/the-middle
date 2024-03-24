@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TheMiddleApp: App {
-    var body: some Scene {
-        WindowGroup {
-          ContentView()
-        }
+  @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }
