@@ -24,6 +24,7 @@
 		38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E12BAC8AE70051C648 /* NetworkService.swift */; };
 		38CAC6E32BAEDAA70051C648 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6BC2BAC321E0051C648 /* APIKey.plist */; };
 		38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E42BAEDCDA0051C648 /* APIError.swift */; };
+		38CAC6E72BB006B20051C648 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E62BB006B20051C648 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationDTO.swift; sourceTree = "<group>"; };
 		38CAC6E12BAC8AE70051C648 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		38CAC6E42BAEDCDA0051C648 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		38CAC6E62BB006B20051C648 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E12BAC8AE70051C648 /* NetworkService.swift */,
+				38CAC6E62BB006B20051C648 /* LocationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CAC6E72BB006B20051C648 /* LocationService.swift in Sources */,
 				38CAC6C62BAC457B0051C648 /* PathType.swift in Sources */,
 				38CAC6D02BAC607A0051C648 /* HomeViewModel.swift in Sources */,
 				38CAC6DA2BAC84A40051C648 /* KakaoLocationAPI.swift in Sources */,
@@ -503,6 +507,8 @@
 				INFOPLIST_FILE = TheMiddle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "중간에서봐";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "현재 위치 기반으로 검색하기 위해 위치 정보가 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 위치 기반으로 검색하기 위해 위치 정보가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -539,6 +545,8 @@
 				INFOPLIST_FILE = TheMiddle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "중간에서봐";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "현재 위치 기반으로 검색하기 위해 위치 정보가 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 위치 기반으로 검색하기 위해 위치 정보가 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
