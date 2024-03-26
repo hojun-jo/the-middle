@@ -26,6 +26,7 @@
 		38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E42BAEDCDA0051C648 /* APIError.swift */; };
 		38CAC6E72BB006B20051C648 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E62BB006B20051C648 /* LocationService.swift */; };
 		38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */; };
+		38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		38CAC6E42BAEDCDA0051C648 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		38CAC6E62BB006B20051C648 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		38CAC6B42BAC1BDA0051C648 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				38CAC6ED2BB2DEE50051C648 /* NavigationBar */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -220,6 +223,14 @@
 				38CAC6E62BB006B20051C648 /* LocationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		38CAC6ED2BB2DEE50051C648 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		64AF494180CB8C6FB64EBAF8 /* Frameworks */ = {
@@ -367,6 +378,7 @@
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
 				38CAC6D32BAC60940051C648 /* Location.swift in Sources */,
+				38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */,
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
 				38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */,
 				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
