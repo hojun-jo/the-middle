@@ -26,7 +26,7 @@ struct MapView: View {
   var body: some View {
     VStack {
       CustomNavigationBar(
-        placename: $location.name,
+        placename: .init(initialValue: location.name),
         leftButtonAction: {},
         rightButtonAction: {},
         isSearchMode: isSearchMode
@@ -59,6 +59,6 @@ private struct NaverMapView: UIViewRepresentable {
       longitude: 2
     )
   )
-    .environmentObject(PathModel())
-    .environmentObject(HomeViewModel())
+  .environmentObject(PathModel())
+  .environmentObject(HomeViewModel())
 }
