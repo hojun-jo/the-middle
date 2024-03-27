@@ -33,6 +33,7 @@ struct HomeView: View {
               .resizable()
               .frame(width: 30, height: 30)
               .foregroundStyle(.white)
+              .fontWeight(.bold)
           }
         )
         .padding()
@@ -45,6 +46,8 @@ struct HomeView: View {
 
 // MARK: - Location Button View
 private struct LocationButtonView: View {
+  @EnvironmentObject private var pathModel: PathModel
+  
   private let location: Location?
   
   fileprivate init(location: Location? = nil) {
@@ -60,6 +63,7 @@ private struct LocationButtonView: View {
           action: {
             // TODO: - 검색 페이지로 이동
             // location 없을 경우 (위치 허용 안 함) 좌표 없이 검색
+            pathModel.paths.append(.mapView(isSearchMode: true, location: location ?? Location(name: "asdf", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: 2, longitude: 2)))
           },
           label: {
             Text(location?.name ?? "출발지 추가")

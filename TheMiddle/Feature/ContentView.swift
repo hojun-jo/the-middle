@@ -26,19 +26,15 @@ struct ContentView: View {
           for: PathType.self,
           destination: { pathType in
             switch pathType {
-            case .homeView:
-              HomeView()
-                .environmentObject(homeViewModel)
-            case .searchView:
-              HomeView()// TODO: SearchView()
-                .environmentObject(homeViewModel)
-            case let .mapView(isComplete):
-              HomeView()// TODO: MapView(isComplete, locations)
+            case let .mapView(isSearchMode, location):
+              MapView(isSearchMode: isSearchMode, location: location)
+                .navigationBarBackButtonHidden()
                 .environmentObject(homeViewModel)
             }
           }
         )
     }
+    .environmentObject(pathModel)
   }
 }
 
