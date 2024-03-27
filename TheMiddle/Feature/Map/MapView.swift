@@ -55,8 +55,8 @@ private struct NaverMapView: UIViewRepresentable {
       category: "지하철역",
       address: "서울 ...",
       roadAddress: "도로명 주소",
-      latitude: 2,
-      longitude: 2
+      latitude: "2",
+      longitude: "2"
     )
   )
   .environmentObject(PathModel())

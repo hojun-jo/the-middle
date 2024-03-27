@@ -12,16 +12,16 @@ final class Location {
   var category: String
   var address: String
   var roadAddress: String
-  var latitude: Double
-  var longitude: Double
+  var latitude: String
+  var longitude: String
   
   init(
     name: String,
     category: String,
     address: String,
     roadAddress: String,
-    latitude: Double,
-    longitude: Double
+    latitude: String,
+    longitude: String
   ) {
     self.name = name
     self.category = category
