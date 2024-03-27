@@ -8,7 +8,5 @@
 import Foundation
 
 enum PathType: Hashable {
-  case homeView
-  case searchView
-  case mapView(isComplete: Bool)
+  case mapView(isSearchMode: Bool, location: Location)
 }
