@@ -29,6 +29,7 @@
 		38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */; };
 		38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */; };
 		38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6F42BB44B9E0051C648 /* DataParser.swift */; };
+		38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6F62BB454970051C648 /* MapViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		38CAC6F42BB44B9E0051C648 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
+		38CAC6F62BB454970051C648 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E92BB024860051C648 /* MapView.swift */,
+				38CAC6F62BB454970051C648 /* MapViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
+				38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */,
 				38CAC6D32BAC60940051C648 /* Location.swift in Sources */,
 				38CAC6EA2BB024860051C648 /* MapView.swift in Sources */,
 				38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */,

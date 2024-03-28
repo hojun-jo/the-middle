@@ -11,6 +11,7 @@ import NMapsMap
 struct MapView: View {
   @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var homeViewModel: HomeViewModel
+  @EnvironmentObject private var mapViewModel: MapViewModel
   @State private var location: Location
   
   private let isSearchMode: Bool
@@ -60,5 +61,5 @@ private struct NaverMapView: UIViewRepresentable {
     )
   )
   .environmentObject(PathModel())
-  .environmentObject(HomeViewModel())
+  .environmentObject(MapViewModel())
 }

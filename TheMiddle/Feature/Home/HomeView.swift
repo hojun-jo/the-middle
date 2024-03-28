@@ -47,6 +47,7 @@ struct HomeView: View {
 // MARK: - Location Button View
 private struct LocationButtonView: View {
   @EnvironmentObject private var pathModel: PathModel
+  @EnvironmentObject private var mapViewModel: MapViewModel
   
   private let location: Location?
   
@@ -85,4 +86,5 @@ private struct LocationButtonView: View {
 #Preview {
   HomeView()
     .environmentObject(HomeViewModel())
+    .environmentObject(MapViewModel())
 }

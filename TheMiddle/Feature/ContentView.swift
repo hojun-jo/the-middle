@@ -17,6 +17,7 @@ struct ContentView: View {
       Location(name: "asdf", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2")
     ]
   )
+  @StateObject private var mapViewModel = MapViewModel()
   
   var body: some View {
     NavigationStack(path: $pathModel.paths) {
@@ -29,12 +30,12 @@ struct ContentView: View {
             case let .mapView(isSearchMode, location):
               MapView(isSearchMode: isSearchMode, location: location)
                 .navigationBarBackButtonHidden()
-                .environmentObject(homeViewModel)
             }
           }
         )
     }
     .environmentObject(pathModel)
+    .environmentObject(mapViewModel)
   }
 }
 
