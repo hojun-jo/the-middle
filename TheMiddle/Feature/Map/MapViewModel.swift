@@ -7,17 +7,57 @@
 
 import Foundation
 
+@MainActor
 final class MapViewModel: ObservableObject {
-  /*
-   searchedLocations
-   isDisplayAlert
-   alertMessage
-   
-   */
+  @Published var searchedLocations: [Location]
+  @Published var isDisplayAlert: Bool
+  @Published var alertMessage: String
   
-  private let locationService: LocationService
+  let locationService: LocationService
   
-  init(locationService: LocationService = .init()) {
+  init(
+    searchedLocations: [Location] = [],
+    isDisplayAlert: Bool = false,
+    alertMessage: String = "",
+    locationService: LocationService = .init()
+  ) {
+    self.searchedLocations = searchedLocations
+    self.isDisplayAlert = isDisplayAlert
+    self.alertMessage = alertMessage
     self.locationService = locationService
+  }
+}
+
+extension MapViewModel {
+  func searchLocation(
+    keyword: String,
+    latitude: String?,
+    longitude: String?
+  ) {
+    Task {
+      do {
+        searchedLocations = try await locationService.searchLocation(
+          keyword: keyword,
+          latitude: latitude,
+          longitude: longitude
+        )
+      } catch {
+        displayAlert(message: error.localizedDescription)
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
+  private func displayAlert(message: String) {
+    setErrorAlertMessage(message)
+    setIsDisplayErrorAlert(true)
+  }
+  
+  private func setErrorAlertMessage(_ message: String) {
+    alertMessage = message
+  }
+  
+  private func setIsDisplayErrorAlert(_ isDisplay: Bool) {
+    isDisplayAlert = isDisplay
   }
 }
