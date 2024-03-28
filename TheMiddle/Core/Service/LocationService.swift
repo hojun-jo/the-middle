@@ -11,22 +11,20 @@ import CoreLocation
 final class LocationService: NSObject {
   private let locationManager = CLLocationManager()
   
+  var currentCoordinate: (latitude: Double, longitude: Double)? {
+    guard let coordinate = locationManager.location?.coordinate else {
+      return nil
+    }
+    
+    return (coordinate.latitude, coordinate.longitude)
+  }
+  
   override init() {
     super.init()
     
     locationManager.delegate = self
     locationManager.distanceFilter = CLLocationDistanceMax
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-  }
-}
-
-extension LocationService {
-  func currentLocation() -> (latitude: Double, longitude: Double)? {
-    guard let coordinate = locationManager.location?.coordinate else {
-      return nil
-    }
-    
-    return (coordinate.latitude, coordinate.longitude)
   }
 }
 
