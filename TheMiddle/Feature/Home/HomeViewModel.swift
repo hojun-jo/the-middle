@@ -9,13 +9,8 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
   @Published var startLocations: [Location]
-  @Published var currentLocation: Location?
   
-  init(
-    startLocations: [Location] = [],
-    currentLocation: Location? = nil
-  ) {
+  init(startLocations: [Location] = []) {
     self.startLocations = startLocations
-    self.currentLocation = currentLocation
   }
 }
