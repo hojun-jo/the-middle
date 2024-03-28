@@ -64,7 +64,8 @@ private struct LocationButtonView: View {
           action: {
             // TODO: - 검색 페이지로 이동
             // location 없을 경우 (위치 허용 안 함) 좌표 없이 검색
-            pathModel.paths.append(.mapView(isSearchMode: true, location: location ?? Location(name: "asdf", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2")))
+            mapViewModel.setCurrentLocation(location)
+            pathModel.paths.append(.mapView(isSearchMode: true))
           },
           label: {
             Text(location?.name ?? "출발지 추가")

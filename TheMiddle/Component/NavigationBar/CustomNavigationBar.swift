@@ -32,6 +32,8 @@ struct CustomNavigationBar: View {
         action: leftButtonAction,
         label: { Image(systemName: "arrow.left") }
       )
+      .padding()
+      .background(.red)
       
       Spacer()
       
@@ -43,16 +45,20 @@ struct CustomNavigationBar: View {
         .padding(.horizontal)
         .autocorrectionDisabled()
         .textFieldStyle(.roundedBorder)
+        .background(.blue)
         
         Button(
           action: rightButtonAction,
           label: { Image(systemName: "magnifyingglass") }
         )
+        .padding()
+        .background(.green)
       }
     }
     .padding()
     .foregroundStyle(.black)
     .fontWeight(.bold)
+    .background(.gray)
   }
 }
 

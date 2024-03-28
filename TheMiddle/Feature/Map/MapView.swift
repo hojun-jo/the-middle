@@ -12,27 +12,26 @@ struct MapView: View {
   @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
-  @State private var location: Location
   
   private let isSearchMode: Bool
   
-  init(
-    isSearchMode: Bool,
-    location: Location
-  ) {
+  init(isSearchMode: Bool) {
     self.isSearchMode = isSearchMode
-    self.location = location
   }
   
   var body: some View {
     VStack {
       CustomNavigationBar(
-        placename: .init(initialValue: location.name),
-        leftButtonAction: {},
-        rightButtonAction: {},
+        placename: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
+        leftButtonAction: {
+          pathModel.paths.removeLast()
+        },
+        rightButtonAction: {
+          // TODO: - placename이 ""가 아니면 검색
+        },
         isSearchMode: isSearchMode
       )
-      
+      // TODO: - mapViewModel.currentLocation != nil 현재 위치로 맵뷰 초기화
       NaverMapView()
     }
   }
@@ -49,17 +48,7 @@ private struct NaverMapView: UIViewRepresentable {
 }
 
 #Preview {
-  MapView(
-    isSearchMode: true,
-    location: Location(
-      name: "asdf",
-      category: "지하철역",
-      address: "서울 ...",
-      roadAddress: "도로명 주소",
-      latitude: "2",
-      longitude: "2"
-    )
-  )
+  MapView(isSearchMode: true)
   .environmentObject(PathModel())
   .environmentObject(MapViewModel())
 }

@@ -9,6 +9,7 @@ import Foundation
 
 @MainActor
 final class MapViewModel: ObservableObject {
+  @Published var currentLocation: Location?
   @Published var searchedLocations: [Location]
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
@@ -16,11 +17,13 @@ final class MapViewModel: ObservableObject {
   let locationService: LocationService
   
   init(
+    currentLocation: Location? = nil,
     searchedLocations: [Location] = [],
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
     locationService: LocationService = .init()
   ) {
+    self.currentLocation = currentLocation
     self.searchedLocations = searchedLocations
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
@@ -29,6 +32,10 @@ final class MapViewModel: ObservableObject {
 }
 
 extension MapViewModel {
+  func setCurrentLocation(_ location: Location?) {
+    currentLocation = location
+  }
+  
   func searchLocation(
     keyword: String,
     latitude: String?,
