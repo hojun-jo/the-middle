@@ -28,6 +28,26 @@ final class LocationService: NSObject {
   }
 }
 
+extension LocationService {
+  func searchLocation(
+    keyword: String,
+    latitude: String?,
+    longitude: String?
+  ) async throws -> [Location] {
+    guard let kakaoLocation = try KakaoLocationAPI(
+      keyword: keyword,
+      latitude: latitude,
+      longitude: longitude
+    ) else {
+      throw APIError.invalidKey
+    }
+    
+    let data = try await NetworkService.fetchData(kakaoLocation)
+    
+    return try DataParser.kakaoLocation(data)
+  }
+}
+
 // MARK: - CLLocationManagerDelegate
 extension LocationService: CLLocationManagerDelegate {
   func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

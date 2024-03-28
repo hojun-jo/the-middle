@@ -8,20 +8,7 @@
 import Foundation
 
 enum DataParser {
-  static func searchLocation(
-    keyword: String,
-    latitude: String?,
-    longitude: String?
-  ) async throws -> [Location] {
-    guard let kakaoLocation = try KakaoLocationAPI(
-      keyword: keyword,
-      latitude: latitude,
-      longitude: longitude
-    ) else {
-      throw APIError.invalidKey
-    }
-    
-    let data = try await NetworkService.fetchData(kakaoLocation)
+  static func kakaoLocation(_ data: Data) throws -> [Location] {
     let locationDTO = try JSONDecoder().decode(KakaoLocationDTO.self, from: data)
     var locations = [Location]()
     
