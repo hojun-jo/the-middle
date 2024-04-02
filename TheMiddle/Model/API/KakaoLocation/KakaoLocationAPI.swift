@@ -23,7 +23,8 @@ struct KakaoLocationAPI: APIType {
     self.queryItems = [
       URLQueryItem(name: "query", value: keyword),
       URLQueryItem(name: "y", value: latitude),
-      URLQueryItem(name: "x", value: longitude)
+      URLQueryItem(name: "x", value: longitude),
+      URLQueryItem(name: "radius", value: "2000")
     ]
   }
 }
