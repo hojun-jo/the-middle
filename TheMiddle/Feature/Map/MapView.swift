@@ -22,12 +22,13 @@ struct MapView: View {
   var body: some View {
     VStack {
       CustomNavigationBar(
-        placename: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
+        placeName: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
         leftButtonAction: {
           pathModel.paths.removeLast()
         },
-        rightButtonAction: {
+        rightButtonAction: { placeName in
           // TODO: - placename이 ""가 아니면 검색
+          
           mapViewModel.isDisplaySearchResult = true
         },
         isSearchMode: isSearchMode

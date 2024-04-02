@@ -11,16 +11,16 @@ struct CustomNavigationBar: View {
   @State private var placeName: String
   
   let leftButtonAction: () -> Void
-  let rightButtonAction: () -> Void
+  let rightButtonAction: (String) -> Void
   let isSearchMode: Bool
   
   init(
-    placename: State<String> = .init(initialValue: ""),
+    placeName: State<String> = .init(initialValue: ""),
     leftButtonAction: @escaping () -> Void = {},
-    rightButtonAction: @escaping () -> Void = {},
+    rightButtonAction: @escaping (String) -> Void = {_ in },
     isSearchMode: Bool = true
   ) {
-    self._placeName = placename
+    self._placeName = placeName
     self.leftButtonAction = leftButtonAction
     self.rightButtonAction = rightButtonAction
     self.isSearchMode = isSearchMode
@@ -48,7 +48,7 @@ struct CustomNavigationBar: View {
         .background(.blue)
         
         Button(
-          action: rightButtonAction,
+          action: { rightButtonAction(placeName) },
           label: { Image(systemName: "magnifyingglass") }
         )
         .padding()
@@ -63,5 +63,5 @@ struct CustomNavigationBar: View {
 }
 
 #Preview {
-  CustomNavigationBar(placename: .init(initialValue: "장소 검색"))
+  CustomNavigationBar(placeName: .init(initialValue: "장소 검색"))
 }
