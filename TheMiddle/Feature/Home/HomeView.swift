@@ -28,6 +28,11 @@ struct HomeView: View {
         
         Button(
           action: {
+            guard homeViewModel.startLocations.isEmpty == false else {
+              // TODO: - 출발지를 추가해주세요 얼럿
+              return
+            }
+            
             Task {
               let coordinate = homeViewModel.computeAverageCoordinate()
               await mapViewModel.searchSubwayStation(at: coordinate)

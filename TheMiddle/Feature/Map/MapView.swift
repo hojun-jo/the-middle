@@ -28,7 +28,10 @@ struct MapView: View {
           pathModel.paths.removeLast()
         },
         rightButtonAction: { placeName in
-          guard placeName != "" else { return }
+          guard placeName != "" else {
+            // TODO: - 검색 장소를 입력해주세요 얼럿
+            return
+          }
           
           Task {
             await mapViewModel.searchLocation(keyword: placeName)
