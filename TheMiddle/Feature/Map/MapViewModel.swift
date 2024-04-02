@@ -11,6 +11,7 @@ import Foundation
 final class MapViewModel: ObservableObject {
   @Published var currentLocation: Location?
   @Published var searchedLocations: [Location]
+  @Published var isDisplaySearchResult: Bool
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
   
@@ -19,12 +20,14 @@ final class MapViewModel: ObservableObject {
   init(
     currentLocation: Location? = nil,
     searchedLocations: [Location] = [],
+    isDisplaySearchResult: Bool = false,
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
     locationService: LocationService = .init()
   ) {
     self.currentLocation = currentLocation
     self.searchedLocations = searchedLocations
+    self.isDisplaySearchResult = isDisplaySearchResult
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
     self.locationService = locationService
