@@ -19,6 +19,7 @@ struct HomeView: View {
               .padding(.bottom, 60)
           }
           LocationButtonView()
+            .padding(.bottom, 60)
         }
         .padding()
         .background(.red)
