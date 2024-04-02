@@ -34,7 +34,7 @@ struct MapView: View {
         },
         isSearchMode: isSearchMode
       )
-      // TODO: - mapViewModel.currentLocation != nil 현재 위치로 맵뷰 초기화
+      
       NaverMapView()
     }
     .sheet(
@@ -67,8 +67,15 @@ private struct NaverMapView: UIViewRepresentable {
     guard let coordinate = mapViewModel.currentCoordinate else { return NMFMapView() }
     
     let map = NMFMapView()
+    let marker = NMFMarker(position: .init(
+      lat: coordinate.latitude,
+      lng: coordinate.longitude
+    ))
+    
     map.latitude = coordinate.latitude
     map.longitude = coordinate.longitude
+    map.zoomLevel = 16
+    marker.mapView = map
     
     return map
   }
