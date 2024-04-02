@@ -39,17 +39,13 @@ extension MapViewModel {
     currentLocation = location
   }
   
-  func searchLocation(
-    keyword: String,
-    latitude: String?,
-    longitude: String?
-  ) {
+  func searchLocation(keyword: String) {
     Task {
       do {
         searchedLocations = try await locationService.searchLocation(
           keyword: keyword,
-          latitude: latitude,
-          longitude: longitude
+          latitude: currentLocation?.latitude,
+          longitude: currentLocation?.longitude
         )
       } catch {
         displayAlert(message: error.localizedDescription)
