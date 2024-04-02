@@ -14,3 +14,27 @@ final class HomeViewModel: ObservableObject {
     self.startLocations = startLocations
   }
 }
+
+extension HomeViewModel {
+  func computeAverageCoordinate() -> Coordinate {
+    let locationCount = Double(startLocations.count)
+    var latitudeSum = 0.0
+    var longitudeSum = 0.0
+    
+    for location in startLocations {
+      guard let latitude = Double(location.latitude),
+            let longitude = Double(location.longitude)
+      else {
+        continue
+      }
+      
+      latitudeSum += latitude
+      longitudeSum += longitude
+    }
+    
+    return Coordinate(
+      latitude: latitudeSum/locationCount,
+      longitude: longitudeSum/locationCount
+    )
+  }
+}
