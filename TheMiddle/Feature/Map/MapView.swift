@@ -24,13 +24,16 @@ struct MapView: View {
       CustomNavigationBar(
         placeName: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
         leftButtonAction: {
+          mapViewModel.isDisplaySearchResult = false
           pathModel.paths.removeLast()
         },
         rightButtonAction: { placeName in
           guard placeName != "" else { return }
           
-          mapViewModel.searchLocation(keyword: placeName)
-          mapViewModel.isDisplaySearchResult = true
+          Task {
+            await mapViewModel.searchLocation(keyword: placeName)
+            mapViewModel.isDisplaySearchResult = true
+          }
         },
         isSearchMode: isSearchMode
       )
@@ -137,6 +140,7 @@ private struct SearchResultCellView: View {
             homeViewModel.startLocations.append(location)
           }
           
+          mapViewModel.isDisplaySearchResult = false
           pathModel.paths.removeLast()
         },
         label: {

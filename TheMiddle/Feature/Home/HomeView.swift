@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+  @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var homeViewModel: HomeViewModel
+  @EnvironmentObject private var mapViewModel: MapViewModel
   
   var body: some View {
     GeometryReader { geometry in
@@ -26,7 +28,11 @@ struct HomeView: View {
         
         Button(
           action: {
-            // TODO: - 중간 지점 계산
+            Task {
+              let coordinate = homeViewModel.computeAverageCoordinate()
+              await mapViewModel.searchSubwayStation(at: coordinate)
+              pathModel.paths.append(.mapView(isSearchMode: false))
+            }
           },
           label: {
             Image(systemName: "magnifyingglass")
@@ -63,8 +69,6 @@ private struct LocationButtonView: View {
         
         Button(
           action: {
-            // TODO: - 검색 페이지로 이동
-            // location 없을 경우 (위치 허용 안 함) 좌표 없이 검색
             mapViewModel.setCurrentLocation(location)
             pathModel.paths.append(.mapView(isSearchMode: true))
           },

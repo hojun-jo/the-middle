@@ -67,19 +67,34 @@ extension MapViewModel {
     currentLocation?.longitude = location.longitude
   }
   
-  func searchLocation(keyword: String) {
-    Task {
-      do {
-        searchedLocations = try await locationService.searchLocation(
-          keyword: keyword,
-          latitude: currentLocation?.latitude,
-          longitude: currentLocation?.longitude
-        )
-      } catch {
-        displayAlert(message: error.localizedDescription)
-        print(error.localizedDescription)
-      }
+  func searchLocation(keyword: String) async {
+    do {
+      let coordinate = currentCoordinate?.toString()
+      searchedLocations = try await locationService.searchLocation(
+        keyword: keyword,
+        latitude: coordinate?.latitude,
+        longitude: coordinate?.longitude
+      )
+    } catch {
+      displayAlert(message: error.localizedDescription)
+      print(error.localizedDescription)
     }
+  }
+  
+  func searchSubwayStation(at coordinate: Coordinate) async {
+    let coordinate = coordinate.toString()
+    
+      setCurrentLocation(Location(
+        name: "중간지점",
+        category: "중간지점",
+        address: "중간지점",
+        roadAddress: "중간지점",
+        latitude: coordinate.latitude,
+        longitude: coordinate.longitude
+      ))
+      await searchLocation(keyword: "지하철역")
+      setCurrentLocation(searchedLocations.first)
+    
   }
   
   private func displayAlert(message: String) {
