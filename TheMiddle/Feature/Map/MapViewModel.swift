@@ -17,6 +17,21 @@ final class MapViewModel: ObservableObject {
   
   let locationService: LocationService
   
+  var currentCoordinate: (latitude: Double, longitude: Double)? {
+    if let currentLocation,
+       let latitude = Double(currentLocation.latitude),
+       let longitude = Double(currentLocation.longitude) {
+      return (latitude, longitude)
+    } else if let currentLatitude = locationService.currentCoordinate.latitude,
+              let currentLongitude = locationService.currentCoordinate.longitude,
+              let latitude = Double(currentLatitude),
+              let longitude = Double(currentLongitude) {
+      return (latitude, longitude)
+    } else {
+      return nil
+    }
+  }
+  
   init(
     currentLocation: Location? = nil,
     searchedLocations: [Location] = [],

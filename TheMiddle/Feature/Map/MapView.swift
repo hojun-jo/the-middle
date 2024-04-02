@@ -61,8 +61,16 @@ struct MapView: View {
 }
 
 private struct NaverMapView: UIViewRepresentable {
+  @EnvironmentObject private var mapViewModel: MapViewModel
+  
   func makeUIView(context: Context) -> NMFMapView {
-    return NMFMapView()
+    guard let coordinate = mapViewModel.currentCoordinate else { return NMFMapView() }
+    
+    let map = NMFMapView()
+    map.latitude = coordinate.latitude
+    map.longitude = coordinate.longitude
+    
+    return map
   }
   
   func updateUIView(_ uiView: NMFMapView, context: Context) {
