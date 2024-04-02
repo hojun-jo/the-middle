@@ -39,6 +39,15 @@ extension MapViewModel {
     currentLocation = location
   }
   
+  func changeCurrentLocation(to location: Location) {
+    currentLocation?.name = location.name
+    currentLocation?.category = location.category
+    currentLocation?.address = location.address
+    currentLocation?.roadAddress = location.roadAddress
+    currentLocation?.latitude = location.latitude
+    currentLocation?.longitude = location.longitude
+  }
+  
   func searchLocation(keyword: String) {
     Task {
       do {
