@@ -27,9 +27,9 @@ struct MapView: View {
           pathModel.paths.removeLast()
         },
         rightButtonAction: { placeName in
-          // TODO: - placename이 ""가 아니면 검색
           guard placeName != "" else { return }
           
+          mapViewModel.searchLocation(keyword: placeName)
           mapViewModel.isDisplaySearchResult = true
         },
         isSearchMode: isSearchMode
@@ -43,6 +43,19 @@ struct MapView: View {
         SearchResultListView()
           .presentationDetents([.large])
       }
+    )
+    .alert(
+      mapViewModel.alertMessage,
+      isPresented: $mapViewModel.isDisplayAlert,
+      actions: {
+        Button(
+          action: {},
+          label: {
+            Text("확인")
+          }
+        )
+      },
+      message: {}
     )
   }
 }
@@ -74,6 +87,7 @@ private struct SearchResultListView: View {
 private struct SearchResultCellView: View {
   @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var homeViewModel: HomeViewModel
+  @EnvironmentObject private var mapViewModel: MapViewModel
   
   private let location: Location
   
@@ -102,7 +116,12 @@ private struct SearchResultCellView: View {
       
       Button(
         action: {
-          homeViewModel.startLocations.append(location)
+          if mapViewModel.currentLocation != nil {
+            mapViewModel.changeCurrentLocation(to: location)
+          } else {
+            homeViewModel.startLocations.append(location)
+          }
+          
           pathModel.paths.removeLast()
         },
         label: {
