@@ -22,12 +22,19 @@ struct ContentView: View {
       Location(name: "mnbv", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2")
     ]
   )
-  @StateObject private var mapViewModel = MapViewModel()
+  @StateObject private var mapViewModel = MapViewModel(
+    searchedLocations: [
+      Location(name: "asdf", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
+      Location(name: "ㄷㄱㅂㅈ", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
+      Location(name: "쇼숀ㅇ호", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㄴㅇㄹㅎ", latitude: "", longitude: ""),
+      Location(name: "ㅌㅊ퓨", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
+      Location(name: "쇼ㅕㅑ", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
+    ]
+  )
   
   var body: some View {
     NavigationStack(path: $pathModel.paths) {
       HomeView()
-        .environmentObject(homeViewModel)
         .navigationDestination(
           for: PathType.self,
           destination: { pathType in
@@ -40,6 +47,7 @@ struct ContentView: View {
         )
     }
     .environmentObject(pathModel)
+    .environmentObject(homeViewModel)
     .environmentObject(mapViewModel)
   }
 }

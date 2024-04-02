@@ -28,6 +28,7 @@ struct MapView: View {
         },
         rightButtonAction: { placeName in
           // TODO: - placename이 ""가 아니면 검색
+          guard placeName != "" else { return }
           
           mapViewModel.isDisplaySearchResult = true
         },
@@ -71,6 +72,9 @@ private struct SearchResultListView: View {
 }
 
 private struct SearchResultCellView: View {
+  @EnvironmentObject private var pathModel: PathModel
+  @EnvironmentObject private var homeViewModel: HomeViewModel
+  
   private let location: Location
   
   fileprivate init(location: Location) {
@@ -98,7 +102,8 @@ private struct SearchResultCellView: View {
       
       Button(
         action: {
-          // TODO: - location homeViewModel.startLocations에 추가,  paths.removeLast
+          homeViewModel.startLocations.append(location)
+          pathModel.paths.removeLast()
         },
         label: {
           Text("선택")
