@@ -56,7 +56,7 @@ enum NetworkError: LocalizedError {
     case .invalidResponse:
       return "서버에서 응답이 잘못되었습니다."
     case .badStatusCode(let statusCode):
-      return "\(statusCode) 오류입니다."
+      return "\(statusCode) 네트워크 오류입니다."
     }
   }
 }
