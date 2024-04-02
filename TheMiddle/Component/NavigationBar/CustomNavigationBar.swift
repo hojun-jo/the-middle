@@ -53,6 +53,17 @@ struct CustomNavigationBar: View {
         )
         .padding()
         .background(.green)
+      } else {
+        Text("중간 위치 검색 결과")
+        
+        Spacer()
+        
+        Button(
+          action: {},
+          label: { Image(systemName: "magnifyingglass") }
+        )
+        .padding()
+        .hidden()
       }
     }
     .padding()
