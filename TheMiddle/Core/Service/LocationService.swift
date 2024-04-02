@@ -11,12 +11,15 @@ import CoreLocation
 final class LocationService: NSObject {
   private let locationManager = CLLocationManager()
   
-  var currentCoordinate: (latitude: String?, longitude: String?) {
+  var currentCoordinate: Coordinate? {
     guard let coordinate = locationManager.location?.coordinate else {
-      return (nil, nil)
+      return nil
     }
     
-    return (String(coordinate.latitude), String(coordinate.longitude))
+    return Coordinate(
+      latitude: coordinate.latitude,
+      longitude: coordinate.longitude
+    )
   }
   
   override init() {
