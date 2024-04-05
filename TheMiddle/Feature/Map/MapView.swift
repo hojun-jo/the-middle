@@ -117,46 +117,51 @@ private struct SearchResultCellView: View {
   }
   
   fileprivate var body: some View {
-    HStack {
-      VStack(alignment: .leading) {
-        HStack(alignment: .bottom) {
-          Text(location.name)
-            .font(.title2)
-            .foregroundStyle(.blue)
-          
-          Text(location.category)
-            .font(.caption)
-            .foregroundStyle(.gray)
-        }
-        
-        Text(location.roadAddress)
-          .font(.footnote)
-      }
+    VStack {
+      Rectangle()
+        .frame(height: 1)
+        .foregroundStyle(.gray)
       
-      Spacer()
-      
-      Button(
-        action: {
-          if mapViewModel.currentLocation != nil {
-            mapViewModel.changeCurrentLocation(to: location)
-          } else {
-            homeViewModel.startLocations.append(location)
+      HStack {
+        VStack(alignment: .leading) {
+          HStack(alignment: .bottom) {
+            Text(location.name)
+              .font(.title2)
+              .foregroundStyle(.blue)
+            
+            Text(location.category)
+              .font(.caption)
+              .foregroundStyle(.gray)
           }
           
-          mapViewModel.isDisplaySearchResult = false
-          pathModel.paths.removeLast()
-        },
-        label: {
-          Text("선택")
+          Text(location.roadAddress)
+            .font(.footnote)
         }
-      )
+        
+        Spacer()
+        
+        Button(
+          action: {
+            if mapViewModel.currentLocation != nil {
+              mapViewModel.changeCurrentLocation(to: location)
+            } else {
+              homeViewModel.startLocations.append(location)
+            }
+            
+            mapViewModel.isDisplaySearchResult = false
+            pathModel.paths.removeLast()
+          },
+          label: {
+            Text("선택")
+          }
+        )
+        .padding()
+        .background(.cyan)
+        .clipShape(.buttonBorder)
+      }
       .padding()
-      .background(.cyan)
-      .clipShape(.buttonBorder)
+      .background(.orange)
     }
-    .padding()
-    .border(.gray)
-    .background(.orange)
   }
 }
 

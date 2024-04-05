@@ -84,17 +84,16 @@ extension MapViewModel {
   func searchSubwayStation(at coordinate: Coordinate) async {
     let coordinate = coordinate.toString()
     
-      setCurrentLocation(Location(
-        name: "중간지점",
-        category: "중간지점",
-        address: "중간지점",
-        roadAddress: "중간지점",
-        latitude: coordinate.latitude,
-        longitude: coordinate.longitude
-      ))
-      await searchLocation(keyword: "지하철역")
-      setCurrentLocation(searchedLocations.first)
-    
+    setCurrentLocation(Location(
+      name: "중간지점",
+      category: "중간지점",
+      address: "중간지점",
+      roadAddress: "중간지점",
+      latitude: coordinate.latitude,
+      longitude: coordinate.longitude
+    ))
+    await searchLocation(keyword: "지하철역")
+    setCurrentLocation(searchedLocations.first)
   }
   
   private func displayAlert(message: String) {
