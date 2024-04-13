@@ -148,15 +148,13 @@ private struct SearchResultCellView: View {
       
       HStack {
         VStack(alignment: .leading) {
-          HStack(alignment: .bottom) {
-            Text(location.name)
-              .font(.title2)
-              .foregroundStyle(.blue)
-            
-            Text(location.category)
-              .font(.caption)
-              .foregroundStyle(.gray)
-          }
+          Text(location.name)
+            .font(.title2)
+            .foregroundStyle(.blue)
+          
+          Text(location.category)
+            .font(.caption)
+            .foregroundStyle(.gray)
           
           Text(location.roadAddress)
             .font(.footnote)
