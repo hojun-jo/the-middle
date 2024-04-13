@@ -15,16 +15,21 @@ struct HomeView: View {
   var body: some View {
     GeometryReader { geometry in
       VStack(alignment: .center) {
-        ScrollView(.vertical) {
+        List {
           ForEach(homeViewModel.startLocations, id: \.self) { location in
             LocationButtonView(location: location)
-              .padding(.bottom, 60)
           }
+          .onDelete(perform: { indexSet in
+            if let index = indexSet.first {
+              homeViewModel.startLocations.remove(at: index)
+            }
+          })
+          
           LocationButtonView()
-            .padding(.bottom, 60)
         }
         .padding()
         .background(.red)
+        .listStyle(.plain)
         
         Button(
           action: {
@@ -81,7 +86,6 @@ private struct LocationButtonView: View {
             Text(location?.name ?? "출발지 추가")
           }
         )
-        .padding()
         .frame(width: geometry.size.width * 0.8)
         .font(.title3)
         .background(.blue)
@@ -91,11 +95,25 @@ private struct LocationButtonView: View {
         Spacer()
       }
     }
+    .padding()
+    .background(.brown)
   }
 }
 
 #Preview {
   HomeView()
-    .environmentObject(HomeViewModel())
+    .environmentObject(HomeViewModel(
+      startLocations: [
+        Location(name: "asdf", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "ㅈㄷㄹ", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "튳ㅊ", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "ㅈㄷㄱㅅ", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "zxcv", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "qwer", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "fghj", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "yui", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
+        Location(name: "mnbv", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2")
+      ]
+    ))
     .environmentObject(MapViewModel())
 }
