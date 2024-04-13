@@ -89,6 +89,21 @@ private struct NaverMapView: UIViewRepresentable {
           continue
         }
         
+        let startToDestination = [
+          NMGLatLng(
+            lat: latitude,
+            lng: longitude
+          ),
+          NMGLatLng(
+            lat: coordinate.latitude,
+            lng: coordinate.longitude
+          )
+        ]
+        let lineString = NMGLineString(points: startToDestination)
+        let polylineOverlay = NMFPolylineOverlay(lineString as! NMGLineString<AnyObject>)
+        polylineOverlay?.color = .blue
+        polylineOverlay?.mapView = map
+        
         let marker = NMFMarker(position: .init(
           lat: latitude,
           lng: longitude
