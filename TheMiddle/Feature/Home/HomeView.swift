@@ -16,6 +16,7 @@ struct HomeView: View {
     GeometryReader { geometry in
       VStack(alignment: .center) {
         List {
+          // TODO: - LocationButtonView 지우고 리스트는 Text로 구성 후 탭 제스처?, 출발지 추가만 버튼
           ForEach(homeViewModel.startLocations, id: \.self) { location in
             LocationButtonView(location: location)
           }

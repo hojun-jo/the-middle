@@ -41,7 +41,7 @@ struct MapView: View {
         isSearchMode: isSearchMode
       )
       
-      NaverMapView()
+      NaverMapView(isSearchMode: isSearchMode)
     }
     .sheet(
       isPresented: $mapViewModel.isDisplaySearchResult,
@@ -67,21 +67,45 @@ struct MapView: View {
 }
 
 private struct NaverMapView: UIViewRepresentable {
+  @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
+  private let isSearchMode: Bool
+  
+  init(isSearchMode: Bool) {
+    self.isSearchMode = isSearchMode
+  }
   
   func makeUIView(context: Context) -> NMFMapView {
     guard let coordinate = mapViewModel.currentCoordinate else { return NMFMapView() }
     
     let map = NMFMapView()
+    
+    if isSearchMode == false {
+      for location in homeViewModel.startLocations {
+        guard let latitude = Double(location.latitude),
+              let longitude = Double(location.longitude)
+        else {
+          // TODO: 모든 출발지를 표시할 수 없습니다. 얼럿
+          continue
+        }
+        
+        let marker = NMFMarker(position: .init(
+          lat: latitude,
+          lng: longitude
+        ))
+        marker.mapView = map
+      }
+    }
+    
     let marker = NMFMarker(position: .init(
       lat: coordinate.latitude,
       lng: coordinate.longitude
     ))
     
+    marker.mapView = map
     map.latitude = coordinate.latitude
     map.longitude = coordinate.longitude
     map.zoomLevel = 16
-    marker.mapView = map
     
     return map
   }
