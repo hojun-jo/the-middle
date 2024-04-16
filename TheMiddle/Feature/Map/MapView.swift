@@ -20,28 +20,34 @@ struct MapView: View {
   }
   
   var body: some View {
-    VStack {
-      CustomNavigationBar(
-        placeName: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
-        leftButtonAction: {
-          mapViewModel.isDisplaySearchResult = false
-          pathModel.paths.removeLast()
-        },
-        rightButtonAction: { placeName in
-          guard placeName != "" else {
-            mapViewModel.displayAlert(message: AlertMessage.needSearchLocation.rawValue)
-            return
-          }
-          
-          Task {
-            await mapViewModel.searchLocation(keyword: placeName)
-            mapViewModel.isDisplaySearchResult = true
-          }
-        },
-        isSearchMode: isSearchMode
-      )
-      
+    ZStack {
       NaverMapView(isSearchMode: isSearchMode)
+        .ignoresSafeArea()
+      
+      VStack {
+        CustomNavigationBar(
+          placeName: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
+          leftButtonAction: {
+            mapViewModel.isDisplaySearchResult = false
+            pathModel.paths.removeLast()
+          },
+          rightButtonAction: { placeName in
+            guard placeName != "" else {
+              mapViewModel.displayAlert(message: AlertMessage.needSearchLocation.rawValue)
+              return
+            }
+            
+            Task {
+              await mapViewModel.searchLocation(keyword: placeName)
+              mapViewModel.isDisplaySearchResult = true
+            }
+          },
+          isSearchMode: isSearchMode
+        )
+        
+        Spacer()
+      }
+      
     }
     .sheet(
       isPresented: $mapViewModel.isDisplaySearchResult,
@@ -168,10 +174,10 @@ private struct SearchResultCellView: View {
             .foregroundStyle(.blue)
           
           Text(location.category)
-            .font(.caption)
+            .font(.footnote)
           
           Text(location.roadAddress)
-            .font(.footnote)
+            .font(.caption)
             .foregroundStyle(.gray)
         }
         
@@ -193,11 +199,11 @@ private struct SearchResultCellView: View {
           }
         )
         .padding()
-        .background(.cyan)
+        .background(.blue)
+        .foregroundStyle(.white)
         .clipShape(.buttonBorder)
       }
       .padding()
-      .background(.orange)
     }
   }
 }

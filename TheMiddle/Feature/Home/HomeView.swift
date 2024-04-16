@@ -26,9 +26,12 @@ struct HomeView: View {
           })
           
           LocationButtonView()
+            .background(.blue)
+            .foregroundStyle(.white)
+            .clipShape(.buttonBorder)
+            .listRowSeparator(.hidden)
         }
         .padding()
-        .background(.red)
         .listStyle(.plain)
         
         Button(
@@ -101,15 +104,12 @@ private struct LocationButtonView: View {
         )
         .frame(width: geometry.size.width * 0.8)
         .font(.title3)
-        .background(.blue)
-        .foregroundStyle(.white)
         .clipShape(.buttonBorder)
         
         Spacer()
       }
     }
     .padding()
-    .background(.brown)
   }
 }
 

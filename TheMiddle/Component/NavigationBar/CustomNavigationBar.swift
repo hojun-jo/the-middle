@@ -27,49 +27,52 @@ struct CustomNavigationBar: View {
   }
   
   var body: some View {
-    HStack {
-      Button(
-        action: leftButtonAction,
-        label: { Image(systemName: "arrow.left") }
-      )
-      .padding()
-      .background(.red)
-      
-      Spacer()
-      
-      if isSearchMode {
-        TextField(
-          "장소, 버스, 지하철, 주소 검색",
-          text: $placeName
-        )
-        .padding(.horizontal)
-        .autocorrectionDisabled()
-        .textFieldStyle(.roundedBorder)
-        .background(.blue)
-        
+    VStack {
+      HStack {
         Button(
-          action: { rightButtonAction(placeName) },
-          label: { Image(systemName: "magnifyingglass") }
+          action: leftButtonAction,
+          label: { Image(systemName: "arrow.left") }
         )
         .padding()
-        .background(.green)
-      } else {
-        Text("중간 위치 검색 결과")
         
         Spacer()
         
-        Button(
-          action: {},
-          label: { Image(systemName: "magnifyingglass") }
-        )
-        .padding()
-        .hidden()
+        if isSearchMode {
+          TextField(
+            "장소, 버스, 지하철, 주소 검색",
+            text: $placeName
+          )
+          .padding(.horizontal, 5)
+          .autocorrectionDisabled()
+          .textFieldStyle(.roundedBorder)
+          
+          Button(
+            action: { rightButtonAction(placeName) },
+            label: { Image(systemName: "magnifyingglass") }
+          )
+          .padding()
+        } else {
+          Text("중간 위치 검색 결과")
+          
+          Spacer()
+          
+          Button(
+            action: {},
+            label: { Image(systemName: "magnifyingglass") }
+          )
+          .padding()
+          .hidden()
+        }
       }
+      .padding(.horizontal)
+      .foregroundStyle(.black)
+      .fontWeight(.bold)
+      
+      Rectangle()
+        .frame(height: 1)
+        .opacity(0.1)
     }
-    .padding()
-    .foregroundStyle(.black)
-    .fontWeight(.bold)
-    .background(.gray)
+    .background(.white)
   }
 }
 
