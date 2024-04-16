@@ -34,7 +34,7 @@ struct HomeView: View {
         Button(
           action: {
             guard homeViewModel.startLocations.isEmpty == false else {
-              homeViewModel.displayAlert(message: "출발지를 추가해 주세요.")
+              homeViewModel.displayAlert(message: AlertMessage.needStartLocation.rawValue)
               return
             }
             
