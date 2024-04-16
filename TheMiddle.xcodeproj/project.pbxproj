@@ -31,6 +31,7 @@
 		38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6F42BB44B9E0051C648 /* DataParser.swift */; };
 		38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6F62BB454970051C648 /* MapViewModel.swift */; };
 		38E42D632BBC59BF00B85D42 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E42D622BBC59BF00B85D42 /* Coordinate.swift */; };
+		38E42D6B2BCEA79F00B85D42 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		38CAC6F42BB44B9E0051C648 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		38CAC6F62BB454970051C648 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		38E42D622BBC59BF00B85D42 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		38CAC6B22BAC1BC60051C648 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				38E42D692BCEA76A00B85D42 /* Alert */,
 				38CAC6C22BAC42160051C648 /* Path */,
 				38CAC6D12BAC60890051C648 /* Location */,
 				38CAC6D42BAC83E30051C648 /* API */,
@@ -251,6 +254,14 @@
 				38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		38E42D692BCEA76A00B85D42 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		64AF494180CB8C6FB64EBAF8 /* Frameworks */ = {
@@ -400,6 +411,7 @@
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
 				38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */,
 				38CAC6D32BAC60940051C648 /* Location.swift in Sources */,
+				38E42D6B2BCEA79F00B85D42 /* AlertMessage.swift in Sources */,
 				38CAC6EA2BB024860051C648 /* MapView.swift in Sources */,
 				38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */,
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
