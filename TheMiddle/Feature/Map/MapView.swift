@@ -29,7 +29,7 @@ struct MapView: View {
         },
         rightButtonAction: { placeName in
           guard placeName != "" else {
-            // TODO: - 검색 장소를 입력해주세요 얼럿
+            mapViewModel.displayAlert(message: "검색 장소를 입력해주세요.")
             return
           }
           
@@ -85,7 +85,7 @@ private struct NaverMapView: UIViewRepresentable {
         guard let latitude = Double(location.latitude),
               let longitude = Double(location.longitude)
         else {
-          // TODO: 모든 출발지를 표시할 수 없습니다. 얼럿
+          mapViewModel.displayAlert(message: "모든 출발지를 표시할 수 없습니다.")
           continue
         }
         
