@@ -16,7 +16,6 @@ struct HomeView: View {
     GeometryReader { geometry in
       VStack(alignment: .center) {
         List {
-          // TODO: - LocationButtonView 지우고 리스트는 Text로 구성 후 탭 제스처?, 출발지 추가만 버튼
           ForEach(homeViewModel.startLocations, id: \.self) { location in
             LocationButtonView(location: location)
           }
@@ -35,7 +34,7 @@ struct HomeView: View {
         Button(
           action: {
             guard homeViewModel.startLocations.isEmpty == false else {
-              // TODO: - 출발지를 추가해주세요 얼럿
+              homeViewModel.displayAlert(message: "출발지를 추가해 주세요.")
               return
             }
             
@@ -59,6 +58,19 @@ struct HomeView: View {
         .background(.green)
       }
     }
+    .alert(
+      homeViewModel.alertMessage,
+      isPresented: $homeViewModel.isDisplayAlert,
+      actions: {
+        Button(
+          action: {},
+          label: {
+            Text("확인")
+          }
+        )
+      },
+      message: {}
+    )
   }
 }
 
