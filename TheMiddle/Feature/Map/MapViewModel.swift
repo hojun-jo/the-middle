@@ -96,7 +96,7 @@ extension MapViewModel {
     setCurrentLocation(searchedLocations.first)
   }
   
-  private func displayAlert(message: String) {
+  func displayAlert(message: String) {
     setErrorAlertMessage(message)
     setIsDisplayErrorAlert(true)
   }
