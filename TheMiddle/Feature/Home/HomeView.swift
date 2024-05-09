@@ -56,8 +56,8 @@ struct HomeView: View {
               .fontWeight(.bold)
           }
         )
-        .padding()
         .frame(width: geometry.size.width)
+        .padding(.vertical)
         .background(.green)
       }
     }
