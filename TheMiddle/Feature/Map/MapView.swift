@@ -33,7 +33,7 @@ struct MapView: View {
           },
           rightButtonAction: { placeName in
             guard placeName != "" else {
-              mapViewModel.displayAlert(message: AlertMessage.needSearchLocation.rawValue)
+              mapViewModel.displayAlert(message: .needSearchLocation)
               return
             }
             
@@ -91,7 +91,7 @@ private struct NaverMapView: UIViewRepresentable {
         guard let latitude = Double(location.latitude),
               let longitude = Double(location.longitude)
         else {
-          mapViewModel.displayAlert(message: AlertMessage.canNotDisplayAllStartLocation.rawValue)
+          mapViewModel.displayAlert(message: .canNotDisplayAllStartLocation)
           continue
         }
         
