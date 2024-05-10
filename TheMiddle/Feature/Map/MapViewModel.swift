@@ -76,7 +76,7 @@ extension MapViewModel {
         longitude: coordinate?.longitude
       )
     } catch {
-      displayAlert(message: error.localizedDescription)
+      displayAlert(message: .error(message: error.localizedDescription))
       print(error.localizedDescription)
     }
   }
