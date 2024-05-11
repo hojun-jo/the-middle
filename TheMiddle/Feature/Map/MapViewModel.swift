@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-final class MapViewModel: ObservableObject {
+final class MapViewModel: ObservableObject, AlertDisplayable {
   @Published var currentLocation: Location?
   @Published var searchedLocations: [Location]
   @Published var isDisplaySearchResult: Bool
@@ -94,18 +94,5 @@ extension MapViewModel {
     ))
     await searchLocation(keyword: "지하철역")
     setCurrentLocation(searchedLocations.first)
-  }
-  
-  func displayAlert(message: AlertMessage) {
-    setAlertMessage(message.description)
-    setIsDisplayErrorAlert(true)
-  }
-  
-  private func setAlertMessage(_ message: String) {
-    alertMessage = message
-  }
-  
-  private func setIsDisplayErrorAlert(_ isDisplay: Bool) {
-    isDisplayAlert = isDisplay
   }
 }

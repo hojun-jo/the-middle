@@ -37,7 +37,7 @@ struct HomeView: View {
         Button(
           action: {
             guard homeViewModel.startLocations.isEmpty == false else {
-              homeViewModel.displayAlert(message: AlertMessage.needStartLocation.rawValue)
+              homeViewModel.displayAlert(message: .needStartLocation)
               return
             }
             

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject, AlertDisplayable {
   @Published var startLocations: [Location]
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
@@ -44,18 +44,5 @@ extension HomeViewModel {
       latitude: latitudeSum/locationCount,
       longitude: longitudeSum/locationCount
     )
-  }
-  
-  func displayAlert(message: String) {
-    setErrorAlertMessage(message)
-    setIsDisplayErrorAlert(true)
-  }
-  
-  private func setErrorAlertMessage(_ message: String) {
-    alertMessage = message
-  }
-  
-  private func setIsDisplayErrorAlert(_ isDisplay: Bool) {
-    isDisplayAlert = isDisplay
   }
 }

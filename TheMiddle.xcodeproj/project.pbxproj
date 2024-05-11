@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */; };
 		38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6A42BAC1B3A0051C648 /* TheMiddleApp.swift */; };
 		38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6A62BAC1B3A0051C648 /* HomeView.swift */; };
 		38CAC6A92BAC1B3B0051C648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		38CAC6A12BAC1B3A0051C648 /* TheMiddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMiddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CAC6A42BAC1B3A0051C648 /* TheMiddleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMiddleApp.swift; sourceTree = "<group>"; };
 		38CAC6A62BAC1B3A0051C648 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38A5133F2BEE4DC2001F1E10 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 		38CAC6982BAC1B3A0051C648 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 		38E42D692BCEA76A00B85D42 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				38A5133F2BEE4DC2001F1E10 /* Interface */,
 				38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */,
 			);
 			path = Alert;
@@ -405,6 +416,7 @@
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
+				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
 				38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
