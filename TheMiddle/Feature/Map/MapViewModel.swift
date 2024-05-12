@@ -12,8 +12,14 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   @Published var currentLocation: Location?
   @Published var searchedLocations: [Location]
   @Published var isDisplaySearchResult: Bool
+  
+  // MARK: - AlertDisplayalbe
   @Published var isDisplayAlert: Bool
+  var isDisplayAlertPublished: Published<Bool> { _isDisplayAlert }
+  var isDisplayAlertPublisher: Published<Bool>.Publisher { $isDisplayAlert }
   @Published var alertMessage: String
+  var alertMessagePublished: Published<String> { _alertMessage }
+  var alertMessagePublisher: Published<String>.Publisher { $alertMessage }
   
   let locationService: LocationService
   

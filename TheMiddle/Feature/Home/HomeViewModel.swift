@@ -9,8 +9,14 @@ import Foundation
 
 final class HomeViewModel: ObservableObject, AlertDisplayable {
   @Published var startLocations: [Location]
+  
+  // MARK: - AlertDisplayalbe
   @Published var isDisplayAlert: Bool
+  var isDisplayAlertPublished: Published<Bool> { _isDisplayAlert }
+  var isDisplayAlertPublisher: Published<Bool>.Publisher { $isDisplayAlert }
   @Published var alertMessage: String
+  var alertMessagePublished: Published<String> { _alertMessage }
+  var alertMessagePublisher: Published<String>.Publisher { $alertMessage }
   
   init(
     startLocations: [Location] = [],

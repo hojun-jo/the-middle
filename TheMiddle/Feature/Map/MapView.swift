@@ -47,7 +47,6 @@ struct MapView: View {
         
         Spacer()
       }
-      
     }
     .sheet(
       isPresented: $mapViewModel.isDisplaySearchResult,
