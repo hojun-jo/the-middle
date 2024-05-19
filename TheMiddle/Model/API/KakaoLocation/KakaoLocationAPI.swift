@@ -10,7 +10,7 @@ import Foundation
 struct KakaoLocationAPI: APIType {
   let url: String = "https://dapi.kakao.com/v2/local/search/keyword.json"
   let headers: [String : String]?
-  let queryItems: [URLQueryItem]?
+  let queryItems: [URLQueryItem]? // TODO: - 추상화 필요 여부 판단
   
   init?(
     keyword: String,

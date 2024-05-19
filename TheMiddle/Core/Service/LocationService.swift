@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-final class LocationService: NSObject {
+final class LocationService: NSObject { // TODO: - DI
   private let locationManager = CLLocationManager()
   
   var currentCoordinate: Coordinate? {
@@ -24,7 +24,7 @@ final class LocationService: NSObject {
   
   override init() {
     super.init()
-    
+    // TODO: - locationManager 세팅 메서드 추가
     locationManager.delegate = self
     locationManager.distanceFilter = CLLocationDistanceMax
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View { // TODO: - DI
   @StateObject private var pathModel = PathModel()
   @StateObject private var homeViewModel = HomeViewModel()
   @StateObject private var mapViewModel = MapViewModel()

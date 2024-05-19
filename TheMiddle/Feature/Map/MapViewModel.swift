@@ -53,12 +53,12 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   }
 }
 
-extension MapViewModel {
+extension MapViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그에 맞는 메서드인지 판단
   func setCurrentLocation(_ location: Location?) {
     currentLocation = location
   }
   
-  func changeCurrentLocation(to location: Location) {
+  func changeCurrentLocation(to location: Location) {// TODO: - 삭제
     currentLocation?.name = location.name
     currentLocation?.category = location.category
     currentLocation?.address = location.address

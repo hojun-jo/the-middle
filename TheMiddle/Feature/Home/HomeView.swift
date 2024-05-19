@@ -35,7 +35,7 @@ struct HomeView: View {
         .listStyle(.plain)
         
         Button(
-          action: {
+          action: { // TODO: - 뷰에서 로직 분리
             guard homeViewModel.startLocations.isEmpty == false else {
               homeViewModel.displayAlert(message: .needStartLocation)
               return

@@ -14,6 +14,6 @@ struct Coordinate {
 
 extension Coordinate {
   func toString() -> (latitude: String, longitude: String) {
-    return (String(latitude), String(longitude))
+    return (String(latitude), String(longitude)) // TODO: - 정확한 이니셜라이저 사용
   }
 }

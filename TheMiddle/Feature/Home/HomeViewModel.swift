@@ -23,7 +23,7 @@ final class HomeViewModel: ObservableObject, AlertDisplayable {
   }
 }
 
-extension HomeViewModel {
+extension HomeViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그에 맞는 메서드인지 판단
   func computeAverageCoordinate() -> Coordinate {
     let locationCount = Double(startLocations.count)
     var latitudeSum = 0.0

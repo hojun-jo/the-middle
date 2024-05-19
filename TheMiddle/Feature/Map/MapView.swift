@@ -31,7 +31,7 @@ struct MapView: View {
             mapViewModel.isDisplaySearchResult = false
             pathModel.paths.removeLast()
           },
-          rightButtonAction: { placeName in
+          rightButtonAction: { placeName in // TODO: - 뷰에서 로직 분리
             guard placeName != "" else {
               mapViewModel.displayAlert(message: .needSearchLocation)
               return
@@ -81,7 +81,7 @@ private struct NaverMapView: UIViewRepresentable {
     self.isSearchMode = isSearchMode
   }
   
-  func makeUIView(context: Context) -> NMFMapView {
+  func makeUIView(context: Context) -> NMFMapView { // TODO: - SRP(작은 메서드 여럿으로 분리)
     guard let coordinate = mapViewModel.currentCoordinate else { return NMFMapView() }
     
     let map = NMFMapView()
@@ -184,7 +184,7 @@ private struct SearchResultCellView: View {
         Spacer()
         
         Button(
-          action: {
+          action: { // TODO: - 뷰에서 로직 분리
             if mapViewModel.currentLocation != nil {
               mapViewModel.changeCurrentLocation(to: location)
             } else {

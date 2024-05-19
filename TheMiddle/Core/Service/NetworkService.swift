@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkService {
+enum NetworkService { // TODO: - DI
   static func fetchData<T: APIType>(_ api: T) async throws -> Data {
     let request = try createRequest(api)
     let (data, response) = try await URLSession.shared.data(for: request)
