@@ -13,13 +13,20 @@ enum DataParser { // TODO: - DI
     var locations = [Location]()
     
     for locationItem in locationDTO.documents {
+      guard let latitude = Double(locationItem.latitude),
+            let longitude = Double(locationItem.longitude)
+      else {
+        continue
+      }
+      
       locations.append(Location(
         name: locationItem.placeName,
         category: locationItem.categoryName,
-        address: locationItem.addressName,
         roadAddress: locationItem.roadAddressName,
-        latitude: locationItem.latitude,
-        longitude: locationItem.longitude
+        coordinate: .init(
+          latitude: latitude,
+          longitude: longitude
+        )
       ))
     }
     

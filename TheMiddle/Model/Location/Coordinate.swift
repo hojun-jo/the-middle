@@ -5,7 +5,7 @@
 //  Created by 조호준 on 4/3/24.
 //
 
-struct Coordinate {
+struct Coordinate: Hashable {
   let latitude: Double
   let longitude: Double
 }

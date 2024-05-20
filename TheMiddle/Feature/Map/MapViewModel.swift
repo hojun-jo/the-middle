@@ -18,13 +18,8 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   let locationService: LocationService
   
   var currentCoordinate: Coordinate? {
-    if let currentLocation,
-       let latitude = Double(currentLocation.latitude),
-       let longitude = Double(currentLocation.longitude) {
-      return Coordinate(
-        latitude: latitude,
-        longitude: longitude
-      )
+    if let currentLocation {
+      return currentLocation.coordinate
     } else if let currentLatitude = locationService.currentCoordinate?.latitude,
               let currentLongitude = locationService.currentCoordinate?.longitude {
       return Coordinate(
@@ -58,14 +53,14 @@ extension MapViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그�
     currentLocation = location
   }
   
-  func changeCurrentLocation(to location: Location) {// TODO: - 삭제
-    currentLocation?.name = location.name
-    currentLocation?.category = location.category
-    currentLocation?.address = location.address
-    currentLocation?.roadAddress = location.roadAddress
-    currentLocation?.latitude = location.latitude
-    currentLocation?.longitude = location.longitude
-  }
+//  func changeCurrentLocation(to location: Location) {// TODO: - 삭제
+//    currentLocation?.name = location.name
+//    currentLocation?.category = location.category
+//    currentLocation?.address = location.address
+//    currentLocation?.roadAddress = location.roadAddress
+//    currentLocation?.latitude = location.latitude
+//    currentLocation?.longitude = location.longitude
+//  }
   
   func searchLocation(keyword: String) async {
     do {
@@ -82,15 +77,11 @@ extension MapViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그�
   }
   
   func searchSubwayStation(at coordinate: Coordinate) async {
-    let coordinate = coordinate.toString()
-    
     setCurrentLocation(Location(
       name: "중간지점",
       category: "중간지점",
-      address: "중간지점",
       roadAddress: "중간지점",
-      latitude: coordinate.latitude,
-      longitude: coordinate.longitude
+      coordinate: coordinate
     ))
     await searchLocation(keyword: "지하철역")
     setCurrentLocation(searchedLocations.first)

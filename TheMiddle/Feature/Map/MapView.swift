@@ -88,13 +88,8 @@ private struct NaverMapView: UIViewRepresentable {
     
     if isSearchMode == false {
       for location in homeViewModel.startLocations {
-        guard let latitude = Double(location.latitude),
-              let longitude = Double(location.longitude)
-        else {
-          mapViewModel.displayAlert(message: .canNotDisplayAllStartLocation)
-          continue
-        }
-        
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
         let startToDestination = [
           NMGLatLng(
             lat: latitude,
@@ -186,7 +181,7 @@ private struct SearchResultCellView: View {
         Button(
           action: { // TODO: - 뷰에서 로직 분리
             if mapViewModel.currentLocation != nil {
-              mapViewModel.changeCurrentLocation(to: location)
+              mapViewModel.setCurrentLocation(location)
             } else {
               homeViewModel.startLocations.append(location)
             }
@@ -213,11 +208,11 @@ private struct SearchResultCellView: View {
     .environmentObject(PathModel())
     .environmentObject(MapViewModel(
       searchedLocations: [
-        Location(name: "asdf", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
-        Location(name: "ㄷㄱㅂㅈ", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
-        Location(name: "쇼숀ㅇ호", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㄴㅇㄹㅎ", latitude: "", longitude: ""),
-        Location(name: "ㅌㅊ퓨", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
-        Location(name: "쇼ㅕㅑ", category: "지하철역", address: "ㅁㄴㅇㄹ", roadAddress: "ㅁㄴㅇㄹ", latitude: "", longitude: ""),
+        Location(name: "asdf", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "qwer", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "xcv", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "rtyu", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "vgfh", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
       ]
     ))
 }
@@ -226,9 +221,7 @@ private struct SearchResultCellView: View {
   SearchResultCellView(location: Location(
     name: "asdf",
     category: "지하철역",
-    address: "서울",
     roadAddress: "성북구",
-    latitude: "",
-    longitude: ""
+    coordinate: .init(latitude: 0, longitude: 0)
   ))
 }

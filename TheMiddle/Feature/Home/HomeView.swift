@@ -117,15 +117,14 @@ private struct LocationButtonView: View {
   HomeView()
     .environmentObject(HomeViewModel(
       startLocations: [
-        Location(name: "asdf", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "ㅈㄷㄹ", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "튳ㅊ", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "ㅈㄷㄱㅅ", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "zxcv", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "qwer", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "fghj", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "yui", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
-        Location(name: "mnbv", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2")
+        Location(name: "asdf", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "qwer", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "zxcv", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "erty", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "dfgh", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "cvbn", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "uoiyui", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
+        Location(name: "hjkj", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
       ]
     ))
     .environmentObject(MapViewModel())

@@ -30,14 +30,8 @@ extension HomeViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그�
     var longitudeSum = 0.0
     
     for location in startLocations {
-      guard let latitude = Double(location.latitude),
-            let longitude = Double(location.longitude)
-      else {
-        continue
-      }
-      
-      latitudeSum += latitude
-      longitudeSum += longitude
+      latitudeSum += location.coordinate.latitude
+      longitudeSum += location.coordinate.longitude
     }
     
     return Coordinate(
