@@ -9,62 +9,84 @@ import Foundation
 
 @MainActor
 final class MapViewModel: ObservableObject, AlertDisplayable {
-  @Published var currentLocation: Location?
-  @Published var searchedLocations: [Location]
   @Published var isDisplaySearchResult: Bool
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
   
-  let locationService: LocationService
+  private let locationService: LocationService
+  private(set) var currentLocation: Location?
+  private(set) var middleLocation: Location?
+  private(set) var searchedLocations: [Location]
   
   var currentCoordinate: Coordinate? {
     if let currentLocation {
       return currentLocation.coordinate
-    } else if let currentLatitude = locationService.currentCoordinate?.latitude,
-              let currentLongitude = locationService.currentCoordinate?.longitude {
-      return Coordinate(
-        latitude: currentLatitude,
-        longitude: currentLongitude
-      )
-    } else {
-      return nil
     }
+    if let userCoordinate = locationService.currentCoordinate {
+      return userCoordinate
+    }
+    return nil
   }
   
   init(
-    currentLocation: Location? = nil,
-    searchedLocations: [Location] = [],
     isDisplaySearchResult: Bool = false,
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
-    locationService: LocationService = .init()
+    locationService: LocationService = .init(),
+    currentLocation: Location? = nil,
+    middleLocation: Location? = nil,
+    searchedLocations: [Location] = []
   ) {
-    self.currentLocation = currentLocation
-    self.searchedLocations = searchedLocations
     self.isDisplaySearchResult = isDisplaySearchResult
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
     self.locationService = locationService
+    self.currentLocation = currentLocation
+    self.middleLocation = middleLocation
+    self.searchedLocations = searchedLocations
   }
 }
 
-extension MapViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그에 맞는 메서드인지 판단
+extension MapViewModel {
   func setCurrentLocation(_ location: Location?) {
     currentLocation = location
   }
   
-//  func changeCurrentLocation(to location: Location) {// TODO: - 삭제
-//    currentLocation?.name = location.name
-//    currentLocation?.category = location.category
-//    currentLocation?.address = location.address
-//    currentLocation?.roadAddress = location.roadAddress
-//    currentLocation?.latitude = location.latitude
-//    currentLocation?.longitude = location.longitude
-//  }
+  func closeSearchResult() {
+    isDisplaySearchResult = false
+  }
   
-  func searchLocation(keyword: String) async {
+  func searchButtonAction(keyword: String) {
+    guard keyword != "" else {
+      displayAlert(message: .needSearchLocation)
+      return
+    }
+    
+    Task {
+      await searchLocation(keyword: keyword)
+      isDisplaySearchResult = true
+    }
+  }
+  
+  func searchSubwayStation(at coordinate: Coordinate) async {
+    setCurrentLocation(.init(
+      name: "중간지점",
+      category: "중간지점",
+      roadAddress: "중간지점",
+      coordinate: coordinate
+    ))
+    await searchLocation(keyword: "지하철역")
+    setMiddleLocation(searchedLocations.first)
+  }
+  
+  private func setMiddleLocation(_ location: Location?) {
+    middleLocation = location
+  }
+  
+  private func searchLocation(keyword: String) async {
     do {
       let coordinate = currentCoordinate?.toString()
+      
       searchedLocations = try await locationService.searchLocation(
         keyword: keyword,
         latitude: coordinate?.latitude,
@@ -74,16 +96,5 @@ extension MapViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그�
       displayAlert(message: .error(message: error.localizedDescription))
       print(error.localizedDescription)
     }
-  }
-  
-  func searchSubwayStation(at coordinate: Coordinate) async {
-    setCurrentLocation(Location(
-      name: "중간지점",
-      category: "중간지점",
-      roadAddress: "중간지점",
-      coordinate: coordinate
-    ))
-    await searchLocation(keyword: "지하철역")
-    setCurrentLocation(searchedLocations.first)
   }
 }

@@ -28,19 +28,11 @@ struct MapView: View {
         CustomNavigationBar(
           placeName: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
           leftButtonAction: {
-            mapViewModel.isDisplaySearchResult = false
+            mapViewModel.closeSearchResult()
             pathModel.paths.removeLast()
           },
-          rightButtonAction: { placeName in // TODO: - 뷰에서 로직 분리
-            guard placeName != "" else {
-              mapViewModel.displayAlert(message: .needSearchLocation)
-              return
-            }
-            
-            Task {
-              await mapViewModel.searchLocation(keyword: placeName)
-              mapViewModel.isDisplaySearchResult = true
-            }
+          rightButtonAction: { placeName in
+            mapViewModel.searchButtonAction(keyword: placeName)
           },
           isSearchMode: isSearchMode
         )
@@ -87,6 +79,11 @@ private struct NaverMapView: UIViewRepresentable {
     let map = NMFMapView()
     
     if isSearchMode == false {
+      guard let middleLocation = mapViewModel.middleLocation else {
+        mapViewModel.displayAlert(message: .canNotDisplayMiddleLocation)
+        return NMFMapView()
+      }
+      
       for location in homeViewModel.startLocations {
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude
@@ -96,8 +93,8 @@ private struct NaverMapView: UIViewRepresentable {
             lng: longitude
           ),
           NMGLatLng(
-            lat: coordinate.latitude,
-            lng: coordinate.longitude
+            lat: middleLocation.coordinate.latitude,
+            lng: middleLocation.coordinate.longitude
           )
         ]
         let lineString = NMGLineString(points: startToDestination)
@@ -111,18 +108,26 @@ private struct NaverMapView: UIViewRepresentable {
         ))
         marker.mapView = map
       }
+      
+      let marker = NMFMarker(position: .init(
+        lat: middleLocation.coordinate.latitude,
+        lng: middleLocation.coordinate.longitude
+      ))
+      
+      marker.mapView = map
+      map.latitude = middleLocation.coordinate.latitude
+      map.longitude = middleLocation.coordinate.longitude
+    } else {
+      let marker = NMFMarker(position: .init(
+        lat: coordinate.latitude,
+        lng: coordinate.longitude
+      ))
+      
+      marker.mapView = map
+      map.latitude = coordinate.latitude
+      map.longitude = coordinate.longitude
     }
-    
-    let marker = NMFMarker(position: .init(
-      lat: coordinate.latitude,
-      lng: coordinate.longitude
-    ))
-    
-    marker.mapView = map
-    map.latitude = coordinate.latitude
-    map.longitude = coordinate.longitude
-    map.zoomLevel = 16
-    
+
     return map
   }
   
@@ -179,14 +184,12 @@ private struct SearchResultCellView: View {
         Spacer()
         
         Button(
-          action: { // TODO: - 뷰에서 로직 분리
-            if mapViewModel.currentLocation != nil {
-              mapViewModel.setCurrentLocation(location)
-            } else {
-              homeViewModel.startLocations.append(location)
-            }
-            
-            mapViewModel.isDisplaySearchResult = false
+          action: {
+            homeViewModel.changeOrAddLocation(
+              origin: mapViewModel.currentLocation,
+              new: location
+            )
+            mapViewModel.closeSearchResult()
             pathModel.paths.removeLast()
           },
           label: {

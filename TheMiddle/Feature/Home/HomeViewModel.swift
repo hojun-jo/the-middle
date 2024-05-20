@@ -39,4 +39,21 @@ extension HomeViewModel { // TODO: - 뷰 모델의 역할(기준) 정하고 그�
       longitude: longitudeSum/locationCount
     )
   }
+  
+  func changeOrAddLocation(origin: Location?, new: Location) {
+    if let origin {
+      changeLocation(
+        from: origin,
+        to: new
+      )
+    } else {
+      startLocations.append(new)
+    }
+  }
+  
+  private func changeLocation(from before: Location, to after: Location) {
+    if let index = startLocations.firstIndex(of: before) {
+      startLocations[index] = after
+    }
+  }
 }
