@@ -20,9 +20,7 @@ struct HomeView: View {
             LocationButtonView(location: location)
           }
           .onDelete(perform: { indexSet in
-            if let index = indexSet.first {
-              homeViewModel.startLocations.remove(at: index)
-            }
+            homeViewModel.removeLocation(at: indexSet.first)
           })
           
           LocationButtonView()
@@ -35,14 +33,14 @@ struct HomeView: View {
         .listStyle(.plain)
         
         Button(
-          action: { // TODO: - 뷰에서 로직 분리
-            guard homeViewModel.startLocations.isEmpty == false else {
+          action: {
+            guard !homeViewModel.startLocations.isEmpty else {
               homeViewModel.displayAlert(message: .needStartLocation)
               return
             }
             
             Task {
-              let coordinate = homeViewModel.computeAverageCoordinate()
+              let coordinate = homeViewModel.averageCoordinate()
               await mapViewModel.searchSubwayStation(at: coordinate)
               pathModel.paths.append(.mapView(isSearchMode: false))
             }
