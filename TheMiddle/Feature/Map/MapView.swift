@@ -14,14 +14,22 @@ struct MapView: View {
   @EnvironmentObject private var mapViewModel: MapViewModel
   
   private let isSearchMode: Bool
+  private let naverMapGenerator: NaverMapGenerator
   
-  init(isSearchMode: Bool) {
+  init(
+    isSearchMode: Bool,
+    naverMapGenerator: NaverMapGenerator
+  ) {
     self.isSearchMode = isSearchMode
+    self.naverMapGenerator = naverMapGenerator
   }
   
   var body: some View {
     ZStack {
-      NaverMapView(isSearchMode: isSearchMode)
+      NaverMapView(
+        isSearchMode: isSearchMode,
+        naverMapGenerator: naverMapGenerator
+      )
         .ignoresSafeArea()
       
       VStack {
@@ -39,7 +47,6 @@ struct MapView: View {
         
         Spacer()
       }
-      
     }
     .sheet(
       isPresented: $mapViewModel.isDisplaySearchResult,
@@ -67,67 +74,31 @@ struct MapView: View {
 private struct NaverMapView: UIViewRepresentable {
   @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
-  private let isSearchMode: Bool
   
-  init(isSearchMode: Bool) {
+  private let isSearchMode: Bool
+  private let naverMapGenerator: NaverMapGenerator
+  
+  init(
+    isSearchMode: Bool,
+    naverMapGenerator: NaverMapGenerator
+  ) {
     self.isSearchMode = isSearchMode
+    self.naverMapGenerator = naverMapGenerator
   }
   
-  func makeUIView(context: Context) -> NMFMapView { // TODO: - SRP(작은 메서드 여럿으로 분리)
-    guard let coordinate = mapViewModel.currentCoordinate else { return NMFMapView() }
-    
-    let map = NMFMapView()
-    
-    if isSearchMode == false {
-      guard let middleLocation = mapViewModel.middleLocation else {
-        mapViewModel.displayAlert(message: .canNotDisplayMiddleLocation)
-        return NMFMapView()
-      }
-      
-      for location in homeViewModel.startLocations {
-        let latitude = location.coordinate.latitude
-        let longitude = location.coordinate.longitude
-        let startToDestination = [
-          NMGLatLng(
-            lat: latitude,
-            lng: longitude
-          ),
-          NMGLatLng(
-            lat: middleLocation.coordinate.latitude,
-            lng: middleLocation.coordinate.longitude
-          )
-        ]
-        let lineString = NMGLineString(points: startToDestination)
-        let polylineOverlay = NMFPolylineOverlay(lineString as! NMGLineString<AnyObject>)
-        polylineOverlay?.color = .blue
-        polylineOverlay?.mapView = map
-        
-        let marker = NMFMarker(position: .init(
-          lat: latitude,
-          lng: longitude
-        ))
-        marker.mapView = map
-      }
-      
-      let marker = NMFMarker(position: .init(
-        lat: middleLocation.coordinate.latitude,
-        lng: middleLocation.coordinate.longitude
-      ))
-      
-      marker.mapView = map
-      map.latitude = middleLocation.coordinate.latitude
-      map.longitude = middleLocation.coordinate.longitude
-    } else {
-      let marker = NMFMarker(position: .init(
-        lat: coordinate.latitude,
-        lng: coordinate.longitude
-      ))
-      
-      marker.mapView = map
-      map.latitude = coordinate.latitude
-      map.longitude = coordinate.longitude
+  func makeUIView(context: Context) -> NMFMapView {
+    guard let coordinate = mapViewModel.currentCoordinate else {
+      mapViewModel.displayAlert(message: .canNotFindCurrentCoordinate)
+      // TODO: - 위치 권한 확인
+      return NMFMapView()
     }
-
+    
+    let map = naverMapGenerator.generateMap(
+      currentCoordinate: coordinate,
+      middleLocation: mapViewModel.middleLocation,
+      startLocations: homeViewModel.startLocations
+    )
+    
     return map
   }
   
@@ -207,7 +178,7 @@ private struct SearchResultCellView: View {
 }
 
 #Preview {
-  MapView(isSearchMode: true)
+  MapView(isSearchMode: true, naverMapGenerator: .init())
     .environmentObject(PathModel())
     .environmentObject(MapViewModel(
       searchedLocations: [

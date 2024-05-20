@@ -11,6 +11,7 @@ struct ContentView: View { // TODO: - DI
   @StateObject private var pathModel = PathModel()
   @StateObject private var homeViewModel = HomeViewModel()
   @StateObject private var mapViewModel = MapViewModel()
+  private let naverMapGenerator = NaverMapGenerator()
 //  @StateObject private var homeViewModel = HomeViewModel(
 //    startLocations: [
 //      Location(name: "asdf", category: "지하철역", address: "서울 성북구", roadAddress: "서울 성북구 ㅇㅇ로", latitude: "2", longitude: "2"),
@@ -42,7 +43,10 @@ struct ContentView: View { // TODO: - DI
           destination: { pathType in
             switch pathType {
             case let .mapView(isSearchMode):
-              MapView(isSearchMode: isSearchMode)
+              MapView(
+                isSearchMode: isSearchMode,
+                naverMapGenerator: naverMapGenerator
+              )
                 .navigationBarBackButtonHidden()
             }
           }
