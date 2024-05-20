@@ -5,8 +5,6 @@
 //  Created by 조호준 on 3/21/24.
 //
 
-import Foundation
-
 final class Location { // TODO: - class vs struct 판단
   // TODO: - 프로퍼티 최소화?, 기본 타입 래핑
   var name: String

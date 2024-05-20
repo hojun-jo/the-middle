@@ -5,8 +5,6 @@
 //  Created by 조호준 on 4/3/24.
 //
 
-import Foundation
-
 struct Coordinate {
   let latitude: Double
   let longitude: Double

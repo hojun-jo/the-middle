@@ -5,8 +5,6 @@
 //  Created by 조호준 on 3/22/24.
 //
 
-import Foundation
-
 struct KakaoLocationDTO: Decodable {
   let documents: [KakaoLocationItem]
 }

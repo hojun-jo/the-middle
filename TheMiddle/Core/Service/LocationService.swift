@@ -5,7 +5,6 @@
 //  Created by 조호준 on 3/24/24.
 //
 
-import Foundation
 import CoreLocation
 
 final class LocationService: NSObject { // TODO: - DI
@@ -32,7 +31,7 @@ final class LocationService: NSObject { // TODO: - DI
 }
 
 extension LocationService {
-  func searchLocation(
+  func searchLocation(// TODO: - generic
     keyword: String,
     latitude: String?,
     longitude: String?

@@ -5,8 +5,6 @@
 //  Created by 조호준 on 5/10/24.
 //
 
-import Foundation
-
 @MainActor
 protocol AlertDisplayable: AnyObject {
   var isDisplayAlert: Bool { get set }
