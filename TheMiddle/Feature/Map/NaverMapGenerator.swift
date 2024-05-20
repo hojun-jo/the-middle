@@ -7,8 +7,8 @@
 
 import NMapsMap
 
-struct NaverMapGenerator {
-  private let map: NMFMapView
+final class NaverMapGenerator {
+  private var map: NMFMapView
   
   init(map: NMFMapView = .init()) {
     self.map = map
@@ -17,30 +17,47 @@ struct NaverMapGenerator {
 
 extension NaverMapGenerator {
   func generateMap(
-    currentCoordinate: Coordinate,
+    isSearchMode: Bool,
+    currentCoordinate: Coordinate?,
     middleLocation: Location?,
     startLocations: [Location]
-  ) -> NMFMapView {
-    if let middleLocation {
-      generateMiddleMap(
+  ) throws -> NMFMapView {
+    reset()
+    
+    if isSearchMode {
+      try generateCurrentMap(coordinate: currentCoordinate)
+    } else {
+      try generateMiddleMap(
         middleLocation: middleLocation,
         startLocations: startLocations
       )
-    } else {
-      generateCurrentMap(coordinate: currentCoordinate)
     }
     
     return map
   }
+  
+  private func reset() {
+    map = .init()
+  }
+  
+  private func generateCurrentMap(coordinate: Coordinate?) throws {
+    guard let coordinate else {
+      throw MapError.notFoundCurrentCoordinate
+    }
+    
+    addMarker(position: coordinate)
+    setMapCenter(position: coordinate)
+  }
 
   private func generateMiddleMap(
-    middleLocation: Location,
+    middleLocation: Location?,
     startLocations: [Location]
-  ) {
+  ) throws {
+    guard let middleLocation else {
+      throw MapError.notFoundMiddleLocation
+    }
+    
     for location in startLocations {
-      let latitude = location.coordinate.latitude
-      let longitude = location.coordinate.longitude
-      
       addPolyLine(
         start: location.coordinate,
         destination: middleLocation.coordinate
@@ -50,11 +67,6 @@ extension NaverMapGenerator {
     
     addMarker(position: middleLocation.coordinate)
     setMapCenter(position: middleLocation.coordinate)
-  }
-  
-  private func generateCurrentMap(coordinate: Coordinate) {
-    addMarker(position: coordinate)
-    setMapCenter(position: coordinate)
   }
   
   private func addMarker(position: Coordinate) {

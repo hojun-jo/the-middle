@@ -87,19 +87,18 @@ private struct NaverMapView: UIViewRepresentable {
   }
   
   func makeUIView(context: Context) -> NMFMapView {
-    guard let coordinate = mapViewModel.currentCoordinate else {
-      mapViewModel.displayAlert(message: .canNotFindCurrentCoordinate)
+    do {
+      return try naverMapGenerator.generateMap(
+        isSearchMode: isSearchMode,
+        currentCoordinate: mapViewModel.currentCoordinate,
+        middleLocation: mapViewModel.middleLocation,
+        startLocations: homeViewModel.startLocations
+      )
+    } catch {
+      mapViewModel.displayAlert(message: .error(message: error.localizedDescription))
       // TODO: - 위치 권한 확인
       return NMFMapView()
     }
-    
-    let map = naverMapGenerator.generateMap(
-      currentCoordinate: coordinate,
-      middleLocation: mapViewModel.middleLocation,
-      startLocations: homeViewModel.startLocations
-    )
-    
-    return map
   }
   
   func updateUIView(_ uiView: NMFMapView, context: Context) {
