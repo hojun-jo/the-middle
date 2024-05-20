@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */; };
+		38A513472BFB30A4001F1E10 /* NaverMapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */; };
 		38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6A42BAC1B3A0051C648 /* TheMiddleApp.swift */; };
 		38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6A62BAC1B3A0051C648 /* HomeView.swift */; };
 		38CAC6A92BAC1B3B0051C648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6A82BAC1B3B0051C648 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
+		38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapGenerator.swift; sourceTree = "<group>"; };
 		38CAC6A12BAC1B3A0051C648 /* TheMiddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMiddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CAC6A42BAC1B3A0051C648 /* TheMiddleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMiddleApp.swift; sourceTree = "<group>"; };
 		38CAC6A62BAC1B3A0051C648 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				38CAC6E92BB024860051C648 /* MapView.swift */,
 				38CAC6F62BB454970051C648 /* MapViewModel.swift */,
+				38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
 				38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */,
 				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
+				38A513472BFB30A4001F1E10 /* NaverMapGenerator.swift in Sources */,
 				38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */,
 				38E42D632BBC59BF00B85D42 /* Coordinate.swift in Sources */,
 			);
