@@ -10,9 +10,9 @@ import SwiftUI
 struct CustomNavigationBar: View {
   @State private var placeName: String
   
-  let leftButtonAction: () -> Void
-  let rightButtonAction: (String) -> Void
-  let isSearchMode: Bool
+  private let leftButtonAction: () -> Void
+  private let rightButtonAction: (String) -> Void
+  private let isSearchMode: Bool
   
   init(
     placeName: State<String> = .init(initialValue: ""),
