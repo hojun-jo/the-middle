@@ -71,6 +71,7 @@ struct MapView: View {
   }
 }
 
+// MARK: - Naver Map View
 private struct NaverMapView: UIViewRepresentable {
   @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
@@ -106,6 +107,7 @@ private struct NaverMapView: UIViewRepresentable {
   }
 }
 
+// MARK: - Search Result List View
 private struct SearchResultListView: View {
   @EnvironmentObject private var mapViewModel: MapViewModel
   
@@ -120,6 +122,7 @@ private struct SearchResultListView: View {
   }
 }
 
+// MARK: - Search Result Cell View
 private struct SearchResultCellView: View {
   @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var homeViewModel: HomeViewModel

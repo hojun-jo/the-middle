@@ -44,6 +44,7 @@ enum NetworkService { // TODO: - DI
   }
 }
 
+// MARK: - Network Error
 enum NetworkError: LocalizedError {
   case invalidURL
   case invalidResponse
