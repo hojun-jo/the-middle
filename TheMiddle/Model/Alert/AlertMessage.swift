@@ -14,6 +14,7 @@ enum AlertMessage {
   
   // MARK: - MapView
   case needSearchLocation
+  case canNotFindCurrentCoordinate
   case canNotDisplayMiddleLocation
   
   var description: String {
@@ -24,6 +25,8 @@ enum AlertMessage {
       "출발지를 추가해 주세요."
     case .needSearchLocation:
       "검색 장소를 입력해주세요."
+    case .canNotFindCurrentCoordinate:
+      "현재 위치를 찾을 수 없습니다.\n위치 권한을 확인해주세요."
     case .canNotDisplayMiddleLocation:
       "중간 위치를 표시할 수 없습니다."
     }
