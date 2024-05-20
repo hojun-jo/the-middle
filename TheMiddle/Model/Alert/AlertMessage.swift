@@ -14,7 +14,7 @@ enum AlertMessage {
   
   // MARK: - MapView
   case needSearchLocation
-  case canNotDisplayAllStartLocation
+  case canNotDisplayMiddleLocation
   
   var description: String {
     switch self {
@@ -24,8 +24,8 @@ enum AlertMessage {
       "출발지를 추가해 주세요."
     case .needSearchLocation:
       "검색 장소를 입력해주세요."
-    case .canNotDisplayAllStartLocation:
-      "모든 출발지를 표시할 수 없습니다."
+    case .canNotDisplayMiddleLocation:
+      "중간 위치를 표시할 수 없습니다."
     }
   }
 }
