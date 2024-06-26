@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */; };
+		3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2B2C2BF5990013A803 /* NetworkSession.swift */; };
 		38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */; };
 		38A513472BFB30A4001F1E10 /* NaverMapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */; };
 		38A513492BFB4B06001F1E10 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513482BFB4B06001F1E10 /* MapError.swift */; };
@@ -24,7 +26,7 @@
 		38CAC6DA2BAC84A40051C648 /* KakaoLocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */; };
 		38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DC2BAC85460051C648 /* Bundle+.swift */; };
 		38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */; };
-		38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E12BAC8AE70051C648 /* NetworkService.swift */; };
+		38CAC6E22BAC8AE70051C648 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E12BAC8AE70051C648 /* NetworkManager.swift */; };
 		38CAC6E32BAEDAA70051C648 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6BC2BAC321E0051C648 /* APIKey.plist */; };
 		38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E42BAEDCDA0051C648 /* APIError.swift */; };
 		38CAC6E72BB006B20051C648 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E62BB006B20051C648 /* LocationManager.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
+		3885CC2B2C2BF5990013A803 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapGenerator.swift; sourceTree = "<group>"; };
 		38A513482BFB4B06001F1E10 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
@@ -58,7 +62,7 @@
 		38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationAPI.swift; sourceTree = "<group>"; };
 		38CAC6DC2BAC85460051C648 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationDTO.swift; sourceTree = "<group>"; };
-		38CAC6E12BAC8AE70051C648 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		38CAC6E12BAC8AE70051C648 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		38CAC6E42BAEDCDA0051C648 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		38CAC6E62BB006B20051C648 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		38CAC6E92BB024860051C648 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3885CC1F2C2BF3150013A803 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC6E62BB006B20051C648 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		3885CC202C2BF3280013A803 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3885CC242C2BF3940013A803 /* Implementation */,
+				38CAC6D52BAC83F50051C648 /* Interface */,
+				38CAC6D82BAC847C0051C648 /* DTO */,
+				38CAC6E42BAEDCDA0051C648 /* APIError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3885CC212C2BF32F0013A803 /* Serializer */ = {
+			isa = PBXGroup;
+			children = (
+				3885CC262C2BF42B0013A803 /* Implementation */,
+				3885CC252C2BF4260013A803 /* Interface */,
+				38CAC6F42BB44B9E0051C648 /* DataParser.swift */,
+			);
+			path = Serializer;
+			sourceTree = "<group>";
+		};
+		3885CC222C2BF3460013A803 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				3885CC282C2BF4380013A803 /* Implementation */,
+				3885CC272C2BF4330013A803 /* Interface */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		3885CC242C2BF3940013A803 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		3885CC252C2BF4260013A803 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		3885CC262C2BF42B0013A803 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		3885CC272C2BF4330013A803 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		3885CC282C2BF4380013A803 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				3885CC2B2C2BF5990013A803 /* NetworkSession.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		38A5133F2BEE4DC2001F1E10 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +220,6 @@
 				38E42D692BCEA76A00B85D42 /* Alert */,
 				38CAC6C22BAC42160051C648 /* Path */,
 				38CAC6D12BAC60890051C648 /* Location */,
-				38CAC6D42BAC83E30051C648 /* API */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,7 +245,8 @@
 		38CAC6B52BAC1BE90051C648 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				38CAC6E02BAC8ADB0051C648 /* Service */,
+				38CAC6E02BAC8ADB0051C648 /* Network */,
+				3885CC1F2C2BF3150013A803 /* Location */,
 				38CAC6DB2BAC852E0051C648 /* Extension */,
 			);
 			path = Core;
@@ -208,16 +288,6 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		38CAC6D42BAC83E30051C648 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				38CAC6D52BAC83F50051C648 /* Interface */,
-				38CAC6D82BAC847C0051C648 /* KakaoLocation */,
-				38CAC6E42BAEDCDA0051C648 /* APIError.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		38CAC6D52BAC83F50051C648 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,13 +296,12 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		38CAC6D82BAC847C0051C648 /* KakaoLocation */ = {
+		38CAC6D82BAC847C0051C648 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				38CAC6D92BAC84A40051C648 /* KakaoLocationAPI.swift */,
 				38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */,
 			);
-			path = KakaoLocation;
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		38CAC6DB2BAC852E0051C648 /* Extension */ = {
@@ -243,14 +312,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		38CAC6E02BAC8ADB0051C648 /* Service */ = {
+		38CAC6E02BAC8ADB0051C648 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				38CAC6E12BAC8AE70051C648 /* NetworkService.swift */,
-				38CAC6E62BB006B20051C648 /* LocationManager.swift */,
-				38CAC6F42BB44B9E0051C648 /* DataParser.swift */,
+				38CAC6E12BAC8AE70051C648 /* NetworkManager.swift */,
+				3885CC222C2BF3460013A803 /* Session */,
+				3885CC212C2BF32F0013A803 /* Serializer */,
+				3885CC202C2BF3280013A803 /* API */,
 			);
-			path = Service;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		38CAC6E82BB024640051C648 /* Map */ = {
@@ -422,10 +492,12 @@
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
+				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
 				38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
+				3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */,
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
 				38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */,
 				38CAC6D32BAC60940051C648 /* Location.swift in Sources */,
@@ -434,7 +506,7 @@
 				38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */,
 				38A513492BFB4B06001F1E10 /* MapError.swift in Sources */,
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
-				38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */,
+				38CAC6E22BAC8AE70051C648 /* NetworkManager.swift in Sources */,
 				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
 				38A513472BFB30A4001F1E10 /* NaverMapGenerator.swift in Sources */,
 				38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */,

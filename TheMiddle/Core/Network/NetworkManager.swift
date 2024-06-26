@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  NetworkManager.swift
 //  TheMiddle
 //
 //  Created by 조호준 on 3/22/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkService { // TODO: - DI
+enum NetworkManager { // TODO: - DI
   
   // MARK: - Public
   
@@ -25,6 +25,8 @@ enum NetworkService { // TODO: - DI
     
     return data
   }
+  
+  // MARK: - Private
   
   static private func createRequest<T: APIType>(_ api: T) throws -> URLRequest {
     guard var urlComponents = URLComponents(string: api.url) else {

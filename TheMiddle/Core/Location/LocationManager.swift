@@ -54,7 +54,7 @@ final class LocationManager: NSObject {
       throw APIError.invalidKey
     }
     
-    let data = try await NetworkService.fetchData(kakaoLocation)
+    let data = try await NetworkManager.fetchData(kakaoLocation)
     
     return try DataParser.kakaoLocation(data)
   }
