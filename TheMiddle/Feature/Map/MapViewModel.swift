@@ -40,7 +40,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     isDisplaySearchResult: Bool = false,
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
-    locationManager: LocationManager = .init(),
+    locationManager: LocationManager,
     currentLocation: Location? = nil,
     middleLocation: Location? = nil,
     searchedLocations: [Location] = []

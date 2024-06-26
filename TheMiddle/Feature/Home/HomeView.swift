@@ -125,5 +125,12 @@ private struct LocationButtonView: View {
         Location(name: "hjkj", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
       ]
     ))
-    .environmentObject(MapViewModel())
+    .environmentObject(MapViewModel(
+      locationManager: .init(
+        repository: .init(
+          networkManager: .init(session: NetworkSession(session: .init(configuration: .default))),
+          deserializer: JSONNetworkDeserializer(decoder: .init())
+        )
+      )
+    ))
 }

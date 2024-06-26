@@ -25,11 +25,16 @@ final class LocationManager: NSObject {
   // MARK: - Private property
   
   private let locationManager: CLLocationManager
+  private let repository: Repository
   
   // MARK: - Lifecycle
   
-  init(locationManager: CLLocationManager = .init()) {
+  init(
+    locationManager: CLLocationManager = .init(),
+    repository: Repository
+  ) {
     self.locationManager = locationManager
+    self.repository = repository
     
     super.init()
     
@@ -41,22 +46,16 @@ final class LocationManager: NSObject {
   
   // MARK: - Public
   
-  func searchLocation(// TODO: - generic
+  func searchLocation(
     keyword: String,
     latitude: String?,
     longitude: String?
   ) async throws -> [Location] {
-    guard let kakaoLocation = try KakaoLocationAPI(
+    return try await repository.fetchLocations(
       keyword: keyword,
       latitude: latitude,
       longitude: longitude
-    ) else {
-      throw APIError.invalidKey
-    }
-    
-    let data = try await NetworkManager.fetchData(kakaoLocation)
-    
-    return try DataParser.kakaoLocation(data)
+    )
   }
   
   // MARK: - Private

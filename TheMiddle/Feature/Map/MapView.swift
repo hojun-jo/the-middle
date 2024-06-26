@@ -183,6 +183,12 @@ private struct SearchResultCellView: View {
   MapView(isSearchMode: true, naverMapGenerator: .init())
     .environmentObject(PathModel())
     .environmentObject(MapViewModel(
+      locationManager: .init(
+        repository: .init(
+          networkManager: .init(session: NetworkSession(session: .init(configuration: .default))),
+          deserializer: JSONNetworkDeserializer(decoder: .init())
+        )
+      ),
       searchedLocations: [
         Location(name: "asdf", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
         Location(name: "qwer", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
