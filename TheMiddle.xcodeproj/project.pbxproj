@@ -11,6 +11,7 @@
 		3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2B2C2BF5990013A803 /* NetworkSession.swift */; };
 		3885CC2E2C2BF94A0013A803 /* NetworkDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */; };
 		3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2F2C2BFEBC0013A803 /* JSONNetworkDeserializer.swift */; };
+		3885CC332C2C0A830013A803 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC322C2C0A830013A803 /* Repository.swift */; };
 		38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */; };
 		38A513472BFB30A4001F1E10 /* NaverMapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */; };
 		38A513492BFB4B06001F1E10 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513482BFB4B06001F1E10 /* MapError.swift */; };
@@ -46,6 +47,7 @@
 		3885CC2B2C2BF5990013A803 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializable.swift; sourceTree = "<group>"; };
 		3885CC2F2C2BFEBC0013A803 /* JSONNetworkDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkDeserializer.swift; sourceTree = "<group>"; };
+		3885CC322C2C0A830013A803 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapGenerator.swift; sourceTree = "<group>"; };
 		38A513482BFB4B06001F1E10 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		3885CC312C2C0A650013A803 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3885CC322C2C0A830013A803 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		38A5133F2BEE4DC2001F1E10 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E02BAC8ADB0051C648 /* Network */,
+				3885CC312C2C0A650013A803 /* Repository */,
 				3885CC1F2C2BF3150013A803 /* Location */,
 				38CAC6DB2BAC852E0051C648 /* Extension */,
 			);
@@ -498,6 +509,7 @@
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
+				3885CC332C2C0A830013A803 /* Repository.swift in Sources */,
 				3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */,
 				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
