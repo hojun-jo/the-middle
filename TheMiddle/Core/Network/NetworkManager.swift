@@ -7,13 +7,26 @@
 
 import Foundation
 
-enum NetworkManager { // TODO: - DI
+final class NetworkManager {
+  
+  // MARK: - Private property
+  
+  private let session: NetworkSessionProtocol
+  
+  // MARK: - Lifecycle
+  
+  init(session: NetworkSessionProtocol) {
+    self.session = session
+  }
   
   // MARK: - Public
   
-  static func fetchData<T: APIType>(_ api: T) async throws -> Data {
+  func fetchData<T: APIType>(_ api: T) async throws -> Data {
     let request = try createRequest(api)
-    let (data, response) = try await URLSession.shared.data(for: request)
+    let (data, response) = try await session.data(
+      for: request,
+      delegate: nil
+    )
     
     guard let httpResponse = response as? HTTPURLResponse else {
       throw NetworkError.invalidResponse
@@ -28,7 +41,7 @@ enum NetworkManager { // TODO: - DI
   
   // MARK: - Private
   
-  static private func createRequest<T: APIType>(_ api: T) throws -> URLRequest {
+  private func createRequest<T: APIType>(_ api: T) throws -> URLRequest {
     guard var urlComponents = URLComponents(string: api.url) else {
       throw NetworkError.invalidURL
     }
