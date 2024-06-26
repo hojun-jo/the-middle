@@ -37,7 +37,6 @@
 		38CAC6EA2BB024860051C648 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E92BB024860051C648 /* MapView.swift */; };
 		38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */; };
 		38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */; };
-		38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6F42BB44B9E0051C648 /* DataParser.swift */; };
 		38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6F62BB454970051C648 /* MapViewModel.swift */; };
 		38E42D632BBC59BF00B85D42 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E42D622BBC59BF00B85D42 /* Coordinate.swift */; };
 		38E42D6B2BCEA79F00B85D42 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */; };
@@ -76,7 +75,6 @@
 		38CAC6E92BB024860051C648 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		38CAC6F42BB44B9E0051C648 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		38CAC6F62BB454970051C648 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		38E42D622BBC59BF00B85D42 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E12BAC8AE70051C648 /* NetworkManager.swift */,
-				38CAC6F42BB44B9E0051C648 /* DataParser.swift */,
 				3885CC222C2BF3460013A803 /* Session */,
 				3885CC212C2BF32F0013A803 /* Serializer */,
 				3885CC202C2BF3280013A803 /* API */,
@@ -533,7 +530,6 @@
 				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
-				38CAC6F52BB44B9E0051C648 /* DataParser.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
 				3885CC372C2C2DB90013A803 /* LocationManagerProtocol.swift in Sources */,
 				3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */,
