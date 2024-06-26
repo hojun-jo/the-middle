@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-final class LocationManager: NSObject {
+final class LocationManager: NSObject, LocationManagerProtocol {
   
   // MARK: - Public property
   
