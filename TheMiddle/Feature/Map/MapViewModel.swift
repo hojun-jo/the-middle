@@ -20,7 +20,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     if let currentLocation {
       return currentLocation.coordinate
     }
-    if let userCoordinate = locationService.currentCoordinate {
+    if let userCoordinate = locationManager.currentCoordinate {
       return userCoordinate
     }
     return nil
@@ -28,7 +28,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   
   // MARK: - Private property
   
-  private let locationService: LocationService
+  private let locationManager: LocationManager
   
   private(set) var currentLocation: Location?
   private(set) var middleLocation: Location?
@@ -40,7 +40,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     isDisplaySearchResult: Bool = false,
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
-    locationService: LocationService = .init(),
+    locationManager: LocationManager = .init(),
     currentLocation: Location? = nil,
     middleLocation: Location? = nil,
     searchedLocations: [Location] = []
@@ -48,7 +48,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     self.isDisplaySearchResult = isDisplaySearchResult
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
-    self.locationService = locationService
+    self.locationManager = locationManager
     self.currentLocation = currentLocation
     self.middleLocation = middleLocation
     self.searchedLocations = searchedLocations
@@ -97,7 +97,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     do {
       let coordinate = currentCoordinate?.toString()
       
-      searchedLocations = try await locationService.searchLocation(
+      searchedLocations = try await locationManager.searchLocation(
         keyword: keyword,
         latitude: coordinate?.latitude,
         longitude: coordinate?.longitude

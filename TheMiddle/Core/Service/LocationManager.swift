@@ -1,5 +1,5 @@
 //
-//  LocationService.swift
+//  LocationManager.swift
 //  TheMiddle
 //
 //  Created by 조호준 on 3/24/24.
@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-final class LocationService: NSObject { // TODO: - DI
+final class LocationManager: NSObject {
   
   // MARK: - Public property
   
@@ -24,16 +24,19 @@ final class LocationService: NSObject { // TODO: - DI
   
   // MARK: - Private property
   
-  private let locationManager = CLLocationManager()
+  private let locationManager: CLLocationManager
   
   // MARK: - Lifecycle
   
-  override init() {
+  init(locationManager: CLLocationManager = .init()) {
+    self.locationManager = locationManager
+    
     super.init()
-    // TODO: - locationManager 세팅 메서드 추가
-    locationManager.delegate = self
-    locationManager.distanceFilter = CLLocationDistanceMax
-    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+    
+    initLocationManager(
+      distanceFilter: CLLocationDistanceMax,
+      desiredAccuracy: kCLLocationAccuracyKilometer
+    )
   }
   
   // MARK: - Public
@@ -55,11 +58,22 @@ final class LocationService: NSObject { // TODO: - DI
     
     return try DataParser.kakaoLocation(data)
   }
+  
+  // MARK: - Private
+  
+  private func initLocationManager(
+    distanceFilter: CLLocationDistance,
+    desiredAccuracy: CLLocationAccuracy
+  ) {
+    locationManager.delegate = self
+    locationManager.distanceFilter = distanceFilter
+    locationManager.desiredAccuracy = desiredAccuracy
+  }
 }
 
 // MARK: - CLLocationManagerDelegate
 
-extension LocationService: CLLocationManagerDelegate {
+extension LocationManager: CLLocationManagerDelegate {
   func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
     switch manager.authorizationStatus {
     case .notDetermined:

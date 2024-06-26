@@ -27,7 +27,7 @@
 		38CAC6E22BAC8AE70051C648 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E12BAC8AE70051C648 /* NetworkService.swift */; };
 		38CAC6E32BAEDAA70051C648 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CAC6BC2BAC321E0051C648 /* APIKey.plist */; };
 		38CAC6E52BAEDCDA0051C648 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E42BAEDCDA0051C648 /* APIError.swift */; };
-		38CAC6E72BB006B20051C648 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E62BB006B20051C648 /* LocationService.swift */; };
+		38CAC6E72BB006B20051C648 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E62BB006B20051C648 /* LocationManager.swift */; };
 		38CAC6EA2BB024860051C648 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6E92BB024860051C648 /* MapView.swift */; };
 		38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */; };
 		38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */; };
@@ -60,7 +60,7 @@
 		38CAC6DE2BAC88720051C648 /* KakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLocationDTO.swift; sourceTree = "<group>"; };
 		38CAC6E12BAC8AE70051C648 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		38CAC6E42BAEDCDA0051C648 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		38CAC6E62BB006B20051C648 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		38CAC6E62BB006B20051C648 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		38CAC6E92BB024860051C648 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		38CAC6EB2BB0598C0051C648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38CAC6EE2BB2DEFA0051C648 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E12BAC8AE70051C648 /* NetworkService.swift */,
-				38CAC6E62BB006B20051C648 /* LocationService.swift */,
+				38CAC6E62BB006B20051C648 /* LocationManager.swift */,
 				38CAC6F42BB44B9E0051C648 /* DataParser.swift */,
 			);
 			path = Service;
@@ -415,7 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38CAC6E72BB006B20051C648 /* LocationService.swift in Sources */,
+				38CAC6E72BB006B20051C648 /* LocationManager.swift in Sources */,
 				38CAC6C62BAC457B0051C648 /* PathType.swift in Sources */,
 				38CAC6D02BAC607A0051C648 /* HomeViewModel.swift in Sources */,
 				38CAC6DA2BAC84A40051C648 /* KakaoLocationAPI.swift in Sources */,
