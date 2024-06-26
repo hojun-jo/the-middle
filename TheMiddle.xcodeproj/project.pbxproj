@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */; };
 		3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2B2C2BF5990013A803 /* NetworkSession.swift */; };
+		3885CC2E2C2BF94A0013A803 /* NetworkDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */; };
+		3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2F2C2BFEBC0013A803 /* JSONNetworkDeserializer.swift */; };
 		38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */; };
 		38A513472BFB30A4001F1E10 /* NaverMapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */; };
 		38A513492BFB4B06001F1E10 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A513482BFB4B06001F1E10 /* MapError.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		3885CC2B2C2BF5990013A803 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializable.swift; sourceTree = "<group>"; };
+		3885CC2F2C2BFEBC0013A803 /* JSONNetworkDeserializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkDeserializer.swift; sourceTree = "<group>"; };
 		38A513402BEE4E38001F1E10 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapGenerator.swift; sourceTree = "<group>"; };
 		38A513482BFB4B06001F1E10 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
@@ -113,7 +117,6 @@
 			children = (
 				3885CC262C2BF42B0013A803 /* Implementation */,
 				3885CC252C2BF4260013A803 /* Interface */,
-				38CAC6F42BB44B9E0051C648 /* DataParser.swift */,
 			);
 			path = Serializer;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 		3885CC252C2BF4260013A803 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -145,6 +149,7 @@
 		3885CC262C2BF42B0013A803 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				3885CC2F2C2BFEBC0013A803 /* JSONNetworkDeserializer.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E12BAC8AE70051C648 /* NetworkManager.swift */,
+				38CAC6F42BB44B9E0051C648 /* DataParser.swift */,
 				3885CC222C2BF3460013A803 /* Session */,
 				3885CC212C2BF32F0013A803 /* Serializer */,
 				3885CC202C2BF3280013A803 /* API */,
@@ -492,6 +498,7 @@
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
+				3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */,
 				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
@@ -505,6 +512,7 @@
 				38CAC6EA2BB024860051C648 /* MapView.swift in Sources */,
 				38CAC6EF2BB2DEFA0051C648 /* CustomNavigationBar.swift in Sources */,
 				38A513492BFB4B06001F1E10 /* MapError.swift in Sources */,
+				3885CC2E2C2BF94A0013A803 /* NetworkDeserializable.swift in Sources */,
 				38CAC6DD2BAC85460051C648 /* Bundle+.swift in Sources */,
 				38CAC6E22BAC8AE70051C648 /* NetworkManager.swift in Sources */,
 				38CAC6DF2BAC88720051C648 /* KakaoLocationDTO.swift in Sources */,
