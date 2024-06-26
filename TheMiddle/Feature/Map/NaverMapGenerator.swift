@@ -8,14 +8,19 @@
 import NMapsMap
 
 final class NaverMapGenerator {
+  
+  // MARK: - Private property
+  
   private var map: NMFMapView
+  
+  // MARK: - Lifecycle
   
   init(map: NMFMapView = .init()) {
     self.map = map
   }
-}
-
-extension NaverMapGenerator {
+  
+  // MARK: - Public
+  
   func generateMap(
     isSearchMode: Bool,
     currentCoordinate: Coordinate?,
@@ -36,6 +41,8 @@ extension NaverMapGenerator {
     return map
   }
   
+  // MARK: - Private
+  
   private func reset() {
     map = .init()
   }
@@ -48,7 +55,7 @@ extension NaverMapGenerator {
     addMarker(position: coordinate)
     setMapCenter(position: coordinate)
   }
-
+  
   private func generateMiddleMap(
     middleLocation: Location?,
     startLocations: [Location]

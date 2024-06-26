@@ -8,9 +8,14 @@
 import Foundation
 
 struct KakaoLocationAPI: APIType {
+  
+  // MARK: - Private property
+  
   let url: String = "https://dapi.kakao.com/v2/local/search/keyword.json"
   let headers: [String : String]?
   let queryItems: [URLQueryItem]?
+  
+  // MARK: - Lifecycle
   
   init?(
     keyword: String,

@@ -6,10 +6,15 @@
 //
 
 struct Location: Hashable {
+  
+  // MARK: - Public property
+  
   let name: String
   let category: String
   let roadAddress: String
   let coordinate: Coordinate
+  
+  // MARK: - Lifecycle
   
   init(
     name: String,

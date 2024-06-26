@@ -8,8 +8,14 @@
 import Foundation
 
 enum DataParser { // TODO: - DI
+  
+  // MARK: - Public
+  
   static func kakaoLocation(_ data: Data) throws -> [Location] {
-    let locationDTO = try JSONDecoder().decode(KakaoLocationDTO.self, from: data)
+    let locationDTO = try JSONDecoder().decode(
+      KakaoLocationDTO.self,
+      from: data
+    )
     var locations = [Location]()
     
     for locationItem in locationDTO.documents {

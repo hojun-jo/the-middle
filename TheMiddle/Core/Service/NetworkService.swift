@@ -8,6 +8,9 @@
 import Foundation
 
 enum NetworkService { // TODO: - DI
+  
+  // MARK: - Public
+  
   static func fetchData<T: APIType>(_ api: T) async throws -> Data {
     let request = try createRequest(api)
     let (data, response) = try await URLSession.shared.data(for: request)
@@ -45,6 +48,7 @@ enum NetworkService { // TODO: - DI
 }
 
 // MARK: - Network Error
+
 enum NetworkError: LocalizedError {
   case invalidURL
   case invalidResponse

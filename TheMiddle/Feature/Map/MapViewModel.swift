@@ -9,14 +9,12 @@ import Foundation
 
 @MainActor
 final class MapViewModel: ObservableObject, AlertDisplayable {
+  
+  // MARK: - Public property
+  
   @Published var isDisplaySearchResult: Bool
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
-  
-  private let locationService: LocationService
-  private(set) var currentLocation: Location?
-  private(set) var middleLocation: Location?
-  private(set) var searchedLocations: [Location]
   
   var currentCoordinate: Coordinate? {
     if let currentLocation {
@@ -27,6 +25,16 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     }
     return nil
   }
+  
+  // MARK: - Private property
+  
+  private let locationService: LocationService
+  
+  private(set) var currentLocation: Location?
+  private(set) var middleLocation: Location?
+  private(set) var searchedLocations: [Location]
+  
+  // MARK: - Lifecycle
   
   init(
     isDisplaySearchResult: Bool = false,
@@ -45,9 +53,9 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     self.middleLocation = middleLocation
     self.searchedLocations = searchedLocations
   }
-}
-
-extension MapViewModel {
+  
+  // MARK: - Public
+  
   func setCurrentLocation(_ location: Location?) {
     currentLocation = location
   }
@@ -78,6 +86,8 @@ extension MapViewModel {
     await searchLocation(keyword: "지하철역")
     setMiddleLocation(searchedLocations.first)
   }
+  
+  // MARK: - Private
   
   private func setMiddleLocation(_ location: Location?) {
     middleLocation = location

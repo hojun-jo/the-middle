@@ -6,12 +6,21 @@
 //
 
 struct Coordinate: Hashable {
+  
+  // MARK: - Public property
+  
   let latitude: Double
   let longitude: Double
-}
-
-extension Coordinate {
-  func toString() -> (latitude: String, longitude: String) {
-    return (String(latitude), String(longitude)) // TODO: - 정확한 이니셜라이저 사용
+  
+  //MARK: - Public
+  
+  func toString() -> (
+    latitude: String,
+    longitude: String
+  ) {
+    return (
+      String(describing: latitude),
+      String(describing: longitude)
+    )
   }
 }

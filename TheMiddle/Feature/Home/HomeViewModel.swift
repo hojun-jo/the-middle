@@ -8,9 +8,14 @@
 import Foundation
 
 final class HomeViewModel: ObservableObject, AlertDisplayable {
+  
+  // MARK: - Public property
+  
   @Published var startLocations: [Location]
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
+  
+  // MARK: - Lifecycle
   
   init(
     startLocations: [Location] = [],
@@ -21,9 +26,9 @@ final class HomeViewModel: ObservableObject, AlertDisplayable {
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
   }
-}
-
-extension HomeViewModel {
+  
+  // MARK: - Public
+  
   func averageCoordinate() -> Coordinate {
     let locationCount = Double(startLocations.count)
     var latitudeSum = 0.0
@@ -40,7 +45,10 @@ extension HomeViewModel {
     )
   }
   
-  func changeOrAddLocation(origin: Location?, new: Location) {
+  func changeOrAddLocation(
+    origin: Location?,
+    new: Location
+  ) {
     if let origin {
       changeLocation(
         from: origin,
@@ -57,7 +65,12 @@ extension HomeViewModel {
     }
   }
   
-  private func changeLocation(from before: Location, to after: Location) {
+  // MARK: - Private
+  
+  private func changeLocation(
+    from before: Location,
+    to after: Location
+  ) {
     if let index = startLocations.firstIndex(of: before) {
       startLocations[index] = after
     }

@@ -8,7 +8,12 @@
 import Foundation
 
 final class PathModel: ObservableObject {
+  
+  // MARK: - Public property
+  
   @Published var paths: [PathType]
+  
+  // MARK: - Lifecycle
   
   init(paths: [PathType] = []) {
     self.paths = paths
