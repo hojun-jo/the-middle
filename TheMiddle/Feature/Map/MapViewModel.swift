@@ -95,7 +95,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   
   private func searchLocation(keyword: String) async {
     do {
-      let coordinate = currentCoordinate?.toString()
+      let coordinate: (latitude: String, longitude: String)? = currentCoordinate?.toString()
       
       searchedLocations = try await locationManager.searchLocation(
         keyword: keyword,

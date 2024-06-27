@@ -77,10 +77,13 @@ extension LocationManager: CLLocationManagerDelegate {
     switch manager.authorizationStatus {
     case .notDetermined:
       manager.requestWhenInUseAuthorization()
+      
     case .authorizedAlways, .authorizedWhenInUse:
       manager.startMonitoringSignificantLocationChanges()
+      
     case .denied, .restricted:
       manager.stopUpdatingLocation()
+      
     default:
       break
     }

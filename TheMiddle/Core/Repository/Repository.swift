@@ -5,6 +5,8 @@
 //  Created by 조호준 on 6/26/24.
 //
 
+import Foundation
+
 final class Repository {
   
   // MARK: - Private property
@@ -37,7 +39,7 @@ final class Repository {
       throw APIError.invalidKey
     }
     
-    let data = try await networkManager.fetchData(kakaoLocation)
+    let data: Data = try await networkManager.fetchData(kakaoLocation)
     let locationDTO: KakaoLocationDTO = try deserializer.deserialize(data)
     
     return transform(kakaoLocation: locationDTO)
@@ -46,7 +48,7 @@ final class Repository {
   // MARK: - Private
   
   private func transform(kakaoLocation: KakaoLocationDTO) -> [Location] {
-    var locations = [Location]()
+    var locations: [Location] = [Location]()
     
     for locationItem in kakaoLocation.documents {
       guard let latitude = Double(locationItem.latitude),

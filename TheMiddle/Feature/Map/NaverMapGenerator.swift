@@ -77,7 +77,7 @@ final class NaverMapGenerator {
   }
   
   private func addMarker(position: Coordinate) {
-    let marker = NMFMarker(position: .init(
+    let marker: NMFMarker = NMFMarker(position: .init(
       lat: position.latitude,
       lng: position.longitude
     ))
@@ -89,7 +89,7 @@ final class NaverMapGenerator {
     start: Coordinate,
     destination: Coordinate
   ) {
-    let startToDestination = [
+    let startToDestination: [NMGLatLng] = [
       NMGLatLng(
         lat: start.latitude,
         lng: start.longitude
@@ -99,8 +99,8 @@ final class NaverMapGenerator {
         lng: destination.longitude
       )
     ]
-    let lineString = NMGLineString(points: startToDestination)
-    let polylineOverlay = NMFPolylineOverlay(lineString as! NMGLineString<AnyObject>)
+    let lineString: NMGLineString<AnyObject> = NMGLineString(points: startToDestination)
+    let polylineOverlay: NMFPolylineOverlay? = NMFPolylineOverlay(lineString)
     
     polylineOverlay?.color = .blue
     polylineOverlay?.mapView = map

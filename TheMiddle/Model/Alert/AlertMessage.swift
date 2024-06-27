@@ -19,8 +19,10 @@ enum AlertMessage {
     switch self {
     case .error(message: let message):
       message
+      
     case .needStartLocation:
       "출발지를 추가해 주세요."
+      
     case .needSearchLocation:
       "검색 장소를 입력해주세요."
     }

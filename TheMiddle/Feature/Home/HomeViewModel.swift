@@ -30,9 +30,9 @@ final class HomeViewModel: ObservableObject, AlertDisplayable {
   // MARK: - Public
   
   func averageCoordinate() -> Coordinate {
-    let locationCount = Double(startLocations.count)
-    var latitudeSum = 0.0
-    var longitudeSum = 0.0
+    let locationCount: Double = Double(startLocations.count)
+    var latitudeSum: Double = 0.0
+    var longitudeSum: Double = 0.0
     
     for location in startLocations {
       latitudeSum += location.coordinate.latitude

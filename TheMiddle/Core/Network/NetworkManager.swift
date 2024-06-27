@@ -22,13 +22,13 @@ final class NetworkManager {
   // MARK: - Public
   
   func fetchData<T: APIType>(_ api: T) async throws -> Data {
-    let request = try createRequest(api)
+    let request: URLRequest = try createRequest(api)
     let (data, response) = try await session.data(
       for: request,
       delegate: nil
     )
     
-    guard let httpResponse = response as? HTTPURLResponse else {
+    guard let httpResponse: HTTPURLResponse = response as? HTTPURLResponse else {
       throw NetworkError.invalidResponse
     }
     
@@ -42,17 +42,17 @@ final class NetworkManager {
   // MARK: - Private
   
   private func createRequest<T: APIType>(_ api: T) throws -> URLRequest {
-    guard var urlComponents = URLComponents(string: api.url) else {
+    guard var urlComponents: URLComponents = URLComponents(string: api.url) else {
       throw NetworkError.invalidURL
     }
     
     urlComponents.queryItems = api.queryItems
     
-    guard let url = urlComponents.url else {
+    guard let url: URL = urlComponents.url else {
       throw NetworkError.invalidURL
     }
     
-    var request = URLRequest(url: url)
+    var request: URLRequest = URLRequest(url: url)
     
     api.headers?.forEach { (key, value) in
       request.addValue(value, forHTTPHeaderField: key)
@@ -73,8 +73,10 @@ enum NetworkError: LocalizedError {
     switch self {
     case .invalidURL:
       return "유효하지 않은 URL입니다."
+      
     case .invalidResponse:
       return "서버에서 응답이 잘못되었습니다."
+      
     case .badStatusCode(let statusCode):
       return "\(statusCode) 네트워크 오류입니다."
     }
