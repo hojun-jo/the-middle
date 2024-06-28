@@ -12,10 +12,12 @@ final class CoordinateTests: XCTestCase {
   var sut: Coordinate!
   
   override func setUpWithError() throws {
+    try super.setUpWithError()
     sut = Coordinate(latitude: 0.0, longitude: 0.0)
   }
   
   override func tearDownWithError() throws {
+    try super.tearDownWithError()
     sut = nil
   }
   
