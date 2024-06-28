@@ -5,11 +5,11 @@
 //  Created by 조호준 on 3/22/24.
 //
 
-struct KakaoLocationDTO: Decodable {
+struct KakaoLocationDTO: Codable, Equatable {
   let documents: [KakaoLocationItem]
 }
 
-struct KakaoLocationItem: Decodable {
+struct KakaoLocationItem: Codable, Equatable {
   let addressName: String
   let categoryGroupCode: String
   let categoryGroupName: String
