@@ -42,6 +42,7 @@
 		38E42D632BBC59BF00B85D42 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E42D622BBC59BF00B85D42 /* Coordinate.swift */; };
 		38E42D6B2BCEA79F00B85D42 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */; };
 		38FE7B0D2C2EB002009FC17C /* DummyKakaoLocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B0C2C2EB002009FC17C /* DummyKakaoLocationDTO.swift */; };
+		38FE7B0F2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B0E2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		38E42D622BBC59BF00B85D42 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		38FE7B0C2C2EB002009FC17C /* DummyKakaoLocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyKakaoLocationDTO.swift; sourceTree = "<group>"; };
+		38FE7B0E2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkDeserializerTests.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				38FE7B0B2C2EAFE0009FC17C /* TestDouble */,
 				3885CC3E2C2E78DA0013A803 /* CoordinateTests.swift */,
+				38FE7B0E2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift */,
 			);
 			path = TheMiddleTests;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3885CC3F2C2E78DA0013A803 /* CoordinateTests.swift in Sources */,
+				38FE7B0F2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift in Sources */,
 				38FE7B0D2C2EB002009FC17C /* DummyKakaoLocationDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
