@@ -189,13 +189,7 @@ private struct SearchResultCellView: View {
           deserializer: JSONNetworkDeserializer(decoder: .init())
         )
       ),
-      searchedLocations: [
-        Location(name: "asdf", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "qwer", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "xcv", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "rtyu", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "vgfh", category: "지하철역", roadAddress: "ㅁㄴㅇㄹ", coordinate: .init(latitude: 0, longitude: 0)),
-      ]
+      searchedLocations: dummyLocations
     ))
 }
 
@@ -204,6 +198,6 @@ private struct SearchResultCellView: View {
     name: "asdf",
     category: "지하철역",
     roadAddress: "성북구",
-    coordinate: .init(latitude: 0, longitude: 0)
+    coordinate: .init(latitude: 0, longitude: 0)!
   ))
 }

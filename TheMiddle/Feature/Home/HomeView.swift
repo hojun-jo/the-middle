@@ -113,18 +113,7 @@ private struct LocationButtonView: View {
 
 #Preview {
   HomeView()
-    .environmentObject(HomeViewModel(
-      startLocations: [
-        Location(name: "asdf", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "qwer", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "zxcv", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "erty", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "dfgh", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "cvbn", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "uoiyui", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-        Location(name: "hjkj", category: "지하철역", roadAddress: "서울 성북구 ㅇㅇ로", coordinate: .init(latitude: 0, longitude: 0)),
-      ]
-    ))
+    .environmentObject(HomeViewModel(startLocations: dummyLocations))
     .environmentObject(MapViewModel(
       locationManager: .init(
         repository: .init(

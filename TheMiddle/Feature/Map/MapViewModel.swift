@@ -71,19 +71,16 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     }
     
     Task {
-      await searchLocation(keyword: keyword)
+      await searchLocation(
+        keyword: keyword,
+        coordinate: currentCoordinate
+      )
       isDisplaySearchResult = true
     }
   }
   
-  func searchSubwayStation(at coordinate: Coordinate) async {
-    setCurrentLocation(.init(
-      name: "중간지점",
-      category: "중간지점",
-      roadAddress: "중간지점",
-      coordinate: coordinate
-    ))
-    await searchLocation(keyword: "지하철역")
+  func searchSubwayStation(at coordinate: Coordinate?) async {
+    await searchLocation(keyword: "지하철역", coordinate: coordinate)
     setMiddleLocation(searchedLocations.first)
   }
   
@@ -93,9 +90,12 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     middleLocation = location
   }
   
-  private func searchLocation(keyword: String) async {
+  private func searchLocation(
+    keyword: String,
+    coordinate: Coordinate?
+  ) async {
     do {
-      let coordinate: (latitude: String, longitude: String)? = currentCoordinate?.toString()
+      let coordinate: (latitude: String, longitude: String)? = coordinate?.toString()
       
       searchedLocations = try await locationManager.searchLocation(
         keyword: keyword,

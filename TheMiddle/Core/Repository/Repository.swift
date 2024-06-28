@@ -51,8 +51,9 @@ final class Repository {
     var locations: [Location] = [Location]()
     
     for locationItem in kakaoLocation.documents {
-      guard let latitude = Double(locationItem.latitude),
-            let longitude = Double(locationItem.longitude)
+      guard let latitude: Double = Double(locationItem.latitude),
+            let longitude: Double = Double(locationItem.longitude),
+            let coordinate: Coordinate = Coordinate(latitude: latitude, longitude: longitude)
       else {
         continue
       }
@@ -61,10 +62,7 @@ final class Repository {
         name: locationItem.placeName,
         category: locationItem.categoryName,
         roadAddress: locationItem.roadAddressName,
-        coordinate: .init(
-          latitude: latitude,
-          longitude: longitude
-        )
+        coordinate: coordinate
       ))
     }
     
