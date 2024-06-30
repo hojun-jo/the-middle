@@ -13,11 +13,13 @@ final class CoordinateTests: XCTestCase {
   
   override func setUpWithError() throws {
     try super.setUpWithError()
+    
     sut = Coordinate(latitude: 0.0, longitude: 0.0)
   }
   
   override func tearDownWithError() throws {
     try super.tearDownWithError()
+    
     sut = nil
   }
   

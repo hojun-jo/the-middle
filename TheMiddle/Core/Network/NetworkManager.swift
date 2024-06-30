@@ -32,7 +32,7 @@ final class NetworkManager {
       throw NetworkError.invalidResponse
     }
     
-    guard (200..<300) ~= httpResponse.statusCode else {
+    guard (200..<400) ~= httpResponse.statusCode else {
       throw NetworkError.badStatusCode(httpResponse.statusCode)
     }
     
@@ -75,7 +75,7 @@ enum NetworkError: LocalizedError {
       return "유효하지 않은 URL입니다."
       
     case .invalidResponse:
-      return "서버에서 응답이 잘못되었습니다."
+      return "네트워크 응답이 잘못되었습니다."
       
     case .badStatusCode(let statusCode):
       return "\(statusCode) 네트워크 오류입니다."
