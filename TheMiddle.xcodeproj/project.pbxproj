@@ -45,6 +45,7 @@
 		38FE7B0F2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B0E2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift */; };
 		38FE7B112C2EB8E5009FC17C /* StubNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B102C2EB8E5009FC17C /* StubNetworkSession.swift */; };
 		38FE7B132C313D4B009FC17C /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B122C313D4B009FC17C /* NetworkManagerTests.swift */; };
+		38FE7B152C31A2CF009FC17C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B142C31A2CF009FC17C /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		38FE7B0E2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNetworkDeserializerTests.swift; sourceTree = "<group>"; };
 		38FE7B102C2EB8E5009FC17C /* StubNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNetworkSession.swift; sourceTree = "<group>"; };
 		38FE7B122C313D4B009FC17C /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		38FE7B142C31A2CF009FC17C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				38CAC6E12BAC8AE70051C648 /* NetworkManager.swift */,
+				38FE7B142C31A2CF009FC17C /* NetworkError.swift */,
 				3885CC222C2BF3460013A803 /* Session */,
 				3885CC212C2BF32F0013A803 /* Serializer */,
 				3885CC202C2BF3280013A803 /* API */,
@@ -619,6 +622,7 @@
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
 				3885CC332C2C0A830013A803 /* Repository.swift in Sources */,
 				3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */,
+				38FE7B152C31A2CF009FC17C /* NetworkError.swift in Sources */,
 				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
