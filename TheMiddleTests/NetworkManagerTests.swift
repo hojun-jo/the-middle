@@ -59,7 +59,7 @@ final class NetworkManagerTests: XCTestCase {
     
     do {
       // when
-      let result: Data = try await sut.fetchData(api)
+      _ = try await sut.fetchData(api)
     } catch {
       // then
       XCTAssertEqual(error.localizedDescription, "500 네트워크 오류입니다.")
@@ -75,10 +75,22 @@ final class NetworkManagerTests: XCTestCase {
     
     do {
       // when
-      let result: Data = try await sut.fetchData(api)
+      _ = try await sut.fetchData(api)
     } catch {
       // then
       XCTAssertEqual(error.localizedDescription, "네트워크 응답이 잘못되었습니다.")
+    }
+  }
+  
+  func test_잘못된URL인API로_fetchData시_invalidURL에러를던진다() async {
+    // given
+    do {
+      // when
+      let api: DummyFailAPI = .init()
+      _ = try await sut.fetchData(api)
+    } catch {
+      // then
+      XCTAssertEqual(error.localizedDescription, "유효하지 않은 URL입니다.")
     }
   }
 }
