@@ -60,7 +60,8 @@ final class HomeViewModel: ObservableObject, AlertDisplayable {
   }
   
   func removeLocation(at index: Int?) {
-    if let index {
+    if let index,
+       0..<startLocations.count ~= index {
       startLocations.remove(at: index)
     }
   }
