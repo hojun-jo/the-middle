@@ -79,9 +79,11 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     }
   }
   
-  func searchSubwayStation(at coordinate: Coordinate?) async {
-    await searchLocation(keyword: "지하철역", coordinate: coordinate)
-    setMiddleLocation(searchedLocations.first)
+  func searchSubwayStation(at coordinate: Coordinate?) {
+    Task {
+      await searchLocation(keyword: "지하철역", coordinate: coordinate)
+      setMiddleLocation(searchedLocations.first)
+    }
   }
   
   // MARK: - Private
