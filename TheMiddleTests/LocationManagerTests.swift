@@ -1,5 +1,5 @@
 //
-//  RepositoryTests.swift
+//  LocationManagerTests.swift
 //  TheMiddleTests
 //
 //  Created by 조호준 on 7/1/24.
@@ -8,21 +8,21 @@
 import XCTest
 @testable import TheMiddle
 
-final class RepositoryTests: XCTestCase {
-  var sut: Repository!
+final class LocationManagerTests: XCTestCase {
+  var sut: LocationManager!
   var dummy: Data!
   
   override func setUpWithError() throws {
     try super.setUpWithError()
     
     dummy = try JSONEncoder().encode(dummyKakaoLocation)
-    sut = Repository(
+    sut = .init(repository: Repository(
       networkManager: .init(session: StubNetworkSession(
         dummy: dummy,
         response: HTTPURLResponse()
       )),
       deserializer: JSONNetworkDeserializer(decoder: .init())
-    )
+    ))
   }
   
   override func tearDownWithError() throws {
@@ -32,7 +32,7 @@ final class RepositoryTests: XCTestCase {
     dummy = nil
   }
   
-  func test_올바른키워드와위경도를입력하면_fetchLocation시_올바른Location배열을리턴한다() async throws {
+  func test_올바른키워드와위경도를입력하면_searchLocation시_올바른Location배열을리턴한다() async throws {
     // given
     let expectation: [Location] = [Location(
       name: "성신여대입구역 4호선",
@@ -45,7 +45,7 @@ final class RepositoryTests: XCTestCase {
     )]
     
     // when
-    let result: [Location] = try await sut.fetchLocations(
+    let result: [Location] = try await sut.searchLocation(
       keyword: "성신역",
       latitude: "37.59296812939267",
       longitude: "127.0171260607647"
