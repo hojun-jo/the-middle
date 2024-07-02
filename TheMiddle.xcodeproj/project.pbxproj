@@ -50,6 +50,7 @@
 		38FE7B1B2C329089009FC17C /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B1A2C329089009FC17C /* RepositoryTests.swift */; };
 		38FE7B1D2C32ADC0009FC17C /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B1C2C32ADC0009FC17C /* LocationManagerTests.swift */; };
 		38FE7B212C32BF0B009FC17C /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B202C32BF0B009FC17C /* HomeViewModelTests.swift */; };
+		38FE7B232C32DA63009FC17C /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE7B222C32DA63009FC17C /* MapViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		38FE7B1A2C329089009FC17C /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		38FE7B1C2C32ADC0009FC17C /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 		38FE7B202C32BF0B009FC17C /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		38FE7B222C32DA63009FC17C /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
 		4B219453BE5606680C90D418 /* Pods-TheMiddle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.release.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.release.xcconfig"; sourceTree = "<group>"; };
 		71BC7F58245F7AFF2885D218 /* Pods_TheMiddle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMiddle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8BE27E9FD08682CF9F9FA8A /* Pods-TheMiddle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMiddle.debug.xcconfig"; path = "Target Support Files/Pods-TheMiddle/Pods-TheMiddle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				38FE7B1A2C329089009FC17C /* RepositoryTests.swift */,
 				38FE7B1C2C32ADC0009FC17C /* LocationManagerTests.swift */,
 				38FE7B202C32BF0B009FC17C /* HomeViewModelTests.swift */,
+				38FE7B222C32DA63009FC17C /* MapViewModelTests.swift */,
 			);
 			path = TheMiddleTests;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				38FE7B132C313D4B009FC17C /* NetworkManagerTests.swift in Sources */,
 				38FE7B1B2C329089009FC17C /* RepositoryTests.swift in Sources */,
 				3885CC3F2C2E78DA0013A803 /* CoordinateTests.swift in Sources */,
+				38FE7B232C32DA63009FC17C /* MapViewModelTests.swift in Sources */,
 				38FE7B0F2C2EB295009FC17C /* JSONNetworkDeserializerTests.swift in Sources */,
 				38FE7B212C32BF0B009FC17C /* HomeViewModelTests.swift in Sources */,
 				38FE7B1D2C32ADC0009FC17C /* LocationManagerTests.swift in Sources */,
