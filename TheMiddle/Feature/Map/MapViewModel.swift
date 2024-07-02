@@ -66,6 +66,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   
   func searchButtonAction(keyword: String) async {
     guard keyword != "" else {
+      searchedLocations = []
       displayAlert(message: .needSearchLocation)
       return
     }
