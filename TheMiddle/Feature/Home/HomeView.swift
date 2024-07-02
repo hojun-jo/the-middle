@@ -39,9 +39,11 @@ struct HomeView: View {
               return
             }
             
-            let coordinate: Coordinate? = homeViewModel.averageCoordinate()
-            mapViewModel.searchSubwayStation(at: coordinate)
-            pathModel.paths.append(.mapView(isSearchMode: false))
+            Task {
+              let coordinate: Coordinate? = homeViewModel.averageCoordinate()
+              await mapViewModel.searchSubwayStation(at: coordinate)
+              pathModel.paths.append(.mapView(isSearchMode: false))
+            }
           },
           label: {
             Image(systemName: "magnifyingglass")

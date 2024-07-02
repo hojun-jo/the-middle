@@ -64,29 +64,25 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     isDisplaySearchResult = false
   }
   
-  func searchButtonAction(keyword: String) {
+  func searchButtonAction(keyword: String) async {
     guard keyword != "" else {
       displayAlert(message: .needSearchLocation)
       return
     }
     
-    Task {
-      await searchLocation(
-        keyword: keyword,
-        coordinate: currentCoordinate
-      )
-      isDisplaySearchResult = true
-    }
+    await searchLocation(
+      keyword: keyword,
+      coordinate: currentCoordinate
+    )
+    isDisplaySearchResult = true
   }
   
-  func searchSubwayStation(at coordinate: Coordinate?) {
-    Task {
-      await searchLocation(
-        keyword: "지하철역",
-        coordinate: coordinate
-      )
-      setMiddleLocation(searchedLocations.first)
-    }
+  func searchSubwayStation(at coordinate: Coordinate?) async {
+    await searchLocation(
+      keyword: "지하철역",
+      coordinate: coordinate
+    )
+    setMiddleLocation(searchedLocations.first)
   }
   
   // MARK: - Private

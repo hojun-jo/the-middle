@@ -40,7 +40,9 @@ struct MapView: View {
             pathModel.paths.removeLast()
           },
           rightButtonAction: { placeName in
-            mapViewModel.searchButtonAction(keyword: placeName)
+            Task {
+              await mapViewModel.searchButtonAction(keyword: placeName)
+            }
           },
           isSearchMode: isSearchMode
         )
