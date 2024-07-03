@@ -11,18 +11,22 @@ import XCTest
 final class LocationManagerTests: XCTestCase {
   var sut: LocationManager!
   var dummy: Data!
+  var stubCLLocationManager: StubCLLocationManager! = .init()
   
   override func setUpWithError() throws {
     try super.setUpWithError()
     
     dummy = try JSONEncoder().encode(dummyKakaoLocation)
-    sut = .init(repository: Repository(
-      networkManager: .init(session: StubNetworkSession(
-        dummy: dummy,
-        response: HTTPURLResponse()
-      )),
-      deserializer: JSONNetworkDeserializer(decoder: .init())
-    ))
+    sut = .init(
+      locationManager: stubCLLocationManager,
+      repository: Repository(
+        networkManager: .init(session: StubNetworkSession(
+          dummy: dummy,
+          response: HTTPURLResponse()
+        )),
+        deserializer: JSONNetworkDeserializer(decoder: .init())
+      )
+    )
   }
   
   override func tearDownWithError() throws {
@@ -53,5 +57,30 @@ final class LocationManagerTests: XCTestCase {
     
     // then
     XCTAssertEqual(result, expectation)
+  }
+  
+  func test_locationManager의location이_nil이아니면_currentCoordinate는올바른값을가진다() {
+    // given
+    let expectation: Coordinate? = .init(
+      latitude: 37.59296812939267,
+      longitude: 127.0171260607647
+    )
+    
+    // when
+    let result: Coordinate? = sut.currentCoordinate
+    
+    // then
+    XCTAssertEqual(result, expectation)
+  }
+  
+  func test_locationManager의location이_nil이면_currentCoordinate는nil이다() {
+    // given
+    stubCLLocationManager.location = nil
+    
+    // when
+    let result: Coordinate? = sut.currentCoordinate
+    
+    // then
+    XCTAssertNil(result)
   }
 }
