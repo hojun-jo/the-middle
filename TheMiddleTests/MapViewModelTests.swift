@@ -156,4 +156,85 @@ final class MapViewModelTests: XCTestCase {
     // then
     XCTAssertEqual(sut.middleLocation, expectation)
   }
+  
+  func test_서버에러가발생한경우_searchSubwayStation시_alertMessage가500오류다() async {
+    // given
+    sut = .init(locationManager: .init(
+      repository: .init(
+        networkManager: .init(session: StubNetworkSession(
+          dummy: dummyData,
+          response: HTTPURLResponse(
+            url: .init(string: "https://dapi.kakao.com/v2/local/search/keyword.json")!,
+            statusCode: 500,
+            httpVersion: nil,
+            headerFields: nil
+          )!
+        )),
+        deserializer: JSONNetworkDeserializer(decoder: .init())
+      )
+    ))
+    
+    // when
+    await sut.searchSubwayStation(at: nil)
+    
+    // then
+    XCTAssertEqual(sut.alertMessage, "500 네트워크 오류입니다.")
+  }
+  
+  func test_currentLocation이dummyLocation이면_currentCoordinate는_dummyLocation의Coordinate다() {
+    // given
+    sut.setCurrentLocation(dummyLocation)
+    
+    // when
+    let result: Coordinate? = sut.currentCoordinate
+    
+    // then
+    XCTAssertEqual(result, dummyLocation.coordinate)
+  }
+  
+  func test_currentLocation이없고_locationManager의currentCoordinate가있을때_currentCoordiante는locationManager의currentCoordinate다() {
+    // given
+    let stubLocationManager: StubCLLocationManager = .init()
+    let latitude: Double = Double(stubLocationManager.location!.coordinate.latitude)
+    let longitude: Double = Double(stubLocationManager.location!.coordinate.longitude)
+    sut = .init(locationManager: .init(
+      locationManager: stubLocationManager,
+      repository: .init(
+        networkManager: .init(session: StubNetworkSession(
+          dummy: dummyData,
+          response: HTTPURLResponse()
+        )),
+        deserializer: JSONNetworkDeserializer(decoder: .init())
+      )
+    ))
+    
+    // when
+    let result: Coordinate? = sut.currentCoordinate
+    
+    // then
+    XCTAssertEqual(result?.latitude, latitude)
+    XCTAssertEqual(result?.longitude, longitude)
+  }
+  
+  func test_currentLocation과locationManager의currentLocation모두nil이면_currentCoordinate는_nil이다() {
+    // given
+    let stubLocationManager: StubCLLocationManager = .init()
+    stubLocationManager.location = nil
+    sut = .init(locationManager: .init(
+      locationManager: stubLocationManager,
+      repository: .init(
+        networkManager: .init(session: StubNetworkSession(
+          dummy: dummyData,
+          response: HTTPURLResponse()
+        )),
+        deserializer: JSONNetworkDeserializer(decoder: .init())
+      )
+    ))
+    
+    // when
+    let result: Coordinate? = sut.currentCoordinate
+    
+    // then
+    XCTAssertNil(result)
+  }
 }
