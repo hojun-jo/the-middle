@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-final class LocationManager: NSObject, LocationManagerProtocol {
+final class LocationManager: NSObject {
   
   // MARK: - Public property
   
@@ -24,13 +24,13 @@ final class LocationManager: NSObject, LocationManagerProtocol {
   
   // MARK: - Private property
   
-  private let locationManager: CLLocationManager
+  private let locationManager: LocationManagerProtocol
   private let repository: Repository
   
   // MARK: - Lifecycle
   
   init(
-    locationManager: CLLocationManager = .init(),
+    locationManager: LocationManagerProtocol = CLLocationManager(),
     repository: Repository
   ) {
     self.locationManager = locationManager

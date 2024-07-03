@@ -5,12 +5,13 @@
 //  Created by 조호준 on 6/26/24.
 //
 
+import CoreLocation
+
 protocol LocationManagerProtocol: AnyObject {
-  var currentCoordinate: Coordinate? { get }
-  
-  func searchLocation(
-    keyword: String,
-    latitude: String?,
-    longitude: String?
-  ) async throws -> [Location]
+  var location: CLLocation? { get }
+  var delegate: CLLocationManagerDelegate? { get set }
+  var distanceFilter: CLLocationDistance { get set }
+  var desiredAccuracy: CLLocationAccuracy { get set }
 }
+
+extension CLLocationManager: LocationManagerProtocol {}
