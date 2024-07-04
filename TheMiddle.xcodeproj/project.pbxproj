@@ -137,6 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		386087612C36E13300744005 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				38E42D692BCEA76A00B85D42 /* Alert */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		3885CC1F2C2BF3150013A803 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,7 +316,6 @@
 		38CAC6B22BAC1BC60051C648 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38E42D692BCEA76A00B85D42 /* Alert */,
 				38CAC6C22BAC42160051C648 /* Path */,
 				38CAC6D12BAC60890051C648 /* Location */,
 			);
@@ -340,6 +347,7 @@
 				3885CC312C2C0A650013A803 /* Repository */,
 				3885CC1F2C2BF3150013A803 /* Location */,
 				38CAC6DB2BAC852E0051C648 /* Extension */,
+				386087612C36E13300744005 /* Utility */,
 			);
 			path = Core;
 			sourceTree = "<group>";
