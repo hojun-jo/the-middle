@@ -52,7 +52,10 @@ final class NaverMapGenerator {
       throw MapError.notFoundCurrentCoordinate
     }
     
-    addMarker(position: coordinate)
+    addMarker(
+      position: coordinate,
+      color: .green
+    )
     setMapCenter(position: coordinate)
   }
   
@@ -69,19 +72,29 @@ final class NaverMapGenerator {
         start: location.coordinate,
         destination: middleLocation.coordinate
       )
-      addMarker(position: location.coordinate)
+      addMarker(
+        position: location.coordinate,
+        color: .green
+      )
     }
     
-    addMarker(position: middleLocation.coordinate)
+    addMarker(
+      position: middleLocation.coordinate,
+      color: .blue
+    )
     setMapCenter(position: middleLocation.coordinate)
   }
   
-  private func addMarker(position: Coordinate) {
+  private func addMarker(
+    position: Coordinate,
+    color: UIColor
+  ) {
     let marker: NMFMarker = NMFMarker(position: .init(
       lat: position.latitude,
       lng: position.longitude
     ))
     
+    marker.iconTintColor = color
     marker.mapView = map
   }
   
