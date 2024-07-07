@@ -237,4 +237,26 @@ final class MapViewModelTests: XCTestCase {
     // then
     XCTAssertNil(result)
   }
+  
+  func test_displayAlert에_notFoundCurrentCoodinate에러가전달되면_얼럿버튼이두개다() {
+    // given
+    let input: MapError = .notFoundCurrentCoordinate
+    
+    // when
+    sut.displayAlert(error: input)
+    
+    // then
+    XCTAssertEqual(sut.alertButtons.count, 2)
+  }
+  
+  func test_displayAlert에_다른에러가전달되면_얼럿버튼이하나다() {
+    // given
+    let input: MapError = .notFoundMiddleLocation
+    
+    // when
+    sut.displayAlert(error: input)
+    
+    // then
+    XCTAssertEqual(sut.alertButtons.count, 1)
+  }
 }
