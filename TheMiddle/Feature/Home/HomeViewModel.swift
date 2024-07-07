@@ -14,17 +14,25 @@ final class HomeViewModel: ObservableObject, AlertDisplayable {
   @Published var startLocations: [Location]
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
+  @Published var alertButtons: [AlertButtonItem]
   
   // MARK: - Lifecycle
   
   init(
     startLocations: [Location] = [],
     isDisplayAlert: Bool = false,
-    alertMessage: String = ""
+    alertMessage: String = "",
+    alertButtons: [AlertButtonItem] = [
+      .init(
+        action: {},
+        text: "확인"
+      )
+    ]
   ) {
     self.startLocations = startLocations
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
+    self.alertButtons = alertButtons
   }
   
   // MARK: - Public

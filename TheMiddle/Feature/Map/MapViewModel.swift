@@ -5,7 +5,7 @@
 //  Created by 조호준 on 3/27/24.
 //
 
-import Foundation
+import UIKit
 
 @MainActor
 final class MapViewModel: ObservableObject, AlertDisplayable {
@@ -15,6 +15,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   @Published var isDisplaySearchResult: Bool
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
+  @Published var alertButtons: [AlertButtonItem]
   
   var currentCoordinate: Coordinate? {
     if let currentLocation {
@@ -40,6 +41,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     isDisplaySearchResult: Bool = false,
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
+    alertButtons: [AlertButtonItem] = [],
     locationManager: LocationManager,
     currentLocation: Location? = nil,
     middleLocation: Location? = nil,
@@ -48,6 +50,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     self.isDisplaySearchResult = isDisplaySearchResult
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
+    self.alertButtons = alertButtons
     self.locationManager = locationManager
     self.currentLocation = currentLocation
     self.middleLocation = middleLocation
@@ -86,6 +89,31 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     setMiddleLocation(searchedLocations.first)
   }
   
+  func displayAlert(error: Error) {
+    if let error = error as? MapError,
+       error == .notFoundCurrentCoordinate {
+      displayAlert(
+        message: .error(message: error.localizedDescription),
+        buttons: [
+          .init(
+            action: {
+              Task {
+                await self.openSettings()
+              }
+            },
+            text: "권한 설정"
+          ),
+          .init(
+            action: {},
+            text: "취소"
+          )
+        ]
+      )
+    } else {
+      displayAlert(message: .error(message: error.localizedDescription))
+    }
+  }
+  
   // MARK: - Private
   
   private func setMiddleLocation(_ location: Location?) {
@@ -107,6 +135,12 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     } catch {
       displayAlert(message: .error(message: error.localizedDescription))
       print(error.localizedDescription)
+    }
+  }
+  
+  private func openSettings() async {
+    if let url: URL = .init(string: UIApplication.openSettingsURLString) {
+      await UIApplication.shared.open(url)
     }
   }
 }

@@ -63,12 +63,12 @@ struct HomeView: View {
       homeViewModel.alertMessage,
       isPresented: $homeViewModel.isDisplayAlert,
       actions: {
-        Button(
-          action: {},
-          label: {
-            Text("확인")
-          }
-        )
+        ForEach(homeViewModel.alertButtons, id: \.self) { button in
+          Button(
+            action: button.action,
+            label: { Text(button.text) }
+          )
+        }
       },
       message: {}
     )

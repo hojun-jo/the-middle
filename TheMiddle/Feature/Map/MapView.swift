@@ -61,12 +61,12 @@ struct MapView: View {
       mapViewModel.alertMessage,
       isPresented: $mapViewModel.isDisplayAlert,
       actions: {
-        Button(
-          action: {},
-          label: {
-            Text("확인")
-          }
-        )
+        ForEach(mapViewModel.alertButtons, id: \.self) { button in
+          Button(
+            action: button.action,
+            label: { Text(button.text) }
+          )
+        }
       },
       message: {}
     )
@@ -98,8 +98,8 @@ private struct NaverMapView: UIViewRepresentable {
         startLocations: homeViewModel.startLocations
       )
     } catch {
-      mapViewModel.displayAlert(message: .error(message: error.localizedDescription))
-      // TODO: - 위치 권한 확인
+      mapViewModel.displayAlert(error: error)
+      
       return NMFMapView()
     }
   }
