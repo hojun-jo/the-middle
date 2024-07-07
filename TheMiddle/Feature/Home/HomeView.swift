@@ -12,6 +12,8 @@ struct HomeView: View {
   @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
   
+  @ScaledMetric private var searchButtonWidth: Double = 30.0
+  
   var body: some View {
     GeometryReader { geometry in
       VStack(alignment: .center) {
@@ -49,7 +51,7 @@ struct HomeView: View {
             Image(systemName: "magnifyingglass")
               .renderingMode(.template)
               .resizable()
-              .frame(width: 30, height: 30)
+              .frame(width: searchButtonWidth, height: searchButtonWidth)
               .foregroundStyle(.white)
               .fontWeight(.bold)
           }
@@ -80,6 +82,8 @@ private struct LocationButtonView: View {
   @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var mapViewModel: MapViewModel
   
+  @ScaledMetric private var height: Double = 21.0
+  
   private let location: Location?
   
   fileprivate init(location: Location? = nil) {
@@ -107,6 +111,7 @@ private struct LocationButtonView: View {
         Spacer()
       }
     }
+    .frame(height: height)
     .padding()
   }
 }
