@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		385C50E92C393B9100FD3D52 /* AlertButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */; };
 		3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */; };
 		3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2B2C2BF5990013A803 /* NetworkSession.swift */; };
 		3885CC2E2C2BF94A0013A803 /* NetworkDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonItem.swift; sourceTree = "<group>"; };
 		3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		3885CC2B2C2BF5990013A803 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		3885CC2D2C2BF94A0013A803 /* NetworkDeserializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializable.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 			children = (
 				38A5133F2BEE4DC2001F1E10 /* Interface */,
 				38E42D6A2BCEA79F00B85D42 /* AlertMessage.swift */,
+				385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
+				385C50E92C393B9100FD3D52 /* AlertButtonItem.swift in Sources */,
 				3885CC332C2C0A830013A803 /* Repository.swift in Sources */,
 				3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */,
 				38FE7B152C31A2CF009FC17C /* NetworkError.swift in Sources */,
