@@ -16,49 +16,52 @@ struct HomeView: View {
   
   var body: some View {
     GeometryReader { geometry in
-      VStack(alignment: .center) {
-        List {
-          ForEach(homeViewModel.startLocations, id: \.self) { location in
-            LocationButtonView(location: location)
-          }
-          .onDelete(perform: { indexSet in
-            homeViewModel.removeLocation(at: indexSet.first)
-          })
-          
-          LocationButtonView()
-            .background(.blue)
-            .foregroundStyle(.white)
-            .clipShape(.buttonBorder)
-            .listRowSeparator(.hidden)
-        }
-        .padding()
-        .listStyle(.plain)
-        
-        Button(
-          action: {
-            guard !homeViewModel.startLocations.isEmpty else {
-              homeViewModel.displayAlert(message: .needStartLocation)
-              return
+      NavigationView {
+        VStack(alignment: .center) {
+          List {
+            ForEach(homeViewModel.startLocations, id: \.self) { location in
+              LocationButtonView(location: location)
             }
+            .onDelete(perform: { indexSet in
+              homeViewModel.removeLocation(at: indexSet.first)
+            })
             
-            Task {
-              let coordinate: Coordinate? = homeViewModel.averageCoordinate()
-              await mapViewModel.searchSubwayStation(at: coordinate)
-              pathModel.paths.append(.mapView(isSearchMode: false))
-            }
-          },
-          label: {
-            Image(systemName: "magnifyingglass")
-              .renderingMode(.template)
-              .resizable()
-              .frame(width: searchButtonWidth, height: searchButtonWidth)
+            LocationButtonView()
+              .background(.blue)
               .foregroundStyle(.white)
-              .fontWeight(.bold)
+              .clipShape(.buttonBorder)
+              .listRowSeparator(.hidden)
           }
-        )
-        .frame(width: geometry.size.width)
-        .padding(.vertical)
-        .background(.green)
+          .padding()
+          .listStyle(.plain)
+          .toolbar { EditButton() }
+          
+          Button(
+            action: {
+              guard !homeViewModel.startLocations.isEmpty else {
+                homeViewModel.displayAlert(message: .needStartLocation)
+                return
+              }
+              
+              Task {
+                let coordinate: Coordinate? = homeViewModel.averageCoordinate()
+                await mapViewModel.searchSubwayStation(at: coordinate)
+                pathModel.paths.append(.mapView(isSearchMode: false))
+              }
+            },
+            label: {
+              Image(systemName: "magnifyingglass")
+                .renderingMode(.template)
+                .resizable()
+                .frame(width: searchButtonWidth, height: searchButtonWidth)
+                .foregroundStyle(.white)
+                .fontWeight(.bold)
+            }
+          )
+          .frame(width: geometry.size.width)
+          .padding(.vertical)
+          .background(.green)
+        }
       }
     }
     .alert(
