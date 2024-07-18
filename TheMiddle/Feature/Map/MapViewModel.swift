@@ -63,6 +63,10 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     currentLocation = location
   }
   
+  func openSearchResult() {
+    isDisplaySearchResult = true
+  }
+  
   func closeSearchResult() {
     isDisplaySearchResult = false
   }
@@ -78,7 +82,6 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
       keyword: keyword,
       coordinate: currentCoordinate
     )
-    isDisplaySearchResult = true
   }
   
   func searchSubwayStation(at coordinate: Coordinate?) async {

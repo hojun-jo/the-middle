@@ -42,6 +42,7 @@ struct MapView: View {
           rightButtonAction: { placeName in
             Task {
               await mapViewModel.searchButtonAction(keyword: placeName)
+              mapViewModel.openSearchResult()
             }
           },
           isSearchMode: isSearchMode
