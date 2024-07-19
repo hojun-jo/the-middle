@@ -25,6 +25,7 @@ struct HomeView: View {
             .onDelete(perform: { indexSet in
               homeViewModel.removeLocation(at: indexSet.first)
             })
+            .accessibilityElement(children: .combine)
             
             LocationButtonView()
               .background(.blue)
@@ -34,7 +35,10 @@ struct HomeView: View {
           }
           .padding()
           .listStyle(.plain)
-          .toolbar { EditButton() }
+          .toolbar {
+            EditButton()
+              .accessibilityHint(.init("출발지 항목을 삭제할 수 있습니다."))
+          }
           
           Button(
             action: {
@@ -61,6 +65,7 @@ struct HomeView: View {
           .frame(width: geometry.size.width)
           .padding(.vertical)
           .background(.green)
+          .accessibilityLabel(.init("중간 지점 검색"))
         }
       }
     }
