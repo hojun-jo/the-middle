@@ -156,6 +156,8 @@ private struct SearchResultCellView: View {
             .font(.caption)
             .foregroundStyle(.gray)
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(.init("\(location.name)"))
         
         Spacer()
         
