@@ -37,7 +37,7 @@ struct HomeView: View {
           .listStyle(.plain)
           .toolbar {
             EditButton()
-              .accessibilityHint(.init("출발지 항목을 삭제할 수 있습니다."))
+              .accessibilityHint(.init(MapNamespace.canDeleteStartLocation))
           }
           
           Button(
@@ -65,7 +65,7 @@ struct HomeView: View {
           .frame(width: geometry.size.width)
           .padding(.vertical)
           .background(.green)
-          .accessibilityLabel(.init("중간 지점 검색"))
+          .accessibilityLabel(.init(MapNamespace.searchMiddleLocation))
         }
       }
     }
@@ -109,7 +109,7 @@ private struct LocationButtonView: View {
             pathModel.paths.append(.mapView(isSearchMode: true))
           },
           label: {
-            Text(location?.name ?? "출발지 추가")
+            Text(location?.name ?? MapNamespace.addStartLocation)
           }
         )
         .frame(width: geometry.size.width * 0.8)

@@ -40,13 +40,13 @@ struct CustomNavigationBar: View {
         
         if isSearchMode {
           TextField(
-            "장소, 버스, 지하철, 주소 검색",
+            MapNamespace.searchPlaceholder,
             text: $placeName
           )
           .padding(.horizontal, 5)
           .autocorrectionDisabled()
           .textFieldStyle(.roundedBorder)
-          .accessibilityLabel(.init("출발지 검색 창"))
+          .accessibilityLabel(.init(MapNamespace.startLocationSearchField))
           
           Button(
             action: { rightButtonAction(placeName) },
@@ -55,7 +55,7 @@ struct CustomNavigationBar: View {
           .padding()
           .accessibilityLabel(.init("검색"))
         } else {
-          Text("중간 위치 검색 결과")
+          Text(MapNamespace.middleSearchResult)
           
           Spacer()
           

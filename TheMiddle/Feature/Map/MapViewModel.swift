@@ -86,7 +86,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   
   func searchSubwayStation(at coordinate: Coordinate?) async {
     await searchLocation(
-      keyword: "지하철역",
+      keyword: MapNamespace.subwayStation,
       coordinate: coordinate
     )
     setMiddleLocation(searchedLocations.first)
