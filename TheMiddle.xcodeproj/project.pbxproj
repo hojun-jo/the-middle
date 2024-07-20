@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		385530B72C4B9B33002C3C2A /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B62C4B9B33002C3C2A /* ImageName.swift */; };
 		385530B92C4BA15B002C3C2A /* MapNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B82C4BA15B002C3C2A /* MapNamespace.swift */; };
+		385530BB2C4BA790002C3C2A /* UtilityNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */; };
 		385C50E92C393B9100FD3D52 /* AlertButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */; };
 		3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */; };
 		3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2B2C2BF5990013A803 /* NetworkSession.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		385530B62C4B9B33002C3C2A /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 		385530B82C4BA15B002C3C2A /* MapNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNamespace.swift; sourceTree = "<group>"; };
+		385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityNamespace.swift; sourceTree = "<group>"; };
 		385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonItem.swift; sourceTree = "<group>"; };
 		3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		3885CC2B2C2BF5990013A803 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				385530B62C4B9B33002C3C2A /* ImageName.swift */,
 				385530B82C4BA15B002C3C2A /* MapNamespace.swift */,
+				385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */,
 			);
 			path = Namespace;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				385530B72C4B9B33002C3C2A /* ImageName.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
 				3885CC372C2C2DB90013A803 /* LocationManagerProtocol.swift in Sources */,
+				385530BB2C4BA790002C3C2A /* UtilityNamespace.swift in Sources */,
 				3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */,
 				38CAC6A52BAC1B3A0051C648 /* TheMiddleApp.swift in Sources */,
 				38CAC6F72BB454970051C648 /* MapViewModel.swift in Sources */,

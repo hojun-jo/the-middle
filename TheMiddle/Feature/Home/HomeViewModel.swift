@@ -25,7 +25,7 @@ final class HomeViewModel: ObservableObject, AlertDisplayable {
     alertButtons: [AlertButtonItem] = [
       .init(
         action: {},
-        text: "확인"
+        text: UtilityNamespace.confirm
       )
     ]
   ) {

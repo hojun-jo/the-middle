@@ -34,7 +34,7 @@ struct CustomNavigationBar: View {
           label: { Image(systemName: ImageName.leftArrow) }
         )
         .padding()
-        .accessibilityLabel(.init("뒤로가기"))
+        .accessibilityLabel(.init(UtilityNamespace.back))
         
         Spacer()
         
@@ -53,7 +53,7 @@ struct CustomNavigationBar: View {
             label: { Image(systemName: ImageName.magnifyingglass) }
           )
           .padding()
-          .accessibilityLabel(.init("검색"))
+          .accessibilityLabel(.init(UtilityNamespace.search))
         } else {
           Text(MapNamespace.middleSearchResult)
           

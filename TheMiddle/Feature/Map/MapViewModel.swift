@@ -104,11 +104,11 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
                 await self.openSettings()
               }
             },
-            text: "권한 설정"
+            text: UtilityNamespace.setAuthority
           ),
           .init(
             action: {},
-            text: "취소"
+            text: UtilityNamespace.cancel
           )
         ]
       )

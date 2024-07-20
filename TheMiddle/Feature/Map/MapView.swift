@@ -171,7 +171,7 @@ private struct SearchResultCellView: View {
             pathModel.paths.removeLast()
           },
           label: {
-            Text("선택")
+            Text(UtilityNamespace.choose)
           }
         )
         .padding()
