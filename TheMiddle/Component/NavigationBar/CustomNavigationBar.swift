@@ -34,6 +34,7 @@ struct CustomNavigationBar: View {
           label: { Image(systemName: "arrow.left") }
         )
         .padding()
+        .accessibilityLabel(.init("뒤로가기"))
         
         Spacer()
         
@@ -45,12 +46,14 @@ struct CustomNavigationBar: View {
           .padding(.horizontal, 5)
           .autocorrectionDisabled()
           .textFieldStyle(.roundedBorder)
+          .accessibilityLabel(.init("출발지 검색 창"))
           
           Button(
             action: { rightButtonAction(placeName) },
             label: { Image(systemName: "magnifyingglass") }
           )
           .padding()
+          .accessibilityLabel(.init("검색"))
         } else {
           Text("중간 위치 검색 결과")
           
