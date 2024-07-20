@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		385530B72C4B9B33002C3C2A /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B62C4B9B33002C3C2A /* ImageName.swift */; };
+		385530B72C4B9B33002C3C2A /* ImageNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B62C4B9B33002C3C2A /* ImageNamespace.swift */; };
 		385530B92C4BA15B002C3C2A /* MapNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B82C4BA15B002C3C2A /* MapNamespace.swift */; };
 		385530BB2C4BA790002C3C2A /* UtilityNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */; };
 		385C50E92C393B9100FD3D52 /* AlertButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */; };
@@ -69,7 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		385530B62C4B9B33002C3C2A /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
+		385530B62C4B9B33002C3C2A /* ImageNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNamespace.swift; sourceTree = "<group>"; };
 		385530B82C4BA15B002C3C2A /* MapNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNamespace.swift; sourceTree = "<group>"; };
 		385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityNamespace.swift; sourceTree = "<group>"; };
 		385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonItem.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		385530B52C4B99F4002C3C2A /* Namespace */ = {
 			isa = PBXGroup;
 			children = (
-				385530B62C4B9B33002C3C2A /* ImageName.swift */,
+				385530B62C4B9B33002C3C2A /* ImageNamespace.swift */,
 				385530B82C4BA15B002C3C2A /* MapNamespace.swift */,
 				385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */,
 			);
@@ -680,7 +680,7 @@
 				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
-				385530B72C4B9B33002C3C2A /* ImageName.swift in Sources */,
+				385530B72C4B9B33002C3C2A /* ImageNamespace.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
 				3885CC372C2C2DB90013A803 /* LocationManagerProtocol.swift in Sources */,
 				385530BB2C4BA790002C3C2A /* UtilityNamespace.swift in Sources */,
