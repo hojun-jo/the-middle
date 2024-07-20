@@ -54,7 +54,7 @@ struct HomeView: View {
               }
             },
             label: {
-              Image(systemName: "magnifyingglass")
+              Image(systemName: ImageName.magnifyingglass)
                 .renderingMode(.template)
                 .resizable()
                 .frame(width: searchButtonWidth, height: searchButtonWidth)

@@ -31,7 +31,7 @@ struct CustomNavigationBar: View {
       HStack {
         Button(
           action: leftButtonAction,
-          label: { Image(systemName: "arrow.left") }
+          label: { Image(systemName: ImageName.leftArrow) }
         )
         .padding()
         .accessibilityLabel(.init("뒤로가기"))
@@ -50,7 +50,7 @@ struct CustomNavigationBar: View {
           
           Button(
             action: { rightButtonAction(placeName) },
-            label: { Image(systemName: "magnifyingglass") }
+            label: { Image(systemName: ImageName.magnifyingglass) }
           )
           .padding()
           .accessibilityLabel(.init("검색"))
@@ -61,7 +61,7 @@ struct CustomNavigationBar: View {
           
           Button(
             action: {},
-            label: { Image(systemName: "magnifyingglass") }
+            label: { Image(systemName: ImageName.magnifyingglass) }
           )
           .padding()
           .hidden()

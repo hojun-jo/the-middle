@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		385530B72C4B9B33002C3C2A /* ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B62C4B9B33002C3C2A /* ImageName.swift */; };
 		385C50E92C393B9100FD3D52 /* AlertButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */; };
 		3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */; };
 		3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885CC2B2C2BF5990013A803 /* NetworkSession.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		385530B62C4B9B33002C3C2A /* ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageName.swift; sourceTree = "<group>"; };
 		385C50E82C393B9100FD3D52 /* AlertButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonItem.swift; sourceTree = "<group>"; };
 		3885CC292C2BF47A0013A803 /* NetworkSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionProtocol.swift; sourceTree = "<group>"; };
 		3885CC2B2C2BF5990013A803 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385530B52C4B99F4002C3C2A /* Namespace */ = {
+			isa = PBXGroup;
+			children = (
+				385530B62C4B9B33002C3C2A /* ImageName.swift */,
+			);
+			path = Namespace;
+			sourceTree = "<group>";
+		};
 		386087612C36E13300744005 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +328,7 @@
 		38CAC6B22BAC1BC60051C648 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				385530B52C4B99F4002C3C2A /* Namespace */,
 				38CAC6C22BAC42160051C648 /* Path */,
 				38CAC6D12BAC60890051C648 /* Location */,
 			);
@@ -533,7 +544,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					3885CC3B2C2E78DA0013A803 = {
 						CreatedOnToolsVersion = 15.1;
@@ -662,6 +673,7 @@
 				3885CC2A2C2BF47A0013A803 /* NetworkSessionProtocol.swift in Sources */,
 				38A513412BEE4E38001F1E10 /* AlertDisplayable.swift in Sources */,
 				38CAC6C42BAC421F0051C648 /* Path.swift in Sources */,
+				385530B72C4B9B33002C3C2A /* ImageName.swift in Sources */,
 				38CAC6EC2BB0598C0051C648 /* AppDelegate.swift in Sources */,
 				3885CC372C2C2DB90013A803 /* LocationManagerProtocol.swift in Sources */,
 				3885CC2C2C2BF5990013A803 /* NetworkSession.swift in Sources */,
@@ -699,6 +711,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SXJPM9PRM7;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -722,6 +735,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SXJPM9PRM7;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
