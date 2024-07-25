@@ -22,16 +22,16 @@ extension AlertDisplayable {
       )
     ]
   ) {
-    setErrorAlertMessage(message.description)
-    setIsDisplayErrorAlert(true)
+    setAlertMessage(message.description)
+    setIsDisplayAlert(true)
     setButtons(buttons)
   }
   
-  private func setErrorAlertMessage(_ message: String) {
+  private func setAlertMessage(_ message: String) {
     alertMessage = message
   }
   
-  private func setIsDisplayErrorAlert(_ isDisplay: Bool) {
+  private func setIsDisplayAlert(_ isDisplay: Bool) {
     isDisplayAlert = isDisplay
   }
   
