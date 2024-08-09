@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3845595C2C663B3C00131B1A /* MiddleSearchResultMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3845595B2C663B3C00131B1A /* MiddleSearchResultMapView.swift */; };
+		384559602C663BD700131B1A /* NaverMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3845595F2C663BD700131B1A /* NaverMapView.swift */; };
 		385530B72C4B9B33002C3C2A /* ImageNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B62C4B9B33002C3C2A /* ImageNamespace.swift */; };
 		385530B92C4BA15B002C3C2A /* MapNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530B82C4BA15B002C3C2A /* MapNamespace.swift */; };
 		385530BB2C4BA790002C3C2A /* UtilityNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		3845595B2C663B3C00131B1A /* MiddleSearchResultMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleSearchResultMapView.swift; sourceTree = "<group>"; };
+		3845595F2C663BD700131B1A /* NaverMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMapView.swift; sourceTree = "<group>"; };
 		385530B62C4B9B33002C3C2A /* ImageNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNamespace.swift; sourceTree = "<group>"; };
 		385530B82C4BA15B002C3C2A /* MapNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNamespace.swift; sourceTree = "<group>"; };
 		385530BA2C4BA790002C3C2A /* UtilityNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityNamespace.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				3845595D2C663B6900131B1A /* CurrentLocationMap */,
 				3845595E2C663B7600131B1A /* MiddleSearchResultMap */,
 				38CAC6F62BB454970051C648 /* MapViewModel.swift */,
+				3845595F2C663BD700131B1A /* NaverMapView.swift */,
 				38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */,
 				38A513482BFB4B06001F1E10 /* MapError.swift */,
 			);
@@ -695,6 +698,7 @@
 				38CAC6CB2BAC5D0F0051C648 /* ContentView.swift in Sources */,
 				38CAC6A72BAC1B3A0051C648 /* HomeView.swift in Sources */,
 				38CAC6D72BAC84070051C648 /* APIType.swift in Sources */,
+				384559602C663BD700131B1A /* NaverMapView.swift in Sources */,
 				385C50E92C393B9100FD3D52 /* AlertButtonItem.swift in Sources */,
 				3885CC332C2C0A830013A803 /* Repository.swift in Sources */,
 				3885CC302C2BFEBC0013A803 /* JSONNetworkDeserializer.swift in Sources */,
