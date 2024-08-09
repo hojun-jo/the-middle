@@ -12,6 +12,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   
   // MARK: - Public property
   
+  @Published var navigationCenterText: String
   @Published var isDisplaySearchResult: Bool
   @Published var isDisplayAlert: Bool
   @Published var alertMessage: String
@@ -38,6 +39,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   // MARK: - Lifecycle
   
   init(
+    navigationCenterText: String = "",
     isDisplaySearchResult: Bool = false,
     isDisplayAlert: Bool = false,
     alertMessage: String = "",
@@ -47,6 +49,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
     middleLocation: Location? = nil,
     searchedLocations: [Location] = []
   ) {
+    self.navigationCenterText = navigationCenterText
     self.isDisplaySearchResult = isDisplaySearchResult
     self.isDisplayAlert = isDisplayAlert
     self.alertMessage = alertMessage
@@ -61,6 +64,7 @@ final class MapViewModel: ObservableObject, AlertDisplayable {
   
   func setCurrentLocation(_ location: Location?) {
     currentLocation = location
+    navigationCenterText = location?.name ?? ""
   }
   
   func openSearchResult() {

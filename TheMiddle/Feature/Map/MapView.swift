@@ -33,20 +33,53 @@ struct MapView: View {
         .ignoresSafeArea()
       
       VStack {
-        CustomNavigationBar(
-          placeName: .init(initialValue: mapViewModel.currentLocation?.name ?? ""),
-          leftButtonAction: {
-            mapViewModel.closeSearchResult()
-            pathModel.paths.removeLast()
-          },
-          rightButtonAction: { placeName in
-            Task {
-              await mapViewModel.searchButtonAction(keyword: placeName)
-              mapViewModel.openSearchResult()
-            }
-          },
-          isSearchMode: isSearchMode
-        )
+        if isSearchMode {
+          NavigationBar(
+            leftItem: Button(
+              action: {
+                mapViewModel.closeSearchResult()
+                pathModel.paths.removeLast()
+              },
+              label: {
+                Image(systemName: ImageNamespace.leftArrow)
+              }
+            )
+            .accessibilityLabel(.init(UtilityNamespace.back)),
+            centerItem: TextField(
+              MapNamespace.searchPlaceholder, 
+              text: $mapViewModel.navigationCenterText
+            )
+            .autocorrectionDisabled()
+            .textFieldStyle(.roundedBorder)
+            .accessibilityLabel(.init(MapNamespace.startLocationSearchField)),
+            rightItem: Button(
+              action: {
+                Task {
+                  await mapViewModel.searchButtonAction(keyword: mapViewModel.navigationCenterText)
+                  mapViewModel.openSearchResult()
+                }
+              },
+              label: {
+                Image(systemName: ImageNamespace.magnifyingglass)
+              }
+            )
+            .accessibilityLabel(.init(UtilityNamespace.search))
+          )
+        } else {
+          NavigationBar(
+            leftItem: Button(
+              action: {
+                mapViewModel.closeSearchResult()
+                pathModel.paths.removeLast()
+              },
+              label: {
+                Image(systemName: ImageNamespace.leftArrow)
+              }
+            )
+            .accessibilityLabel(.init(UtilityNamespace.back)),
+            centerItem: Text(MapNamespace.middleSearchResult)
+          )
+        }
         
         Spacer()
       }
