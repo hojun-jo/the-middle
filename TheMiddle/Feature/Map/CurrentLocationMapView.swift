@@ -1,5 +1,5 @@
 //
-//  MapView.swift
+//  CurrentLocationMapView.swift
 //  TheMiddle
 //
 //  Created by 조호준 on 3/24/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import NMapsMap
 
-struct MapView: View {
+struct CurrentLocationMapView: View {
   @EnvironmentObject private var pathModel: PathModel
   @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
@@ -206,7 +206,7 @@ private struct SearchResultCellView: View {
 }
 
 #Preview {
-  MapView(isSearchMode: true, naverMapGenerator: .init())
+  CurrentLocationMapView(isSearchMode: true, naverMapGenerator: .init())
     .environmentObject(PathModel())
     .environmentObject(MapViewModel(
       locationManager: .init(

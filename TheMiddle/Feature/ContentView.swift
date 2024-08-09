@@ -28,7 +28,7 @@ struct ContentView: View {
           destination: { pathType in
             switch pathType {
             case let .mapView(isSearchMode):
-              MapView(
+              CurrentLocationMapView(
                 isSearchMode: isSearchMode,
                 naverMapGenerator: naverMapGenerator
               )

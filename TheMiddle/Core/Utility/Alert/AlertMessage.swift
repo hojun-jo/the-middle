@@ -12,7 +12,7 @@ enum AlertMessage {
   // MARK: - HomeView
   case needStartLocation
   
-  // MARK: - MapView
+  // MARK: - CurrentLocationMapView
   case needSearchLocation
   
   var description: String {
