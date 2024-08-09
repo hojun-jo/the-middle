@@ -6,5 +6,6 @@
 //
 
 enum PathType: Hashable {
-  case mapView(isSearchMode: Bool)
+  case currentLocationMapView
+  case middleSearchResultMapView
 }

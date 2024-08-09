@@ -50,7 +50,7 @@ struct HomeView: View {
               Task {
                 let coordinate: Coordinate? = homeViewModel.averageCoordinate()
                 await mapViewModel.searchSubwayStation(at: coordinate)
-                pathModel.paths.append(.mapView(isSearchMode: false))
+                pathModel.paths.append(.middleSearchResultMapView)
               }
             },
             label: {
@@ -106,7 +106,7 @@ private struct LocationButtonView: View {
         Button(
           action: {
             mapViewModel.setCurrentLocation(location)
-            pathModel.paths.append(.mapView(isSearchMode: true))
+            pathModel.paths.append(.currentLocationMapView)
           },
           label: {
             Text(location?.name ?? MapNamespace.addStartLocation)

@@ -43,7 +43,6 @@ struct NaverMapView: UIViewRepresentable {
   }
 }
 
-
 #Preview {
   NaverMapView(
     isSearchMode: true,

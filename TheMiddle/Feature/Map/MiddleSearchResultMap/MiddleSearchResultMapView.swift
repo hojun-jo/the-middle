@@ -8,11 +8,60 @@
 import SwiftUI
 
 struct MiddleSearchResultMapView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @EnvironmentObject private var pathModel: PathModel
+  @EnvironmentObject private var mapViewModel: MapViewModel
+  
+  private let naverMapGenerator: NaverMapGenerator
+  
+  init(naverMapGenerator: NaverMapGenerator) {
+    self.naverMapGenerator = naverMapGenerator
+  }
+  
+  var body: some View {
+    ZStack {
+      NaverMapView(
+        isSearchMode: false,
+        naverMapGenerator: naverMapGenerator
+      )
+      .ignoresSafeArea()
+      
+      VStack {
+        NavigationBar(
+          leftItem: NavigationBackButton {
+            pathModel.paths.removeLast()
+          },
+          centerItem: Text(MapNamespace.middleSearchResult)
+        )
+        
+        Spacer()
+      }
     }
+    .alert(
+      mapViewModel.alertMessage,
+      isPresented: $mapViewModel.isDisplayAlert,
+      actions: {
+        ForEach(mapViewModel.alertButtons, id: \.self) { button in
+          Button(
+            action: button.action,
+            label: { Text(button.text) }
+          )
+        }
+      },
+      message: {}
+    )
+  }
 }
 
 #Preview {
-    MiddleSearchResultMapView()
+  MiddleSearchResultMapView(naverMapGenerator: .init())
+  .environmentObject(PathModel())
+  .environmentObject(MapViewModel(
+    locationManager: .init(
+      repository: .init(
+        networkManager: .init(session: NetworkSession(session: .init(configuration: .default))),
+        deserializer: JSONNetworkDeserializer(decoder: .init())
+      )
+    ),
+    searchedLocations: dummyLocations
+  ))
 }

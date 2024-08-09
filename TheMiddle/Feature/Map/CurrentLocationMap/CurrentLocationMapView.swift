@@ -12,61 +12,46 @@ struct CurrentLocationMapView: View {
   @EnvironmentObject private var homeViewModel: HomeViewModel
   @EnvironmentObject private var mapViewModel: MapViewModel
   
-  private let isSearchMode: Bool
   private let naverMapGenerator: NaverMapGenerator
   
-  init(
-    isSearchMode: Bool,
-    naverMapGenerator: NaverMapGenerator
-  ) {
-    self.isSearchMode = isSearchMode
+  init(naverMapGenerator: NaverMapGenerator) {
     self.naverMapGenerator = naverMapGenerator
   }
   
   var body: some View {
     ZStack {
       NaverMapView(
-        isSearchMode: isSearchMode,
+        isSearchMode: true,
         naverMapGenerator: naverMapGenerator
       )
-        .ignoresSafeArea()
+      .ignoresSafeArea()
       
       VStack {
-        if isSearchMode {
-          NavigationBar(
-            leftItem: NavigationBackButton {
-              mapViewModel.closeSearchResult()
-              pathModel.paths.removeLast()
-            },
-            centerItem: TextField(
-              MapNamespace.searchPlaceholder, 
-              text: $mapViewModel.navigationCenterText
-            )
-            .autocorrectionDisabled()
-            .textFieldStyle(.roundedBorder)
-            .accessibilityLabel(.init(MapNamespace.startLocationSearchField)),
-            rightItem: Button(
-              action: {
-                Task {
-                  await mapViewModel.searchButtonAction(keyword: mapViewModel.navigationCenterText)
-                  mapViewModel.openSearchResult()
-                }
-              },
-              label: {
-                Image(systemName: ImageNamespace.magnifyingglass)
+        NavigationBar(
+          leftItem: NavigationBackButton {
+            mapViewModel.closeSearchResult()
+            pathModel.paths.removeLast()
+          },
+          centerItem: TextField(
+            MapNamespace.searchPlaceholder,
+            text: $mapViewModel.navigationCenterText
+          )
+          .autocorrectionDisabled()
+          .textFieldStyle(.roundedBorder)
+          .accessibilityLabel(.init(MapNamespace.startLocationSearchField)),
+          rightItem: Button(
+            action: {
+              Task {
+                await mapViewModel.searchButtonAction(keyword: mapViewModel.navigationCenterText)
+                mapViewModel.openSearchResult()
               }
-            )
-            .accessibilityLabel(.init(UtilityNamespace.search))
-          )
-        } else {
-          NavigationBar(
-            leftItem: NavigationBackButton {
-              mapViewModel.closeSearchResult()
-              pathModel.paths.removeLast()
             },
-            centerItem: Text(MapNamespace.middleSearchResult)
+            label: {
+              Image(systemName: ImageNamespace.magnifyingglass)
+            }
           )
-        }
+          .accessibilityLabel(.init(UtilityNamespace.search))
+        )
         
         Spacer()
       }
@@ -169,7 +154,7 @@ private struct SearchResultCellView: View {
 }
 
 #Preview {
-  CurrentLocationMapView(isSearchMode: true, naverMapGenerator: .init())
+  CurrentLocationMapView(naverMapGenerator: .init())
     .environmentObject(PathModel())
     .environmentObject(MapViewModel(
       locationManager: .init(

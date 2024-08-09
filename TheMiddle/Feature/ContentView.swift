@@ -27,11 +27,11 @@ struct ContentView: View {
           for: PathType.self,
           destination: { pathType in
             switch pathType {
-            case let .mapView(isSearchMode):
-              CurrentLocationMapView(
-                isSearchMode: isSearchMode,
-                naverMapGenerator: naverMapGenerator
-              )
+            case .currentLocationMapView:
+              CurrentLocationMapView(naverMapGenerator: naverMapGenerator)
+                .navigationBarBackButtonHidden()
+            case .middleSearchResultMapView:
+              MiddleSearchResultMapView(naverMapGenerator: naverMapGenerator)
                 .navigationBarBackButtonHidden()
             }
           }
