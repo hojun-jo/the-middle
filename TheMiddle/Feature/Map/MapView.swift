@@ -35,16 +35,10 @@ struct MapView: View {
       VStack {
         if isSearchMode {
           NavigationBar(
-            leftItem: Button(
-              action: {
-                mapViewModel.closeSearchResult()
-                pathModel.paths.removeLast()
-              },
-              label: {
-                Image(systemName: ImageNamespace.leftArrow)
-              }
-            )
-            .accessibilityLabel(.init(UtilityNamespace.back)),
+            leftItem: NavigationBackButton {
+              mapViewModel.closeSearchResult()
+              pathModel.paths.removeLast()
+            },
             centerItem: TextField(
               MapNamespace.searchPlaceholder, 
               text: $mapViewModel.navigationCenterText
@@ -67,16 +61,10 @@ struct MapView: View {
           )
         } else {
           NavigationBar(
-            leftItem: Button(
-              action: {
-                mapViewModel.closeSearchResult()
-                pathModel.paths.removeLast()
-              },
-              label: {
-                Image(systemName: ImageNamespace.leftArrow)
-              }
-            )
-            .accessibilityLabel(.init(UtilityNamespace.back)),
+            leftItem: NavigationBackButton {
+              mapViewModel.closeSearchResult()
+              pathModel.paths.removeLast()
+            },
             centerItem: Text(MapNamespace.middleSearchResult)
           )
         }
