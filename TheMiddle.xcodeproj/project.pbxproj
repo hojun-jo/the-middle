@@ -167,6 +167,15 @@
 			path = MiddleSearchResultMap;
 			sourceTree = "<group>";
 		};
+		384559612C66415600131B1A /* NaverMap */ = {
+			isa = PBXGroup;
+			children = (
+				3845595F2C663BD700131B1A /* NaverMapView.swift */,
+				38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */,
+			);
+			path = NaverMap;
+			sourceTree = "<group>";
+		};
 		385530B52C4B99F4002C3C2A /* Namespace */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,9 +479,8 @@
 			children = (
 				3845595D2C663B6900131B1A /* CurrentLocationMap */,
 				3845595E2C663B7600131B1A /* MiddleSearchResultMap */,
+				384559612C66415600131B1A /* NaverMap */,
 				38CAC6F62BB454970051C648 /* MapViewModel.swift */,
-				3845595F2C663BD700131B1A /* NaverMapView.swift */,
-				38A513462BFB30A4001F1E10 /* NaverMapGenerator.swift */,
 				38A513482BFB4B06001F1E10 /* MapError.swift */,
 			);
 			path = Map;
