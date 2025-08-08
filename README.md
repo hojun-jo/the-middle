@@ -1,5 +1,5 @@
 # 중간에서봐
-> 프젝트 기간 : 2024.03. ~
+> 프젝트 기간 : 2024.03. ~ 2024.08.
 
 `SwiftUI` `Combine` `Swift Concurrency` `CoreLocation` `MVVM`
 
